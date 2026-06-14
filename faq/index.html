@@ -1,0 +1,326 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Petição Pública Brasil</title>
+    <meta name="description"
+        content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros.">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    
+    <link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-4QFTX7SRFF&amp;cx=c&amp;gtm=4e66b0h2"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js"></script>
+
+    <meta property="og:image" content="https://peticaopublica.com.br/images/fbShareLogo.gif">
+    <script type="text/javascript">$(function () {
+            $("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
+            $("#txtemailnewsletter").keypress(function (e) { if (e.keyCode == 13) { doSearch(); } });
+            var pesq = $("#txtemailnewsletter").val();
+            if (pesq === "")
+                $("#txtemailnewsletter").val('Procure Abaixo-Assinados');
+            $("#txtemailnewsletter").live("focus", function () {
+                if ($(this).val() === $(this).attr("title")) {
+                    $(this).val("")
+                }
+            }).live("blur", function () {
+                if ($(this).val() === "") {
+                    $(this).val($(this).attr("title"))
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".account").click(function () {
+                var X = $(this).attr('id');
+                if (X == 1) { $(".submenu").hide(); $(this).attr('id', '0'); }
+                else { $(".submenu").show(); $(this).attr('id', '1'); }
+            });
+            $(".submenu").mouseup(function () { return false });//Mouseup textarea false
+            $(".account").mouseup(function () { return false });
+            $(document).mouseup(function () { $(".submenu").hide(); $(".account").attr('id', ''); });//Textarea without editing.
+        });
+        function doSearch() {
+            if ($('#txtemailnewsletter').val() == $('#txtemailnewsletter').attr("title")) $('#txtemailnewsletter').val("");
+            var psearch = $('#txtemailnewsletter').val();
+            window.location = '../searchfilter/index.html?q=' + psearch;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="innerHeader">
+            <div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
+                <a href="../home/index.html"><img src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px"
+                        alt="Petição Pública Brasil Logotipo" title="Um dos mais antigos métodos da democracia."
+                        width="304px" height="82px"></a>
+            </div>
+            <div style="float: right; width: 650px; height: 90px; background-color: #000;">
+                <div style="height: 40px">
+                    <ul class="headerMenu">
+                        <li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
+                        <li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
+                        <li class="headerLink">
+                            <div id="divLogin">
+                                <a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div style="height: 70px; float: right; margin: 10px 20px;">
+                    <div class="emailnewsletter" id="divemailnewsletter">
+                        <input id="txtemailnewsletter" type="text" value="" maxlength="50"
+                            title="Procure Abaixo-Assinados"><a id="submitEmailNewsletter"
+                            href="javascript:doSearch();">procurar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form method="post" action=".../faq/index.html" id="aspnetForm">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="/wEPDwUKMTM3NDk3Mzc1Nw9kFgJmD2QWBAIBDxYCHgdWaXNpYmxlZ2QCAw9kFgICAQ9kFgICAQ8WAh4EVGV4dAXeNzxkaXYgY2xhc3M9IndyYXBwZXIiPg0KCTxkaXYgY2xhc3M9InBjb250ZW50Ij4NCiAgICAgICAgPGRpdiBjbGFzcz0icGV0aGVhZCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICM2ODg2MDI7IHZlcnRpY2FsLWFsaWduOiB0b3A7Ij4NCgkJCTxzcGFuPkJlbS12aW5kbyBhbyBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsLDwvc3Bhbj4NCgkJPC9kaXY+DQoJCTx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgc3R5bGU9ImJvcmRlcjogMDsgbWFyZ2luOiAwOyBwYWRkaW5nOjA7Ij4NCgkJPHRyPg0KICAgICAgICAgICAgPHRkIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmOyBwYWRkaW5nOjAgMjBweDsiPg0KICAgICAgICAgICAgICAgIDxwPkVzdGEgw6FyZWEgZGUgcGVyZ3VudGFzIGZyZXF1ZW50ZXMgc2VydmUgZGUgYWp1ZGEgcGFyYSBjb21wcmVlbmRlciBub3NzbyBzaXN0ZW1hIGRlIGFybWF6ZW5hbWVudG8sIGdyw6F0aXMsIHBhcmEgb3UgYWJhaXhvLWFzc2luYWRvcyBvbmxpbmUgZSBjb21vIHZvY8OqIHBvZGUgdXRpbGl6YXIgbm9zc28gc2lzdGVtYSBlbSBzZXUgcHJvdmVpdG8uPC9wPg0KICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+TyBxdWUgw6kgbyBQZXRpY2FvUHVibGljYS5jb20uYnI/PC9oMT4NCiAgICAgICAgICAgICAgICA8cD5PIHNpdGUgUGV0aWNhb1B1YmxpY2EuY29tLmJyLCBmb3JuZWNlIGFsb2phbWVudG8gb25saW5lIGdyYXR1aXRvIHBhcmEgcGV0acOnw7VlcyBww7pibGljYXMsIG91IGFiYWl4by1hc3NpbmFkb3MuIE8gbWVzbW8gcHJldGVuZGUgY29uc3RpdHVpciB1bSBzZXJ2acOnbyBww7pibGljbyBkZSBxdWFsaWRhZGUgYSB0b2RvcyBvcyBjaWRhZMOjb3MgYnJhc2lsZWlyb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkZvcm5lY2Vtb3MgdW0gZG9zIG1haXMgYW50aWdvcyBtw6l0b2RvcyBkYSBkZW1vY3JhY2lhLCBjb21iaW5hZG8gY29tIGEgw7psdGltYSBlIG1haXMgbW9kZXJuYSB0ZWNub2xvZ2lhIGRpZ2l0YWwgZGUgY29tdW5pY2HDp8OjbywgZGlzcG9uw612ZWwgZ3JhdHVpdGFtZW50ZSAyNCBob3JhcyBwb3IgZGlhLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5BY3JlZGl0YW1vcyBxdWUgYSBpbnRlcm5ldCBwb2RlIGZhY2lsaXRhciBhIGNyaWHDp8OjbywgZGl2dWxnYcOnw6NvIGUgdGFtYsOpbSBhIHBhcnRpY2lwYcOnw6NvIGRvcyBjaWRhZMOjb3MgbmEgc3Vic2NyacOnw6NvIGRlIGFiYWl4by1hc3NpbmFkb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPk7Do28gc2Vyw6NvIGFjZWl0ZXMgYWJhaXhvLWFzc2luYWRvcywgcXVlIGluY2l0ZW0gw6AgdmlvbMOqbmNpYSwgcXVlIG9mZW5kYW0gdGVyY2Vpcm9zLCBxdWUgdXRpbGl6ZW0gbGluZ3VhZ2VtIGltcHLDs3ByaWEsIG91IGRlIHF1YWxxdWVyIG1hbmVpcmEgaXJyZXNwb25zw6F2ZWwgb3UgYW50aS1zb2NpYWwuIFRhbWLDqW0gbsOjbyBhY2VpdGFyZW1vcyBhYmFpeG8tYXNzaW5hZG9zIGFuw7NuaW1vcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+QWJhaXhvLWFzc2luYWRvcyBxdWUgdXRpbGl6ZW0gbm9tZXMgZmFsc29zIG91IGxpbmd1YWdlbSBpbmFjZWl0w6F2ZWwsIHNlcsOjbyByZW1vdmlkb3MgaW1lZGlhdGFtZW50ZSwgc2VtcHJlIHF1ZSBmb3JlbSBkZXNjb2JlcnRvcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+UXVhbHF1ZXIgYWJhaXhvLWFzc2luYWRvIMOpIGJlbS12aW5kbywgc2VqYSBxdWFsIGZvciBzdWEgZGltZW5zw6NvLiBPcyBhYmFpeG8tYXNzaW5hZG9zIHBvZGVtIHRlciB1bWEgZXNjYWxhIHBlcXVlbmEgZSBsb2NhbCBjb21vLCBwb3IgZXhlbXBsbywgYXMgcHJlb2N1cGHDp8O1ZXMgbnVtYSBwZXF1ZW5hIGFsZGVpYSwgb3UgdW1hIGVzY2FsYSBuYWNpb25hbCwgb25kZSB1bSBkZXRlcm1pbmFkbyBhc3N1bnRvIHBvZGUgZ2VyYXIgYmFzdGFudGUgcG9sw6ltaWNhIG5vcyBtZWlvcyBkZSBjb211bmljYcOnw6NvLiBBY3JlZGl0YW1vcyBxdWUgbyBuw7ptZXJvIHRvdGFsIGRlIGFzc2luYXR1cmFzIGRlIHVtIGFiYWl4by1hc3NpbmFkbywgbsOjbyDDqSBvIHBvbnRvIG1haXMgaW1wb3J0YW50ZSBlIG7Do28gw6kgc2VndXJhbWVudGUgbyBxdWUgbyB0b3JuYSBudW0gYWJhaXhvLWFzc2luYWRvIGRlIHN1Y2Vzc28uPC9wPg0KICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+T3MgYWJhaXhvLWFzc2luYWRvcyBhcXVpIGFybWF6ZW5hZGFzIG7Do28gcmVmbGV0ZW0gb3MgcG9udG9zIGRlIHZpc3RhIGRvIFBldGljYW9QdWJsaWNhLmNvbS5iciwgZGUgc2V1cyBhc3NvY2lhZG9zIG91IHBhdHJvY2luYWRvcmVzLjwvcD4NCiAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxoMSBzdHlsZT0ibWFyZ2luLXRvcDogMjBweDsiPkFiYWl4by1hc3NpbmFkbyAob3UgcGV0acOnw6NvIHDDumJsaWNhKSwgbyBxdWUgw6k/PC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5BYmFpeG8tYXNzaW5hZG8gKG91IHBldGnDp8OjbyBww7pibGljYSksIGVtIGdlcmFsLCDDqSBhIGFwcmVzZW50YcOnw6NvIGRlIHVtIHBlZGlkbyBvdSBkZSB1bWEgcHJvcG9zdGEsIGEgw7NyZ8OjbyBzb2JlcmFubyBvdSBhIHF1YWxxdWVyIGF1dG9yaWRhZGUgcMO6YmxpY2EsIHBhcmEgcXVlIGFkb3RlIG91IGRldGVybWluYWRhIG1lZGlkYS4gKEFkYXB0YcOnw6NvIGRvIFRleHRvIGRhIENvbnN0aXR1acOnw6NvIGRlIDE5ODgsIGVtIHNldSBBcnRpZ28gMTUzLCBwYXLDoWdyYWZvIDMwKTwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij5RdWVtIHBvZGUgYXByZXNlbnRhciB1bSBhYmFpeG8tYXNzaW5hZG8gKG91IHBldGnDp8OjbyBww7pibGljYSk/PC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5Ub2RvIG8gY2lkYWTDo28gdGVtIG8gZGlyZWl0byBkZSBhcHJlc2VudGFyLCBpbmRpdmlkdWFsIG91IGNvbGV0aXZhbWVudGUsIGFvcyDDs3Jnw6NvcyBzb2JlcmFub3MsIGFvcyDDs3Jnw6NvcyBkZSBnb3Zlcm5vIGRvcyBlc3RhZG9zIG91IGEgcXVhbHF1ZXIgYXV0b3JpZGFkZSwgcGV0acOnw7VlcywgYWJhaXhvLWFzc2luYWRvcywgcmVwcmVzZW50YcOnw7VlcywgcmVjbGFtYcOnw7VlcyBvdSBxdWVpeGFzIHBhcmEgZGVmZXNhIGRlIHNldXMgZGlyZWl0b3MsIGRhIENvbnN0aXR1acOnw6NvLCBkYXMgbGVpcyBvdSBkZSBpbnRlcmVzc2UgZ2VyYWwuIFRlbSB0YW1iw6ltIG8gZGlyZWl0byBkZSBzZXIgaW5mb3JtYWRvcywgZW0gcHJhem8gcmF6b8OhdmVsLCBzb2JyZSBvIHJlc3VsdGFkbyBkYSByZXNwZXRpdmEgYXByZWNpYcOnw6NvLiAoQXJ0aWdvIDE0MSwgUGFyw6FncmFmbyAzNyk8L3A+DQogICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8IS0tPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+UXVhaXMgb3MgZGFkb3Mgb2JyaWdhdMOzcmlvcyBwYXJhIG9zIHNpZ25hdMOhcmlvcywgY2FzbyBhIFBldGnDp8OjbyBzZWphIHBhcmEgZW50cmVnYSBubyBBc3NlbWJsZWlhIGRhIFJlcMO6YmxpY2E/PC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PcyBwZXRpY2lvbsOhcmlvcyBkZXZlbSBpbmRpY2FyIG8gbm9tZSBjb21wbGV0byBlIG8gbsO6bWVybyBkbyBiaWxoZXRlIGRlIGlkZW50aWRhZGUgb3UsIG7Do28gc2VuZG8gcG9ydGFkb3IgZGVzdGUsIHF1YWxxdWVyIG91dHJvIGRvY3VtZW50byBkZSBpZGVudGlmaWNhw6fDo28gdsOhbGlkby48L3A+DQogICAgICAgICAgICAgICAgLS0+DQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+TyBxdWUgZmF6IG8gUGV0aWNhb1B1YmxpY2EuY29tLmJyPyBRdWUgcGFydGUgZG8gdHJhYmFsaG8gZmHDp28gZXU/PC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5BdHJhdsOpcyBkbyBQZXRpY2FvUHVibGljYS5jb20uYnIsIHZvY8OqIGVzY3JldmUgbyB0ZXh0byBkZSBzZXUgYWJhaXhvLWFzc2luYWRvLCBlIHN1Ym1ldGUtbywgdXRpbGl6YW5kbyB1bSBzaW1wbGVzIGZvcm11bMOhcmlvIG9ubGluZS4gQSBzZWd1aXIgdm9jw6ogZGV2ZSBwcm9tb3ZlciBzZXUgYWJhaXhvLWFzc2luYWRvLCBwYXJhIHRlbnRhciBjb25zZWd1aXIgbyBtYWlvciBuw7ptZXJvIGRlIGFzc2luYXR1cmFzIHBvc3PDrXZlaXMuIEFzc2ltIHF1ZSBlbnRlbmRlciBxdWUgc2V1IGFiYWl4by1hc3NpbmFkbywgZXN0w6EgY29tcGxldG8sIHZvY8OqIHBvZGUgaW1wcmltaS1sbyBvdSBlbmNhbWluaGFyIG8gbGluaywgcG9yIGVtYWlsLCBwYXJhIG9zIGRlc3RpbmF0w6FyaW9zIGRlIHNldSBhYmFpeG8tYXNzaW5hZG8uPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPlBldGljYW9QdWJsaWNhLmNvbS5iciBmb3JuZWNlIHVtIHNpc3RlbWEgZ3LDoXRpcyBkZSBhYmFpeG8tYXNzaW5hZG9zLCBuYSBpbnRlcm5ldCBwYXJhIHF1ZSBvIHByb2Nlc3NvIGRlIGZhemVyIHBldGnDp8O1ZXMgc2VqYSBzaW1wbGVzIGUgcsOhcGlkby4gTm9zc28gc2lzdGVtYSBmb3JtYXRhIGF1dG9tYXRpY2FtZW50ZSBzZXUgYWJhaXhvLWFzc2luYWRvLCBwYXJhIHVtIGZvcm1hdG8gbmEgSW50ZXJuZXQsIGFsb2phIHNldSBhYmFpeG8tYXNzaW5hZG8gZGUgZm9ybWEgc2VndXJhIGVtIG5vc3NvcyBzZXJ2aWRvcmVzLCByZWNvbGhlLCBtb3N0cmEgZSBtYW50ZW0gdG9kYXMgYXMgYXNzaW5hdHVyYXMgZGUgc2V1IGFiYWl4by1hc3NpbmFkby48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+Q29tbyBlc2NyZXZlciBtZXUgYWJhaXhvLWFzc2luYWRvPzwvaDE+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+QSBwYXJ0ZSBtYWlzIGltcG9ydGFudGUgZGUgc2V1IGFiYWl4by1hc3NpbmFkbywgw6kgYSBkZWNsYXJhw6fDo28gZGUgYWJhaXhvLWFzc2luYWRvLiBDZW50ZW5hcywgbWlsaGFyZXMgb3UgbWVzbW8gbWFpcyBwZXNzb2FzIHbDo28gbGVyIHNldSBhYmFpeG8tYXNzaW5hZG8sIHBvcnRhbnRvIGVsZSBkZXZlIGVzdGFyIGJlbSBlc2NyaXRvIGUgc2VtIGVycm9zLiBUb2RvIG8gdGVtcG8gcXVlIGdhc3RhciBuYSByZXZpc8OjbyBkYSBkZWNsYXJhw6fDo28gZGUgYWJhaXhvIGFzc2luYWRvLCB2YWkgYXVtZW50YXIgbyBzdWNlc3NvIGRvIG1lc21vLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5UZW5oYSBlbSBtZW50ZSBxdWUgdW0gYWJhaXhvLWFzc2luYWRvLCBuw6NvIHBvZGUgc2VyIGFsdGVyYWRvIGRlcG9pcyBkZSBzdWJtZXRpZG8sIHBvcnF1ZSBxdWFscXVlciBtdWRhbsOnYSBzZXJpYSBpbmdyYXRhIHBhcmEgYXF1ZWxlcyBxdWUgasOhIHRpbmhhIGFzc2luYWRvIG8gYWJhaXhvLWFzc2luYWRvLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij5BcyBhc3NpbmF0dXJhcyBlc3TDo28gc2VndXJhcz88L2gxPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkFzIGFzc2luYXR1cmFzIHPDo28gdHJhdGFkYXMgY29tIG11aXRvIGN1aWRhZG8uIFRvZG8gbyBzaXRlIGUgdG9kYXMgYXMgYXNzaW5hdHVyYXMgc8OjbyBndWFyZGFkYXMgZGlhcmlhbWVudGUgbnVtIGJhY2t1cCBlIGFycXVpdmFkYXMgcGFyYSBmYWNpbGl0YXIgc3VhIHJlY3VwZXJhw6fDo28gbm8gY2FzbyBkZSBhbGd1bSBwcm9ibGVtYSBkbyBzaXN0ZW1hLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5EbyBwb250byBkZSB2aXN0YSBsZWdhbCwgdm9jw6ogYXNzdW1lIHRvZG8gbyByaXNjbyBkZSB1c2FyIG5vc3NvIHNlcnZpw6dvIGRlIHBldGnDp8O1ZXMgcMO6YmxpY2FzLCBvdSBhYmFpeG8tYXNzaW5hZG9zLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij5Db21vIHBvc3NvIGZhemVyIG1haXMgcXVlc3TDtWVzIGFvIFBldGljYW9QdWJsaWNhLmNvbS5icj88L2gxPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkludHJvZHV6YSBzdWFzIHF1ZXN0w7VlcywgY29tZW50w6FyaW9zIGUgc3VnZXN0w7VlcywgYXRyYXbDqXMgZG8gPGEgY2xhc3M9ImdyZWVuLWxpbmsiIGhyZWY9Ii9jb250YWN0dXMuYXNweCI+Zm9ybXVsw6FyaW8gZGUgY29udGF0bzwvYT4gZXhpc3RlbnRlIG5vIHNpdGUuIFNlamEgY2xhcm8gZSBvYmpldGl2byBlIHNlIHByZXRlbmRlIHJlZmVyaXIgYWxndW1hIHBldGnDp8OjbyBvdSBhYmFpeG8tYXNzaW5hZG8sIG7Do28gc2UgZXNxdWXDp2EgZGUgaW5jbHVpciBvIFVSTCBkYSBtZXNtYS48L3A+DQogICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij5BIGRlY2xhcmHDp8OjbyBwYXJhIG1ldSBhYmFpeG8tYXNzaW5hZG8gZXN0w6EgcHJvbnRhLCBjb21vIHN1Ym1ldGVyIHVtIGFiYWl4by1hc3NpbmFkbywgcGFyYSBvIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWw/PC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5Kw6EgdGVtIG8gdGV4dG8gZGUgc2V1IGFiYWl4by1hc3NpbmFkbywgZXNjcml0bywgdmlzdG8gZSByZXZpc3RvLCBwb2RlIGlyIGRpcmV0YW1lbnRlIHBhcmEgYSBww6FnaW5hIGRlIDxhIGNsYXNzPSJncmVlbi1saW5rIiBocmVmPSIvcGNyZWF0ZS5hc3B4Ij5DcmlhciBBYmFpeG8tYXNzaW5hZG8uPC9hPjwvcD4NCiAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgPC90cj4NCgkJPC90YWJsZT4JCQ0KCQk8ZGl2IGNsYXNzPSJwZXRGb290ZXIiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmOyBwYWRkaW5nOiA1cHggMDsiPjwvZGl2PgkNCgk8L2Rpdj4NCjwvZGl2PmRkbEuy0aIp2gXfnJF+Ch9qsZiB84cJTuTJAdj6mFys80Q=">
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2EA23B35">
+        </div>
+
+        <div class="wrapper">
+            <div class="pcontent">
+                <div class="pethead" style="background-color: #688602; vertical-align: top;">
+                    <span>Bem-vindo ao Petição Pública Brasil,</span>
+                </div>
+                <table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding:0;">
+                    <tbody>
+                        <tr>
+                            <td style="background-color: #fff; padding:0 20px;">
+                                <p>Esta área de perguntas frequentes serve de ajuda para compreender nosso sistema de
+                                    armazenamento, grátis, para ou abaixo-assinados online e como você pode utilizar
+                                    nosso sistema em seu proveito.</p>
+
+                                <h1 style="margin-top: 20px;">O que é o PeticaoPublica.com.br?</h1>
+                                <p>O site PeticaoPublica.com.br, fornece alojamento online gratuito para petições
+                                    públicas, ou abaixo-assinados. O mesmo pretende constituir um serviço público de
+                                    qualidade a todos os cidadãos brasileiros.</p>
+
+                                <p>Fornecemos um dos mais antigos métodos da democracia, combinado com a última e mais
+                                    moderna tecnologia digital de comunicação, disponível gratuitamente 24 horas por
+                                    dia.</p>
+
+                                <p>Acreditamos que a internet pode facilitar a criação, divulgação e também a
+                                    participação dos cidadãos na subscrição de abaixo-assinados.</p>
+
+                                <p>Não serão aceites abaixo-assinados, que incitem à violência, que ofendam terceiros,
+                                    que utilizem linguagem imprópria, ou de qualquer maneira irresponsável ou
+                                    anti-social. Também não aceitaremos abaixo-assinados anónimos.</p>
+
+                                <p>Abaixo-assinados que utilizem nomes falsos ou linguagem inaceitável, serão removidos
+                                    imediatamente, sempre que forem descobertos.</p>
+
+                                <p>Qualquer abaixo-assinado é bem-vindo, seja qual for sua dimensão. Os abaixo-assinados
+                                    podem ter uma escala pequena e local como, por exemplo, as preocupações numa pequena
+                                    aldeia, ou uma escala nacional, onde um determinado assunto pode gerar bastante
+                                    polémica nos meios de comunicação. Acreditamos que o número total de assinaturas de
+                                    um abaixo-assinado, não é o ponto mais importante e não é seguramente o que o torna
+                                    num abaixo-assinado de sucesso.</p>
+
+                                <p>Os abaixo-assinados aqui armazenadas não refletem os pontos de vista do
+                                    PeticaoPublica.com.br, de seus associados ou patrocinadores.</p>
+
+                                <h1 style="margin-top: 20px;">Abaixo-assinado (ou petição pública), o que é?</h1>
+
+                                <p>Abaixo-assinado (ou petição pública), em geral, é a apresentação de um pedido ou de
+                                    uma proposta, a órgão soberano ou a qualquer autoridade pública, para que adote ou
+                                    determinada medida. (Adaptação do Texto da Constituição de 1988, em seu Artigo 153,
+                                    parágrafo 30)</p>
+
+                                <h1 style="margin-top: 20px;">Quem pode apresentar um abaixo-assinado (ou petição
+                                    pública)?</h1>
+
+                                <p>Todo o cidadão tem o direito de apresentar, individual ou coletivamente, aos órgãos
+                                    soberanos, aos órgãos de governo dos estados ou a qualquer autoridade, petições,
+                                    abaixo-assinados, representações, reclamações ou queixas para defesa de seus
+                                    direitos, da Constituição, das leis ou de interesse geral. Tem também o direito de
+                                    ser informados, em prazo razoável, sobre o resultado da respetiva apreciação.
+                                    (Artigo 141, Parágrafo 37)</p>
+
+                                <!--<h1 style="margin-top: 20px;">Quais os dados obrigatórios para os signatários, caso a Petição seja para entrega no Assembleia da República?</h1>
+                
+                <p>Os peticionários devem indicar o nome completo e o número do bilhete de identidade ou, não sendo portador deste, qualquer outro documento de identificação válido.</p>
+                -->
+                                <h1 style="margin-top: 20px;">O que faz o PeticaoPublica.com.br? Que parte do trabalho
+                                    faço eu?</h1>
+
+                                <p>Através do PeticaoPublica.com.br, você escreve o texto de seu abaixo-assinado, e
+                                    submete-o, utilizando um simples formulário online. A seguir você deve promover seu
+                                    abaixo-assinado, para tentar conseguir o maior número de assinaturas possíveis.
+                                    Assim que entender que seu abaixo-assinado, está completo, você pode imprimi-lo ou
+                                    encaminhar o link, por email, para os destinatários de seu abaixo-assinado.</p>
+
+                                <p>PeticaoPublica.com.br fornece um sistema grátis de abaixo-assinados, na internet para
+                                    que o processo de fazer petições seja simples e rápido. Nosso sistema formata
+                                    automaticamente seu abaixo-assinado, para um formato na Internet, aloja seu
+                                    abaixo-assinado de forma segura em nossos servidores, recolhe, mostra e mantem todas
+                                    as assinaturas de seu abaixo-assinado.</p>
+
+                                <h1 style="margin-top: 20px;">Como escrever meu abaixo-assinado?</h1>
+
+                                <p>A parte mais importante de seu abaixo-assinado, é a declaração de abaixo-assinado.
+                                    Centenas, milhares ou mesmo mais pessoas vão ler seu abaixo-assinado, portanto ele
+                                    deve estar bem escrito e sem erros. Todo o tempo que gastar na revisão da declaração
+                                    de abaixo assinado, vai aumentar o sucesso do mesmo.</p>
+
+                                <p>Tenha em mente que um abaixo-assinado, não pode ser alterado depois de submetido,
+                                    porque qualquer mudança seria ingrata para aqueles que já tinha assinado o
+                                    abaixo-assinado.</p>
+
+                                <h1 style="margin-top: 20px;">As assinaturas estão seguras?</h1>
+
+                                <p>As assinaturas são tratadas com muito cuidado. Todo o site e todas as assinaturas são
+                                    guardadas diariamente num backup e arquivadas para facilitar sua recuperação no caso
+                                    de algum problema do sistema.</p>
+
+                                <p>Do ponto de vista legal, você assume todo o risco de usar nosso serviço de petições
+                                    públicas, ou abaixo-assinados.</p>
+
+                                <h1 style="margin-top: 20px;">Como posso fazer mais questões ao PeticaoPublica.com.br?
+                                </h1>
+
+                                <p>Introduza suas questões, comentários e sugestões, através do <a class="green-link"
+                                        href="../contactus/index.html">formulário de contato</a> existente no site. Seja claro e
+                                    objetivo e se pretende referir alguma petição ou abaixo-assinado, não se esqueça de
+                                    incluir o URL da mesma.</p>
+
+                                <h1 style="margin-top: 20px;">A declaração para meu abaixo-assinado está pronta, como
+                                    submeter um abaixo-assinado, para o Petição Pública Brasil?</h1>
+
+                                <p>Já tem o texto de seu abaixo-assinado, escrito, visto e revisto, pode ir diretamente
+                                    para a página de <a class="green-link" href="../pcreate/index.html">Criar
+                                        Abaixo-assinado.</a></p>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
+            </div>
+        </div>
+
+    </form>
+    <div class="footer">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <div style="width: 300px; float: left;">
+                <h4 style="margin: 0;">Procurar por Categorias</h4>
+
+                <ul id="ulCat">
+                    <li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
+                </ul>
+
+            </div>
+            <div style="float: right;">
+                <div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
+                    respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
+                <div class="nav-share">
+                    <iframe
+                        src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398"
+                        width="82" height="32" style="border:none;overflow:hidden;padding-top:20px;" scrolling="no"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <ul style="float:right;">
+                        <li><a target="_blank" href="https://www.facebook.com/peticaopublicabrasil" class="fbshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
+                        <li><a target="_blank" href="https://twitter.com/peticaopublicab" class="twshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
+                        <li><a target="_blank" href="https://peticaopublica.com.br/rss.aspx" class="rss32f"
+                                title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
+                    </ul>
+                </div>
+                <div
+                    style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
+                    O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
+                    face ao poder político,
+                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a
+                        style="font-size: 11px;"
+                        href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm"
+                        target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
+                    Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondfooter">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <ul>
+                <li><a href="../aboutus/index.html">Sobre Nós</a></li>
+                <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../privacy/index.html">Política de Privacidade</a></li>
+                <li><a href="../termsconditions/index.html">Termos e Condições</a></li>
+                <li><a href="../help/index.html">Ajuda</a></li>
+                <li><a href="../contactus/index.html?pi=">Contato</a></li>
+            </ul>
+            <div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+            </div>
+        </div>
+    </div>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-4269839-47');
+    </script>
+    <script defer=""
+        src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+        integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+        data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b46a5cb6f5e049389877892a967b678e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
+        crossorigin="anonymous"></script>
+
+    <div id="cboxOverlay" style="display: none;"></div>
+    <div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;">
+        <div id="cboxWrapper">
+            <div>
+                <div id="cboxTopLeft" style="float: left;"></div>
+                <div id="cboxTopCenter" style="float: left;"></div>
+                <div id="cboxTopRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxMiddleLeft" style="float: left;"></div>
+                <div id="cboxContent" style="float: left;">
+                    <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+                    <div id="cboxTitle" style="float: left;"></div>
+                    <div id="cboxCurrent" style="float: left;"></div>
+                    <div id="cboxNext" style="float: left;"></div>
+                    <div id="cboxPrevious" style="float: left;"></div>
+                    <div id="cboxSlideshow" style="float: left;"></div>
+                    <div id="cboxClose" style="float: left;"></div>
+                </div>
+                <div id="cboxMiddleRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxBottomLeft" style="float: left;"></div>
+                <div id="cboxBottomCenter" style="float: left;"></div>
+                <div id="cboxBottomRight" style="float: left;"></div>
+            </div>
+        </div>
+        <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+    </div>
+</body>

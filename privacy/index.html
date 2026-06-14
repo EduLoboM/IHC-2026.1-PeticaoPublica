@@ -1,0 +1,374 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Petição Pública Brasil</title>
+    <meta name="description"
+        content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros.">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    
+    <link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-4QFTX7SRFF&amp;cx=c&amp;gtm=4e66b0h2"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js"></script>
+
+    <meta property="og:image" content="https://peticaopublica.com.br/images/fbShareLogo.gif">
+    <script type="text/javascript">$(function () {
+            $("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
+            $("#txtemailnewsletter").keypress(function (e) { if (e.keyCode == 13) { doSearch(); } });
+            var pesq = $("#txtemailnewsletter").val();
+            if (pesq === "")
+                $("#txtemailnewsletter").val('Procure Abaixo-Assinados');
+            $("#txtemailnewsletter").live("focus", function () {
+                if ($(this).val() === $(this).attr("title")) {
+                    $(this).val("")
+                }
+            }).live("blur", function () {
+                if ($(this).val() === "") {
+                    $(this).val($(this).attr("title"))
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".account").click(function () {
+                var X = $(this).attr('id');
+                if (X == 1) { $(".submenu").hide(); $(this).attr('id', '0'); }
+                else { $(".submenu").show(); $(this).attr('id', '1'); }
+            });
+            $(".submenu").mouseup(function () { return false });//Mouseup textarea false
+            $(".account").mouseup(function () { return false });
+            $(document).mouseup(function () { $(".submenu").hide(); $(".account").attr('id', ''); });//Textarea without editing.
+        });
+        function doSearch() {
+            if ($('#txtemailnewsletter').val() == $('#txtemailnewsletter').attr("title")) $('#txtemailnewsletter').val("");
+            var psearch = $('#txtemailnewsletter').val();
+            window.location = '../searchfilter/index.html?q=' + psearch;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="innerHeader">
+            <div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
+                <a href="../home/index.html"><img src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px"
+                        alt="Petição Pública Brasil Logotipo" title="Um dos mais antigos métodos da democracia."
+                        width="304px" height="82px"></a>
+            </div>
+            <div style="float: right; width: 650px; height: 90px; background-color: #000;">
+                <div style="height: 40px">
+                    <ul class="headerMenu">
+                        <li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
+                        <li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
+                        <li class="headerLink">
+                            <div id="divLogin">
+                                <a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div style="height: 70px; float: right; margin: 10px 20px;">
+                    <div class="emailnewsletter" id="divemailnewsletter">
+                        <input id="txtemailnewsletter" type="text" value="" maxlength="50"
+                            title="Procure Abaixo-Assinados"><a id="submitEmailNewsletter"
+                            href="javascript:doSearch();">procurar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form method="post" action=".../privacy/index.html" id="aspnetForm">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="/wEPDwUKLTU1MTkwNjMzMA9kFgJmD2QWBAIBDxYCHgdWaXNpYmxlZ2QCAw9kFgICAQ9kFgICAQ8WAh4EVGV4dAXoTzxkaXYgY2xhc3M9IndyYXBwZXIiPg0KCTxkaXYgY2xhc3M9InBjb250ZW50Ij4NCiAgICAgICAgPGRpdiBjbGFzcz0icGV0aGVhZCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICM2ODg2MDI7IHZlcnRpY2FsLWFsaWduOiB0b3A7Ij4NCgkJCTxzcGFuPlBvbMOtdGljYSBkZSBQcml2YWNpZGFkZTwvc3Bhbj4NCgkJPC9kaXY+DQoJCTx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCIgc3R5bGU9ImJvcmRlcjogMDsgbWFyZ2luOiAwOyBwYWRkaW5nOjA7IGZvbnQtZmFtaWx5OidTZWdvZSBVSScsIEFyaWFsLCBzYW5zLXNlcmlmO2ZvbnQtc2l6ZToxLjJlbTsiPg0KCQk8dHI+DQogICAgICAgICAgICA8dGQgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IHBhZGRpbmc6MCAyMHB4OyI+DQogICAgICAgICAgICAgIDxwPlBvciBmYXZvciwgbGVpYSBlc3RlIHRleHRvIGUgY29uaGXDp2EgbWVsaG9yIG5vc3NhIFBvbMOtdGljYSBkZSBQcml2YWNpZGFkZS48L3A+DQoNCiAgICAgICAgICAgICAgPHA+TyBzaXRlIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWwgbGV2YSBhIHPDqXJpbyBhIHByaXZhY2lkYWRlIGRlIHF1ZW0gbm9zIHZpc2l0YS4gQW8gYWNlc3NhciBlc3RlIHNpdGUgb3UgZW52aWFyIHF1YWlzcXVlciBmb3JtdWzDoXJpb3Mgbm8gc2l0ZSwgdm9jw6ogY29uY29yZGEgY29tIGVzdGEgUG9sw610aWNhIGRlIFByaXZhY2lkYWRlIGUgY29tIG5vc3NvcyBUZXJtb3MgZGUgVXNvIGUgY29uc2VudGUgY29tIGEgY29sZXRhIGUgdXNvIGRlIHF1YWlzcXVlciBpbmZvcm1hw6fDtWVzIHF1ZSBmb3JuZWNlci4gQ2FzbyBuw6NvIGNvbmNvcmRlIGNvbSBlc3RhIFBvbMOtdGljYSBkZSBQcml2YWNpZGFkZSBvdSBub3Nzb3MgVGVybW9zIGRlIFVzbywgcG9yIGZhdm9yLCBuw6NvIGFjZXNzZSBvdSB1c2UgbyBzZXJ2acOnby48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+MSkgQSBQb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGUgZGUgUGV0acOnw6NvIFDDumJsaWNhIEJyYXNpbDwvaDE+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgIDxwPkVzdGFtb3MgY29tcHJvbWV0aWRvcyBlbSBwcm90ZWdlciBhIHN1YSBwcml2YWNpZGFkZSBvbmxpbmUuIEEgcHJlc2VudGUgUG9sw610aWNhIGRlIFByaXZhY2lkYWRlIGVuZ2xvYmEgY29tbyBzw6NvIHRyYXRhZG9zIG9zIGRhZG9zIHBlc3NvYWlzLiBRdWFuZG8gdm9jw6ogdXRpbGl6YSBub3NzbyBzaXRlIG91IHNlIGNvbXVuaWNhIGNvbm9zY28sIGNvbGV0YW1vcyBlIGFybWF6ZW5hbW9zIHN1YXMgaW5mb3JtYcOnw7VlcyBwZXNzb2FpcyBwYXJhIHByb3BvcmNpb25hcm1vcyBhIG1lbGhvciBleHBlcmllbmNpYSBuYSB1dGlsaXphw6fDo28gZG8gc2l0ZS4gRXN0YSBQb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGUgdGVtIG8gb2JqZWN0aXZvIGRlIG1vc3RyYXIgY29tbyBvIHNpdGUgUGV0acOnw6NvIFDDumJsaWNhIEJyYXNpbCBsaWRhIGNvbSBlc3NhcyBpbmZvcm1hw6fDtWVzIGUgY29tbyBlc3TDo28gYSBzZXIgdXRpbGl6YWRhcy48L3A+DQoNCiAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxoMSBzdHlsZT0ibWFyZ2luLXRvcDogMjBweDsiPjIpIFJlY29saGEsIHRyYXRhbWVudG8gZSBtYW51dGVuw6fDo28gZG9zIERhZG9zIFBlc3NvYWlzPC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PIHNpdGUgUGV0acOnw6NvIFDDumJsaWNhIHJlY29saGVtb3MgaW5mb3JtYcOnw6NvIHNlbXByZSBxdWUgaGFqYSB1bWEgdmlzaXRhIG91IHVtIHJlZ2lzdG8gdm9sdW50w6FyaW8gZG8gdmlzaXRhbnRlLiBBIGluZm9ybWHDp8OjbyBhc3NpbSByZWNvbGhpZGEgw6kgaW5kaXZpZHVhbG1lbnRlIGlkZW50aWZpY8OhdmVsIChkYWRvcyBwZXNzb2FpcykuPC9wPg0KDQogICAgICAgICAgICAgIDxwPlJlY29saGVtb3MgaW5mb3JtYcOnw7VlcyBjb21vIG8gc2V1IG5vbWUsIGVuZGVyZcOnbyBkZSBlLW1haWwsIGNvbWVudMOhcmlvcywgZW5kZXJlw6dvIElQIGUgcXVhaXNxdWVyIG91dHJhcyBpbmZvcm1hw6fDtWVzIHF1ZSB2b2PDqiBjb21wYXJ0aWxoYSBhbyBzZSByZWdpc3RhciBubyBzaXRlLCBhc3NpbmFyIHVtYSBwZXRpw6fDo28gb3UgZW50cmFyIGVtIGNvbnRhdG8gY29ub3Njby4gDQogICAgICAgICAgICAgIFBvZGVtb3MgdGFtYsOpbSByZWNvbGhlciBpbmZvcm1hw6fDo28gc29icmUgbyBzaXN0ZW1hIGluZm9ybcOhdGljbyB1dGlsaXphZG8gcGFyYSBhY2VkZXIgYW8gc2l0ZSBQZXRpw6fDo28gUMO6YmxpY2EsIGEgbmF2ZWdhw6fDo28gZWZlY3R1YWRhIGUgb3V0cmFzIGluZm9ybWHDp8O1ZXMgZSBJRHMgZGUgY29udGFzIGVtIHJlZGVzIHNvY2lhaXMgY29tcGFydGlsaGFkYXMgY29ub3NjbyBubyBtb21lbnRvIGRvIGxvZ2luIG91IGFzc2luYXR1cmEgZGUgdW1hIHBldGnDp8Ojby48L3A+DQogICAgICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPlBvZGVtIHRhbWLDqW0gc2VyIGdlcmFkb3MgY29va2llcyBjb20gaW5mb3JtYcOnw7VlcyBzb2JyZSBhcyBww6FnaW5hcyB2aXNpdGFkYXMuIEVzdGUgY29va2llcyBzw6NvIGluc3RhbGFkb3Mgbm9zIEJyb3dzZXJzIG9uZGUgZXNzYSBvcMOnw6NvIGVzdGVqYSBhY3RpdmFkYS48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+UGFyY2VyaWFzIGV4aXN0ZW50ZXMgbm8gc2l0ZSBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsIGFvIG7DrXZlbCBkYSBwdWJsaWNpZGFkZSBvdSByZWRlcyBzb2NpYWlzIHBvZGVtIHRhbWLDqW0gc2VyIHVtYSBmb250ZSBkZSByZWNvbGhhIGRlIGluZm9ybWHDp8O1ZXMsIGRlcGVuZGVuZG8gdGFsIGFjw6fDo28gZGFzIHJlc3BlY3RpdmFzIHBvbMOtdGljYXMgZG9zIHBhcmNlaXJvcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+U2VtcHJlIHF1ZSB1bSB2aXNpdGFudGUgZGVsaWJlcmFkYSBlIHZvbHVudGFyaWFtZW50ZSBzZSByZWdpc3RhIGVtIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWwsIMOpLWxoZSByZXF1ZXJpZGEgYSBpbmRpY2HDp8OjbyBkbyBub21lIGUgdW0gZW5kZXJlw6dvIGRlIGNvcnJlaW8gZWxlY3Ryw7NuaWNvLiBVbWEgdmV6IHJlZ2lzdGFkbyBlbSBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsLCBvIHZpc2l0YW50ZSwgcGFyYSBuw7NzLCBkZWl4YSBkZSBzZXIgYW7Ds25pbW8uPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgPHA+Tm8gUGV0acOnw6NvIFDDumJsaWNhIEJyYXNpbCB1dGlsaXphbW9zIGVzc2FzIGluZm9ybWHDp8O1ZXMgcGFyYTo8L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHVsPg0KICAgICAgICAgICAgICAgICAgICA8bGkgc3R5bGU9Imxpc3Qtc3R5bGUtdHlwZTogZGlzYzsiPnBlcm1pdGlyIG8gYWNlc3NvIGEgem9uYXMgZG8gc2l0ZSBhIHF1ZSBzw7Mgb3MgdmlzaXRhbnRlcyByZWdpc3RhZG9zIHTDqm0gYWNlc3NvOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cGVyc29uYWxpemFyIG9zIGNvbnRlw7pkb3MgZSBhIHB1YmxpY2lkYWRlOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cG9kZXIgY29ycmVzcG9uZGVyIMOgcyBzb2xpY2l0YcOnw7VlcyBkb3MgdmlzaXRhbnRlcyByZWdpc3RhZG9zIHNvYnJlIHByb2R1dG9zIGUgc2VydmnDp29zOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+aW5mb3JtYXIgbyB2aXNpdGFudGUgcmVnaXN0YWRvIGFjZXJjYSBkb3MgcHJvZHV0b3MgZG8gc2l0ZSwgZGl2dWxnYcOnw6NvIGRlIGFjw6fDtWVzIGRlIHByb21vw6fDo28gZG8gUGV0acOnw6NvIFDDumJsaWNhLCBub21lYWRhbWVudGUgZW52aWFyIG5ld3NsZXR0ZXJzIGVsZWN0csOzbmljYXMuPC9saT4NCiAgICAgICAgICAgICAgICA8L3VsPg0KDQogICAgICAgICAgICAgICAgPHA+QXJtYXplbmFtb3MgZSBtYW50ZXJlbW9zIGFzIHN1YXMgaW5mb3JtYcOnw7VlcyBwZXNzb2FpcyBwZWxvIHRlbXBvIHF1ZSBmb3IgbmVjZXNzw6FyaW8gcGFyYSBvKHMpIHByb3DDs3NpdG8ocykgcGFyYSBvIHF1YWwocXVhaXMpIHRhaXMgaW5mb3JtYcOnw7VlcyBmb3JhbSBjb2xldGFkYXMuIENhc28gdm9jw6ogaW5kaXF1ZSBwYXJhIHBhcmFyIGRlIGVudmlhciBjb211bmljYcOnw7VlcyBvdSBwYXJhIGVsaW1pbmFyIHN1YXMgaW5mb3JtYcOnw7VlcywgYXRlbmRlcmVtb3Mgc2V1IHBlZGlkbyBlIG1hbnRlcmVtb3MgbyBtw61uaW1vIGRlIGluZm9ybWHDp8OjbyBwb3Nzw612ZWwgcGFyYSBldml0YXIgZnJhdWRlIGUgcGFyYSBhanVkYXIgYSBnYXJhbnRpciBxdWUgdm9jw6ogbsOjbyBzZXLDoSBjb250YXRhZG8gbm92YW1lbnRlLjwvcD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkVtIGNvbmZvcm1pZGFkZSBjb20gbyBkaXNwb3N0byBuYSBsZWkgZGUgcHJvdGVjw6fDo28gZGUgZGFkb3MgcGVzc29haXMsIG9zIHV0aWxpemFkb3JlcyB0w6ptIGRpcmVpdG8gZGUgcGVkaXIgYSBhbHRlcmHDp8OjbywgcmVjdGlmaWNhw6fDo28gZSBlbGltaW5hw6fDo28gZG9zIHNldXMgZGFkb3MgcGVzc29haXMuIFBhcmEgbyBmYXplciBkZXZlcsOhIGNvbnRhY3Rhci1ub3MgYXRyYXbDqXMgZG8gPGEgaHJlZj0iaHR0cHM6Ly9wZXRpY2FvcHVibGljYS5jb20uYnIvY29udGFjdHVzLmFzcHg/cGk9cG9scHJpdmFjaWRhZGUiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyBmb250LWZhbWlseTonU2Vnb2UgVUknLCBBcmlhbCwgc2Fucy1zZXJpZjsgZm9udC13ZWlnaHQ6NjAwOyI+Zm9ybXVsw6FyaW8gZGUgY29udGFjdG88L2E+IG91IGVudmlhciB1bSBlbWFpbCBkaXJlY3RhbWVudGUgYXRyYXbDqXMgZGFzIGluZm9ybWHDp8O1ZXMgY29uc3RhbnRlIG5vIGZpbmFsIGRlc3RhIDxhIGhyZWY9Imh0dHBzOi8vcGV0aWNhb3B1YmxpY2EuY29tLmJyL2NvbnRhY3R1cy5hc3B4P3BpPXBvbHByaXZhY2lkYWRlIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOnVuZGVybGluZTsgZm9udC1mYW1pbHk6J1NlZ29lIFVJJywgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OjYwMDsiPnDDoWdpbmE8L2E+LjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij4zKSBQYXJ0aWxoYSBlIERpdnVsZ2HDp8OjbyBkb3MgRGFkb3MgUGVzc29haXM8L2gxPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPlBvciBjb25zaWRlcmFyIGluZm9ybWHDp8OjbyBjb25maWRlbmNpYWwgZSBpbmRpdmlkdWFsLCBvIHNpdGUgUGV0acOnw6NvIFDDumJsaWNhIEJyYXNpbCBuw6NvIHZlbmRlcsOhIG91IGNlZGVyw6EgYSB0ZXJjZWlyb3Mgb3MgZGFkb3MgcGVzc29haXMgZG9zIHZpc2l0YW50ZXMgcmVnaXN0YWRvcyBvdSBxdWUgYXNzaW5lbSBhYmFpeG8tYXNzaW5hZG9zLiBFc3RlcyBhcGVuYXMgc8OjbyB1dGlsaXphZG9zIG5vIMOibWJpdG8gZGFzIGF0aXZpZGFkZXMgZG8gc2l0ZSBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsIGUgc2VtcHJlIGNvbSBvIG9iamV0aXZvIGRlIG1lbGhvcmFyIG8gc2VydmnDp28gcHJlc3RhZG8uPC9wPg0KCQkJCQ0KCQkJCSAgICAgICAgPHA+TyBub21lIGUgbyBlbWFpbCBkbyBzaWduYXTDoXJpbyBkbyBhYmFpeG8tYXNzaW5hZG8gcG9kZXLDoSBzZXIgdXRpbGl6YWRvIHBlbG8gc2l0ZSBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsIG91IHBvciBvdXRybyBzaXRlIGRvIG1lc21vIGdydXBvIHBhcmEgZGl2dWxnYcOnw6NvIGRlIGHDp8O1ZXMgZGUgcHJvbW/Dp8OjbywgY2FtcGFuaGFzIHB1YmxpY2l0w6FyaWFzIG91IG5ld3NsZXR0ZXJzIGF0cmF2w6lzIGRlIGVtYWlsLCBjYXNvIG8gc2lnbsOhdMOhcmlvIHRlbmhhIGluZGljYWRvIHF1ZSBuw6NvIHNlIGltcG9ydGEgZGUgcmVjZWJlciBjb250YXRvcyBkZXN0YSBuYXR1cmV6YS4gRXN0ZSBlbnZpbyBkZSBlbWFpbCBhY29udGVjZXLDoSBhcGVuYXMgbm8gY2FzbyBkZSBvIHNpZ25hdMOhcmlvIHRlciBleHByZXNzYWRvIHZvbHVudGFyaWFtZW50ZSBlc3NhIHZvbnRhZGUgYW8gYXNzaW5hciB1bSBhYmFpeG8tYXNzaW5hZG8gKG91IHBldGnDp8OjbyBww7pibGljYSkgZSBjb2xvY2FyIG9zIHNldXMgZGFkb3MgcGVzc29haXMsIGRlIG91dHJhIGZvcm1hIG51bmNhIHJlY2ViZXLDoSBxdWFscXVlciBlbWFpbCBvdSBjb250YWN0byBkbyBzaXRlIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWwuPC9wPg0KDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+NCkgQXR1YWxpemHDp8OjbyBvdSBFbGltaW5hw6fDo28gZGUgRGFkb3MgUGVzc29haXM8L2gxPg0KDQogICAgICAgICAgICAgICAgPHA+RW0gY29uZm9ybWlkYWRlIGNvbSBvIGRpc3Bvc3RvIG5hIGxlaSBkZSBwcm90ZWPDp8OjbyBkZSBkYWRvcyBwZXNzb2Fpcywgb3MgdXRpbGl6YWRvcmVzIHTDqm0gZGlyZWl0byBkZSA8c3Ryb25nPnBlZGlyIGEgYWx0ZXJhw6fDo28sIHJlY3RpZmljYcOnw6NvIGUgZWxpbWluYcOnw6NvIGRvcyBzZXVzIGRhZG9zIHBlc3NvYWlzPC9zdHJvbmc+LiBQYXJhIG8gZmF6ZXIgZGV2ZXLDoSBjb250YWN0YXItbm9zIGF0cmF2w6lzIGRvIDxhIGhyZWY9Imh0dHBzOi8vcGV0aWNhb3B1YmxpY2EuY29tLmJyL2NvbnRhY3R1cy5hc3B4P3BpPXBvbHByaXZhY2lkYWRlIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOnVuZGVybGluZTsgZm9udC1mYW1pbHk6J1NlZ29lIFVJJywgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OjYwMDsiPmZvcm11bMOhcmlvIGRlIGNvbnRhY3RvPC9hPiBvdSBlbnZpYXIgZGlyZWN0YW1lbnRlIHVtIGVtYWlsIHBhcmEgbyBlbmRlcmXDp28gcXVlIGVuY29udHJhIG5vIGZpbmFsIGRlc3RhIDxhIGhyZWY9Imh0dHBzOi8vcGV0aWNhb3B1YmxpY2EuY29tLmJyL2NvbnRhY3R1cy5hc3B4P3BpPXBvbHByaXZhY2lkYWRlIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOnVuZGVybGluZTsgZm9udC1mYW1pbHk6J1NlZ29lIFVJJywgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OjYwMDsiPnDDoWdpbmE8L2E+LjwvcD4NCg0KICAgICAgICAgICAgICAgIDxwPkEgcXVhbHF1ZXIgbW9tZW50byBvIHVzdcOhcmlvIHBvZGVyw6Egc29saWNpdGFyIGEgYXR1YWxpemHDp8OjbyBvdSBlbGltaW5hw6fDo28gZG8gc2V1IHJlZ2lzdG8sIG91IGRlIHF1YWxxdWVyIGFzc2luYXR1cmEgZWZldHVhZGEgbm8gc2l0ZS4gQSBmb3JtYSBtYWlzIHNpbXBsZXMgcGFyYSBmYXplciBlc3RlIHBlZGlkbyDDqSBjb250YWN0YXIgYXRyYXbDqXMgPGEgaHJlZj0iaHR0cHM6Ly9wZXRpY2FvcHVibGljYS5jb20uYnIvY29udGFjdHVzLmFzcHg/cGk9cG9scHJpdmFjaWRhZGUiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyBmb250LWZhbWlseTonU2Vnb2UgVUknLCBBcmlhbCwgc2Fucy1zZXJpZjsgZm9udC13ZWlnaHQ6NjAwOyI+Zm9ybXVsw6FyaW8gZGUgY29udGFjdG88L2E+IG91IGVudmlhciBkaXJlY3RhbWVudGUgdW0gZW1haWwgcGFyYSBvIGVuZGVyZcOnbyBxdWUgZW5jb250cmEgbm8gZmluYWwgZGVzdGEgPGEgaHJlZj0iaHR0cHM6Ly9wZXRpY2FvcHVibGljYS5jb20uYnIvY29udGFjdHVzLmFzcHg/cGk9cG9scHJpdmFjaWRhZGUiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyBmb250LWZhbWlseTonU2Vnb2UgVUknLCBBcmlhbCwgc2Fucy1zZXJpZjsgZm9udC13ZWlnaHQ6NjAwOyI+cMOhZ2luYTwvYT4uPC9wPiANCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+NSkgQ29va2llczwvaDE+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWwgcG9kZXLDoSBpbnN0YWxhciBjb29raWVzIG5vIGNvbXB1dGFkb3IgZG8gdmlzaXRhbnRlLCBkZXNkZSBxdWUgZXN0YSBvcMOnw6NvIGVzdGVqYSBhY3RpdmFkYSBubyBCcm93c2VyIHV0aWxpemFkbyBwYXJhIGZhemVyIGEgbmF2ZWdhw6fDo28uPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPk9zIGFudW5jaWFudGVzIG91IG91dHJvcyBzZXJ2acOnb3MgcHJlc2VudGVzIG5vIHNpdGUgUGV0acOnw6NvIFDDumJsaWNhIHBvZGVtIHJlY29saGVyIGUgdXNhciBpbmZvcm1hw6fDtWVzIHN1YXMsIG5lc3RlIGUgbm91dHJvcyBzaXRlcywgcGFyYSBsaGUgZXhpYmlyIGFuw7puY2lvcyBvdSBmYWNpbGl0YXIgbyB1c28gZGVzdGUgc2l0ZS48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+NikgU2VndXJhbsOnYTwvaDE+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+TyBzZXUgcmVnaXN0byBubyBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsIGVzdMOhIHByb3RlZ2lkbyBwb3IgdW0gY8OzZGlnbyBkZSBhY2Vzc28gcHLDs3ByaW8gcXVlIGxoZSBhc3NlZ3VyYSBwcml2YWNpZGFkZSBlIHNlZ3VyYW7Dp2EuIFV0aWxpemFtb3MgdGFtYsOpbSBwcsOhdGljYXMgcGFkcsOjbyBkYSBpbmTDunN0cmlhLCB0YWlzIGNvbW8gZmlyZXdhbGxzIGUgZW5jcmlwdGHDp8OjbywgcGFyYSBwcm90ZWdlciBhcyBzdWFzIGluZm9ybWHDp8O1ZXMuICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICBFbSBhbGd1bWFzIMOhcmVhcywgbyBQZXRpw6fDo28gUMO6YmxpY2EgQnJhc2lsIHV0aWxpemEgYSB1bSBzaXN0ZW1hIGRlIGNvZGlmacOnw6NvIGUgZW5jcmlwdGHDp8OjbywgdnVsZ2FybWVudGUgZGVzaWduYWRvIHBvciBTU0wsIHBhcmEgcHJvdGVjw6fDo28gZGEgdHJhbnNtaXNzw6NvIGRvcyBkYWRvcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+NykgQWx0ZXJhw6fDtWVzIMOgIFByZXNlbnRlIFBvbMOtdGljYSBkZSBQcml2YWNpZGFkZTwvaDE+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIFBldGnDp8OjbyBQw7pibGljYSBCcmFzaWwgcG9kZXLDoSByZWN0aWZpY2FyIGVzdGEgcG9sw610aWNhIGVtIHF1YWxxdWVyIG1vbWVudG8uIEVtIGNhc28gZGUgc2VyZW0gZWZlY3R1YWRhcyBhbHRlcmHDp8O1ZXMgc2lnbmlmaWNhdGl2YXMgcXVhbnRvIGFvIG1vZG8gZGUgdXRpbGl6YcOnw6NvIGRvcyBkYWRvcyBwZXNzb2FpcyBkbyB2aXNpdGFudGUgcmVnaXN0YWRvLCBmYXJlbW9zIGNpcmN1bGFyIHVtIGFuw7puY2lvIGRlIGRlc3RhcXVlIG5hcyBub3NzYXMgcMOhZ2luYXMgZHVyYW50ZSAxMCBkaWFzIG91IGVudmlhcmVtb3MgdW0gYXZpc28gaW5kaXZpZHVhbCBwb3IgbmV3c2xldHRlciBlbGVjdHLDs25pY2EuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxoMSBzdHlsZT0ibWFyZ2luLXRvcDogMjBweDsiPjgpIFBlcmd1bnRhcyBvdSBTdWdlc3TDtWVzPC9oMT4NCiAgICAgICAgICAgICAgDQogICAgICAgICAgICAgIDxwPkNhc28gdGVuaGEgcXVhaXNxdWVyIGTDunZpZGFzIHNvYnJlIG5vc3NhcyBwb2zDrXRpY2FzLCBzdWFzIGluZm9ybWHDp8O1ZXMgcGVzc29haXMgb3UgYXMgcHLDoXRpY2FzIGRlc3RlIHNpdGUsIHZvY8OqIHBvZGVyw6EgPGEgaHJlZj0iaHR0cHM6Ly9wZXRpY2FvcHVibGljYS5jb20uYnIvY29udGFjdHVzLmFzcHg/cGk9cG9scHJpdmFjaWRhZGUiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lOyBmb250LWZhbWlseTonU2Vnb2UgVUknLCBBcmlhbCwgc2Fucy1zZXJpZjsiPmVudHJhciBlbSBjb250YXRvPC9hPiBjb25vc2NvLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgIDwvdGQ+DQogICAgICAgIDwvdHI+DQoJCTwvdGFibGU+CQkNCgkJPGRpdiBjbGFzcz0icGV0Rm9vdGVyIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogI2ZmZjsgcGFkZGluZzogNXB4IDA7Ij48L2Rpdj4JDQoJPC9kaXY+DQo8L2Rpdj5kZBclHJfhyPxtliWhB8XnpaW3LcA5eYsu2vF8JKVfZRP2">
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="89FAF9C6">
+        </div>
+
+        <div class="wrapper">
+            <div class="pcontent">
+                <div class="pethead" style="background-color: #688602; vertical-align: top;">
+                    <span>Política de Privacidade</span>
+                </div>
+                <table border="0" cellpadding="0" cellspacing="0"
+                    style="border: 0; margin: 0; padding:0; font-family:'Segoe UI', Arial, sans-serif;font-size:1.2em;">
+                    <tbody>
+                        <tr>
+                            <td style="background-color: #fff; padding:0 20px;">
+                                <p>Por favor, leia este texto e conheça melhor nossa Política de Privacidade.</p>
+
+                                <p>O site Petição Pública Brasil leva a sério a privacidade de quem nos visita. Ao
+                                    acessar este site ou enviar quaisquer formulários no site, você concorda com esta
+                                    Política de Privacidade e com nossos Termos de Uso e consente com a coleta e uso de
+                                    quaisquer informações que fornecer. Caso não concorde com esta Política de
+                                    Privacidade ou nossos Termos de Uso, por favor, não acesse ou use o serviço.</p>
+
+                                <h1 style="margin-top: 20px;">1) A Política de Privacidade de Petição Pública Brasil
+                                </h1>
+
+                                <p>Estamos comprometidos em proteger a sua privacidade online. A presente Política de
+                                    Privacidade engloba como são tratados os dados pessoais. Quando você utiliza nosso
+                                    site ou se comunica conosco, coletamos e armazenamos suas informações pessoais para
+                                    proporcionarmos a melhor experiencia na utilização do site. Esta Política de
+                                    Privacidade tem o objectivo de mostrar como o site Petição Pública Brasil lida com
+                                    essas informações e como estão a ser utilizadas.</p>
+
+
+                                <h1 style="margin-top: 20px;">2) Recolha, tratamento e manutenção dos Dados Pessoais
+                                </h1>
+
+                                <p>O site Petição Pública recolhemos informação sempre que haja uma visita ou um registo
+                                    voluntário do visitante. A informação assim recolhida é individualmente
+                                    identificável (dados pessoais).</p>
+
+                                <p>Recolhemos informações como o seu nome, endereço de e-mail, comentários, endereço IP
+                                    e quaisquer outras informações que você compartilha ao se registar no site, assinar
+                                    uma petição ou entrar em contato conosco.
+                                    Podemos também recolher informação sobre o sistema informático utilizado para aceder
+                                    ao site Petição Pública, a navegação efectuada e outras informações e IDs de contas
+                                    em redes sociais compartilhadas conosco no momento do login ou assinatura de uma
+                                    petição.</p>
+
+                                <p>Podem também ser gerados cookies com informações sobre as páginas visitadas. Este
+                                    cookies são instalados nos Browsers onde essa opção esteja activada.</p>
+
+                                <p>Parcerias existentes no site Petição Pública Brasil ao nível da publicidade ou redes
+                                    sociais podem também ser uma fonte de recolha de informações, dependendo tal acção
+                                    das respectivas políticas dos parceiros.</p>
+
+                                <p>Sempre que um visitante deliberada e voluntariamente se regista em Petição Pública
+                                    Brasil, é-lhe requerida a indicação do nome e um endereço de correio electrónico.
+                                    Uma vez registado em Petição Pública Brasil, o visitante, para nós, deixa de ser
+                                    anónimo.</p>
+
+                                <p>No Petição Pública Brasil utilizamos essas informações para:</p>
+
+                                <ul>
+                                    <li style="list-style-type: disc;">permitir o acesso a zonas do site a que só os
+                                        visitantes registados têm acesso;</li>
+                                    <li style="list-style-type: disc;">personalizar os conteúdos e a publicidade;</li>
+                                    <li style="list-style-type: disc;">poder corresponder às solicitações dos visitantes
+                                        registados sobre produtos e serviços;</li>
+                                    <li style="list-style-type: disc;">informar o visitante registado acerca dos
+                                        produtos do site, divulgação de acções de promoção do Petição Pública,
+                                        nomeadamente enviar newsletters electrónicas.</li>
+                                </ul>
+
+                                <p>Armazenamos e manteremos as suas informações pessoais pelo tempo que for necessário
+                                    para o(s) propósito(s) para o qual(quais) tais informações foram coletadas. Caso
+                                    você indique para parar de enviar comunicações ou para eliminar suas informações,
+                                    atenderemos seu pedido e manteremos o mínimo de informação possível para evitar
+                                    fraude e para ajudar a garantir que você não será contatado novamente.</p>
+
+                                <p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores
+                                    têm direito de pedir a alteração, rectificação e eliminação dos seus dados pessoais.
+                                    Para o fazer deverá contactar-nos através do <a
+                                        href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
+                                        de contacto</a> ou enviar um email directamente através das informações
+                                    constante no final desta <a
+                                        href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
+                                </p>
+
+                                <h1 style="margin-top: 20px;">3) Partilha e Divulgação dos Dados Pessoais</h1>
+
+                                <p>Por considerar informação confidencial e individual, o site Petição Pública Brasil
+                                    não venderá ou cederá a terceiros os dados pessoais dos visitantes registados ou que
+                                    assinem abaixo-assinados. Estes apenas são utilizados no âmbito das atividades do
+                                    site Petição Pública Brasil e sempre com o objetivo de melhorar o serviço prestado.
+                                </p>
+
+                                <p>O nome e o email do signatário do abaixo-assinado poderá ser utilizado pelo site
+                                    Petição Pública Brasil ou por outro site do mesmo grupo para divulgação de ações de
+                                    promoção, campanhas publicitárias ou newsletters através de email, caso o signátário
+                                    tenha indicado que não se importa de receber contatos desta natureza. Este envio de
+                                    email acontecerá apenas no caso de o signatário ter expressado voluntariamente essa
+                                    vontade ao assinar um abaixo-assinado (ou petição pública) e colocar os seus dados
+                                    pessoais, de outra forma nunca receberá qualquer email ou contacto do site Petição
+                                    Pública Brasil.</p>
+
+                                <h1 style="margin-top: 20px;">4) Atualização ou Eliminação de Dados Pessoais</h1>
+
+                                <p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores
+                                    têm direito de <strong>pedir a alteração, rectificação e eliminação dos seus dados
+                                        pessoais</strong>. Para o fazer deverá contactar-nos através do <a
+                                        href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
+                                        de contacto</a> ou enviar directamente um email para o endereço que encontra no
+                                    final desta <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
+                                </p>
+
+                                <p>A qualquer momento o usuário poderá solicitar a atualização ou eliminação do seu
+                                    registo, ou de qualquer assinatura efetuada no site. A forma mais simples para fazer
+                                    este pedido é contactar através <a
+                                        href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
+                                        de contacto</a> ou enviar directamente um email para o endereço que encontra no
+                                    final desta <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
+                                </p>
+
+
+                                <h1 style="margin-top: 20px;">5) Cookies</h1>
+
+                                <p>O site Petição Pública Brasil poderá instalar cookies no computador do visitante,
+                                    desde que esta opção esteja activada no Browser utilizado para fazer a navegação.
+                                </p>
+
+                                <p>Os anunciantes ou outros serviços presentes no site Petição Pública podem recolher e
+                                    usar informações suas, neste e noutros sites, para lhe exibir anúncios ou facilitar
+                                    o uso deste site.</p>
+
+                                <h1 style="margin-top: 20px;">6) Segurança</h1>
+
+                                <p>O seu registo no Petição Pública Brasil está protegido por um código de acesso
+                                    próprio que lhe assegura privacidade e segurança. Utilizamos também práticas padrão
+                                    da indústria, tais como firewalls e encriptação, para proteger as suas informações.
+                                    Em algumas áreas, o Petição Pública Brasil utiliza a um sistema de codifição e
+                                    encriptação, vulgarmente designado por SSL, para protecção da transmissão dos dados.
+                                </p>
+
+                                <h1 style="margin-top: 20px;">7) Alterações à Presente Política de Privacidade</h1>
+
+                                <p>O site Petição Pública Brasil poderá rectificar esta política em qualquer momento. Em
+                                    caso de serem efectuadas alterações significativas quanto ao modo de utilização dos
+                                    dados pessoais do visitante registado, faremos circular um anúncio de destaque nas
+                                    nossas páginas durante 10 dias ou enviaremos um aviso individual por newsletter
+                                    electrónica.</p>
+
+                                <h1 style="margin-top: 20px;">8) Perguntas ou Sugestões</h1>
+
+                                <p>Caso tenha quaisquer dúvidas sobre nossas políticas, suas informações pessoais ou as
+                                    práticas deste site, você poderá <a
+                                        href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade"
+                                        style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif;">entrar
+                                        em contato</a> conosco.</p>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
+            </div>
+        </div>
+
+    </form>
+    <div class="footer">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <div style="width: 300px; float: left;">
+                <h4 style="margin: 0;">Procurar por Categorias</h4>
+
+                <ul id="ulCat">
+                    <li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
+                </ul>
+
+            </div>
+            <div style="float: right;">
+                <div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
+                    respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
+                <div class="nav-share">
+                    <iframe
+                        src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398"
+                        width="82" height="32" style="border:none;overflow:hidden;padding-top:20px;" scrolling="no"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <ul style="float:right;">
+                        <li><a target="_blank" href="https://www.facebook.com/peticaopublicabrasil" class="fbshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
+                        <li><a target="_blank" href="https://twitter.com/peticaopublicab" class="twshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
+                        <li><a target="_blank" href="https://peticaopublica.com.br/rss.aspx" class="rss32f"
+                                title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
+                    </ul>
+                </div>
+                <div
+                    style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
+                    O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
+                    face ao poder político,
+                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a
+                        style="font-size: 11px;"
+                        href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm"
+                        target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
+                    Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondfooter">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <ul>
+                <li><a href="../aboutus/index.html">Sobre Nós</a></li>
+                <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../privacy/index.html">Política de Privacidade</a></li>
+                <li><a href="../termsconditions/index.html">Termos e Condições</a></li>
+                <li><a href="../help/index.html">Ajuda</a></li>
+                <li><a href="../contactus/index.html?pi=">Contato</a></li>
+            </ul>
+            <div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+            </div>
+        </div>
+    </div>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-4269839-47');
+    </script>
+    <script defer=""
+        src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+        integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+        data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b46a5cb6f5e049389877892a967b678e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
+        crossorigin="anonymous"></script>
+
+    <div id="cboxOverlay" style="display: none;"></div>
+    <div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;">
+        <div id="cboxWrapper">
+            <div>
+                <div id="cboxTopLeft" style="float: left;"></div>
+                <div id="cboxTopCenter" style="float: left;"></div>
+                <div id="cboxTopRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxMiddleLeft" style="float: left;"></div>
+                <div id="cboxContent" style="float: left;">
+                    <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+                    <div id="cboxTitle" style="float: left;"></div>
+                    <div id="cboxCurrent" style="float: left;"></div>
+                    <div id="cboxNext" style="float: left;"></div>
+                    <div id="cboxPrevious" style="float: left;"></div>
+                    <div id="cboxSlideshow" style="float: left;"></div>
+                    <div id="cboxClose" style="float: left;"></div>
+                </div>
+                <div id="cboxMiddleRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxBottomLeft" style="float: left;"></div>
+                <div id="cboxBottomCenter" style="float: left;"></div>
+                <div id="cboxBottomRight" style="float: left;"></div>
+            </div>
+        </div>
+        <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+    </div>
+</body>

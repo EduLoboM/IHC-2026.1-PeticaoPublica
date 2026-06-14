@@ -1,0 +1,563 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Criar Abaixo-Assinado| Fazer Abaixo-Assinado : Petição Pública Brasil</title>
+    <meta name="description"
+        content="Serviço gratuito que permite criar a sua petição pública online. Pode iniciar o seu abaixo-assinado e fazer a sua mensagem ser ouvida. O site de criar e fazer Petições e Abaixo-assinados.">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    
+    <link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-4QFTX7SRFF&amp;cx=c&amp;gtm=4e66b0h2"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="https://peticaopublica.com.br/scripts/html5.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <meta property="og:image" content="https://peticaopublica.com.br/images/fbShareLogo.gif">
+    <script type="text/javascript">$(function () {
+            $("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
+            $("#txtemailnewsletter").keypress(function (e) { if (e.keyCode == 13) { doSearch(); } });
+            var pesq = $("#txtemailnewsletter").val();
+            if (pesq === "")
+                $("#txtemailnewsletter").val('Procure Abaixo-Assinados');
+            $("#txtemailnewsletter").live("focus", function () {
+                if ($(this).val() === $(this).attr("title")) {
+                    $(this).val("")
+                }
+            }).live("blur", function () {
+                if ($(this).val() === "") {
+                    $(this).val($(this).attr("title"))
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".account").click(function () {
+                var X = $(this).attr('id');
+                if (X == 1) { $(".submenu").hide(); $(this).attr('id', '0'); }
+                else { $(".submenu").show(); $(this).attr('id', '1'); }
+            });
+            $(".submenu").mouseup(function () { return false });//Mouseup textarea false
+            $(".account").mouseup(function () { return false });
+            $(document).mouseup(function () { $(".submenu").hide(); $(".account").attr('id', ''); });//Textarea without editing.
+        });
+        function doSearch() {
+            if ($('#txtemailnewsletter').val() == $('#txtemailnewsletter').attr("title")) $('#txtemailnewsletter').val("");
+            var psearch = $('#txtemailnewsletter').val();
+            window.location = '../searchfilter/index.html?q=' + psearch;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="innerHeader">
+            <div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
+                <a href="../home/index.html"><img src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px"
+                        alt="Petição Pública Brasil Logotipo" title="Um dos mais antigos métodos da democracia."
+                        width="304px" height="82px"></a>
+            </div>
+            <div style="float: right; width: 650px; height: 90px; background-color: #000;">
+                <div style="height: 40px">
+                    <ul class="headerMenu">
+                        <li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
+                        <li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
+                        <li class="headerLink">
+                            <div id="divLogin">
+                                <a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div style="height: 70px; float: right; margin: 10px 20px;">
+                    <div class="emailnewsletter" id="divemailnewsletter">
+                        <input id="txtemailnewsletter" type="text" value="" maxlength="50"
+                            title="Procure Abaixo-Assinados"><a id="submitEmailNewsletter"
+                            href="javascript:doSearch();">procurar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form method="post" action=".../pcreate/index.html" id="aspnetForm" enctype="multipart/form-data" novalidate="novalidate">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="/wEPDwUKLTk2NTM3NDczMA9kFgJmD2QWBAIBDxYCHgdWaXNpYmxlZ2QCAw8WAh4HZW5jdHlwZQUTbXVsdGlwYXJ0L2Zvcm0tZGF0YRYCAgEPZBYSAgYPEA8WAh4LXyFEYXRhQm91bmRnZBAVBAVUZXh0bwhOw7ptZXJvcwhMaW5rL1VSTAhTaW0vTsOjbxUEATEBMgEzATQUKwMEZ2dnZ2RkAgcPEA8WAh8CZ2QQFQILRmFjdWx0YXRpdm8MT2JyaWdhdMOzcmlvFQIBMgExFCsDAmdnZGQCCg8QDxYCHwJnZBAVBAVUZXh0bwhOw7ptZXJvcwhMaW5rL1VSTAhTaW0vTsOjbxUEATEBMgEzATQUKwMEZ2dnZ2RkAgsPEA8WAh8CZ2QQFQILRmFjdWx0YXRpdm8MT2JyaWdhdMOzcmlvFQIBMgExFCsDAmdnZGQCDQ8QDxYCHwJnZBAVBAVUZXh0bwhOw7ptZXJvcwhMaW5rL1VSTAhTaW0vTsOjbxUEATEBMgEzATQUKwMEZ2dnZ2RkAg4PEA8WAh8CZ2QQFQILRmFjdWx0YXRpdm8MT2JyaWdhdMOzcmlvFQIBMgExFCsDAmdnZGQCEA8QDxYCHwJnZBAVBAVUZXh0bwhOw7ptZXJvcwhMaW5rL1VSTAhTaW0vTsOjbxUEATEBMgEzATQUKwMEZ2dnZ2RkAhEPEA8WAh8CZ2QQFQILRmFjdWx0YXRpdm8MT2JyaWdhdMOzcmlvFQIBMgExFCsDAmdnZGQCEg8QDxYCHwJnZBAVDQtbQ2F0ZWdvcmlhXQhBbWJpZW50ZQ9BcnRlcyBlIEN1bHR1cmEVQ2nDqm5jaWEgZSBUZWNub2xvZ2lhFERpcmVpdG9zIGRvcyBBbmltYWlzCkVkdWNhw6fDo28WRW50cmV0ZW5pbWVudG8gZSBNZWRpYQdFc3BvcnRlF0xlZ2lzbGHDp8OjbyBlIEp1c3Rpw6dhE1BvbMOtdGljYSBlIEdvdmVybm8JUmVsaWdpw6NvElNhw7pkZSBlIEJlbS1Fc3RhcglTb2NpZWRhZGUVDQEwAjIzAjI0AjI1AzEwMQIyNwIyOAIyNgIyOQIzMAIzMQIzMgIzMxQrAw1nZ2dnZ2dnZ2dnZ2dnZGRkLZnlU108OlWyLej48uKaG7CgQaRfZOhzg/tPUb42MLo=">
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6448FB29">
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="/wEdADSljXza8kVPxBJ4ELRygLTcxmzGRR/gjbfS2/8lIWzkcOe9SWLlMl9XRhq344sHGZ769UHyQrBc3xWX5Ib8JlC/cJdC9dhxd/3hkdmST1IvVPTWFHaCsqvXYDoCmdl9i4ETbOtuBr0fxmaakM9v4Cd774UluS/iDcXbJ9ca3HbJA2oLeGoW9XK7SLLOuq2o0c5sTU6+/2M7YHEliYAyhCnTrdO6O2QuGCkV2909Cyq5297R3FY+f7UWaWD5uEtrTgOuOr//3mLlB13UOQDlCZQzzgnxTM++WZPlBmPnfTqFos9Ak/n1K6BuIECncuAM8lLZ+mGOIL5jF24UyKEzCdni+Nx9EfENjR8oDTmm2fsDu0H1tIC1hNakl0+DNDbuRKBkD30gcTFoYJsa1d3diFT/CB2YvK5da/IkwnO0ir+v3Nsgp1RO7grDUhKM4jYL3kUbh9JcfktbWKeivnpr7RKJNR8KjLLxakhuQDNnQ2UiYgYh0EfOO/aVapTqSLx6FGJSnrEXjXqS/cqtZTyDJ9iZSqLHbYeJr2P3oZIe1h0Qu/1VXWzxuDd4myJC4BYt+WutWRk/ffXCetrVJteAAxPLNz1PLTKkLR4IlCg2UaElM7eYwWcVVCMMQr+YEUxn6jUYeDvvWdT6Qhxw8jcjIuZ/HB/Huav/ccPafKqAvQdf5K7qEIYJpzgR3w0ua0s6wtHytplxUuzQbcyE/l1WmaKXhHKddP9rXC6jSjvbCh5qkp//u1C+itB1y/ZbuZSGWglmJq3jCP2JdWWv/ORmrWEs9+9bZUv6826EkoUP1uIF1Gptb5HiJW5ohgJoBUZFzLu5LsImDtDDId3HcKAW2pSUMaYGflb1IARGAnKaDOSJR9LfSlYgCKzz0sE92HyEaUrNY+BKB/5Cq6jX4dYgZZkxHacSvZw9nXSCkdARl4nLzvynxsT0YzyVTJrOHTPtDE/nYSzkx2ooL/SJnKbSaVSoq+s7aagmQVdddgsLlZbZmvsGdI9sEiItsn/Gwp4UliJnwYihplyvAMxYUujVv5ndZFZn3VMOZM9EBQ/fhg3LXaJ16XwRLvgVefh9kEgrDLcZiqXLYMJrW42hZ3vayfIto5sr3y/5RJlJDXjQRqe61PWF2LHQK9nXVDAlY68lT4c=">
+        </div>
+
+        <div class="wrapper">
+            <div class="pcontent">
+                <div class="pethead" style="background-color: #688602; vertical-align: top;">
+                    <img src="https://peticaopublica.com.br/images/iconAddPetition.png" alt="Criar Abaixo-Assinado">
+                    <h1 style="display:inline; margin:0; padding:0;">Criar Abaixo-Assinado</h1>
+                </div>
+                <table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding: 0;">
+                    <tbody>
+                        <tr>
+                            <td style="background-color: #fff; width: 730px; border-right: 1px solid #D8D8D8;">
+                                <div class="error-container">
+                                    <h4 style="margin:10px 0 0 40px;padding:0px;">Existem alguns problemas com o
+                                        formulário de criação de Abaixo-Assinado.</h4>
+                                    <ol></ol>
+                                </div>
+                                <div id="cmain_messagebox" class="message-box"></div>
+                                <div class="dform" style="margin-left:20px;">
+                                    <label for="ctl00_cph1_txtTitulo"
+                                        style="display: block; font-size: 18px; color: #333; padding:10px 0;">Título do
+                                        Abaixo-Assinado</label>
+                                    <input name="ctl00$cmain$txtTitulo" type="text" maxlength="200" id="cmain_txtTitulo"
+                                        placeholder="O título do Abaixo-Assinado. ex.: Petição Liberdade e Justiça."
+                                        style="width:450px;">
+
+                                    <label for="ctl00_cph1_txtDestinatarios"
+                                        style="display: block; font-size: 18px; color: #333; padding:10px 0;">Destinatários
+                                        do Abaixo-Assinado<a href="#"
+                                            class="tooltip yellow-tooltip">[ajuda]<span><b>Destinatários da
+                                                    Petição</b>:Coloque o nome da organização, empresa ou pessoa a quem
+                                                se destina ou que deve receber o abaixo-assinado.<br><b>Exemplos:</b>
+                                                Exmo. Sr. Presidente da República<br>
+                                                Exmo. Sr. Governador/Prefeito de São Paulo<br>Câmara dos Deputados /
+                                                Congresso Nacional<br>
+                                                Exmo. Sr. Gerente/Administrador da Empresa</span></a></label>
+                                    <input name="ctl00$cmain$txtDestinatarios" type="text" maxlength="600"
+                                        id="cmain_txtDestinatarios"
+                                        placeholder="Escolher pessoas, organizações ou órgãos do governo federal"
+                                        style="width:450px;">
+
+                                    <label for="ctl00_cph1_txtDeclaracao"
+                                        style="display: block; font-size: 18px; color: #333; padding:10px 0;">Declaração
+                                        do Abaixo-Assinado<a href="#"
+                                            class="tooltip yellow-tooltip">[ajuda]<span><b>Declaração do
+                                                    Abaixo-Assinado:</b><br>Esta é a base do seu abaixo-assinado. Neste
+                                                texto vai pedir às pessoas que concordem e subscrevam o seu
+                                                abaixo-assinado. Explique o problema e uma possivel solução.
+                                                Recomendamos que escreva o texto cuidadosamente em off-line, utilize um
+                                                corretor ortográfico para evitar erros e por último copie o texto para
+                                                aqui. <br><br>***<b>ATENÇÃO</b>***<br>Nunca use este espaço para
+                                                difamação, denúncia de particulares, discurso de ódio, insultos ou
+                                                ameaças. (*configura crime previsto no Código Penal e pode originar ao
+                                                autor da petição indenização por danos morais)</span></a></label>
+                                    <textarea name="ctl00$cmain$txtDeclaracao" rows="20" cols="40"
+                                        id="cmain_txtDeclaracao"
+                                        placeholder="Escreva aqui o texto do seu abaixo-assinado. Explique o problema que quer resolver e qual a solução.     *** Não use este espaço para difamação, denúncia de particulares, discurso de ódio, insultos ou ameaças."></textarea>
+
+                                    <a href="#" class="show_hide" style="font-size:11px"><img
+                                            src="images/iconshowhide.png" alt=""
+                                            style="border:0; vertical-align: middle;">Mostrar/Esconder campos
+                                        opcionais.</a><br>
+                                </div>
+
+                                <div class="slidingDiv" style="display: block;">
+                                    <div class="dform mTop" style="margin-left:20px;">
+
+                                        <label
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Campos
+                                            para formulário de recolha de assinatura <span
+                                                style="font-size:13px">(opcional)</span> <a href="#"
+                                                class="tooltip yellow-tooltip">[ajuda]<span><b>Campos para Formulário de
+                                                        Assinatura</b>:<br>O "Nome" e "E-mail" são campos obrigatórios.
+                                                    Pode configurar quatro campos adicionais para recolha com cada
+                                                    assinatura.</span></a></label>
+
+                                        <input type="text" readonly="readonly" style="width:260px;" disabled="disabled"
+                                            value="Nome Completo">
+                                        <select disabled="disabled" class="wcp">
+                                            <option selected="selected" value="1">Texto</option>
+                                        </select>
+                                        <select disabled="disabled" class="wcp">
+                                            <option selected="selected" value="1">Obrigatório</option>
+                                        </select>
+
+                                        <input type="text" readonly="readonly" style="width:260px;" disabled="disabled"
+                                            value="Email">
+                                        <select disabled="disabled" class="wcp">
+                                            <option selected="selected" value="1">Texto</option>
+                                        </select>
+                                        <select disabled="disabled" class="wcp">
+                                            <option selected="selected" value="1">Obrigatório</option>
+                                        </select>
+
+                                        <input name="ctl00$cmain$txtCampoNome1" type="text" maxlength="40"
+                                            id="cmain_txtCampoNome1" style="width:260px;">
+                                        <select name="ctl00$cmain$ddlCampoTipo1" id="cmain_ddlCampoTipo1" class="wcp">
+                                            <option value="1">Texto</option>
+                                            <option value="2">Números</option>
+                                            <option value="3">Link/URL</option>
+                                            <option value="4">Sim/Não</option>
+
+                                        </select>
+                                        <select name="ctl00$cmain$ddlCampoEstado1" id="cmain_ddlCampoEstado1"
+                                            class="wcp">
+                                            <option value="2">Facultativo</option>
+                                            <option value="1">Obrigatório</option>
+
+                                        </select>
+
+
+                                        <input name="ctl00$cmain$txtCampoNome2" type="text" maxlength="40"
+                                            id="cmain_txtCampoNome2" style="width:260px;">
+                                        <select name="ctl00$cmain$ddlCampoTipo2" id="cmain_ddlCampoTipo2" class="wcp">
+                                            <option value="1">Texto</option>
+                                            <option value="2">Números</option>
+                                            <option value="3">Link/URL</option>
+                                            <option value="4">Sim/Não</option>
+
+                                        </select>
+                                        <select name="ctl00$cmain$ddlCampoEstado2" id="cmain_ddlCampoEstado2"
+                                            class="wcp">
+                                            <option value="2">Facultativo</option>
+                                            <option value="1">Obrigatório</option>
+
+                                        </select>
+
+                                        <input name="ctl00$cmain$txtCampoNome3" type="text" maxlength="40"
+                                            id="cmain_txtCampoNome3" style="width:260px;">
+                                        <select name="ctl00$cmain$ddlCampoTipo3" id="cmain_ddlCampoTipo3" class="wcp">
+                                            <option value="1">Texto</option>
+                                            <option value="2">Números</option>
+                                            <option value="3">Link/URL</option>
+                                            <option value="4">Sim/Não</option>
+
+                                        </select>
+                                        <select name="ctl00$cmain$ddlCampoEstado3" id="cmain_ddlCampoEstado3"
+                                            class="wcp">
+                                            <option value="2">Facultativo</option>
+                                            <option value="1">Obrigatório</option>
+
+                                        </select>
+
+                                        <input name="ctl00$cmain$txtCampoNome4" type="text" maxlength="40"
+                                            id="cmain_txtCampoNome4" style="width:260px;">
+                                        <select name="ctl00$cmain$ddlCampoTipo4" id="cmain_ddlCampoTipo4" class="wcp">
+                                            <option value="1">Texto</option>
+                                            <option value="2">Números</option>
+                                            <option value="3">Link/URL</option>
+                                            <option value="4">Sim/Não</option>
+
+                                        </select>
+                                        <select name="ctl00$cmain$ddlCampoEstado4" id="cmain_ddlCampoEstado4"
+                                            class="wcp">
+                                            <option value="2">Facultativo</option>
+                                            <option value="1">Obrigatório</option>
+
+                                        </select>
+
+                                        <label for="ctl00_cph1_ddlCategoria"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Categoria
+                                            <span style="font-size:13px">(opcional)</span></label>
+                                        <select name="ctl00$cmain$ddlCategoria" id="cmain_ddlCategoria">
+                                            <option selected="selected" value="0" disabled="disabled"
+                                                style="display:none;">[Categoria]</option>
+                                            <option value="23">Ambiente</option>
+                                            <option value="24">Artes e Cultura</option>
+                                            <option value="25">Ciência e Tecnologia</option>
+                                            <option value="101">Direitos dos Animais</option>
+                                            <option value="27">Educação</option>
+                                            <option value="28">Entretenimento e Media</option>
+                                            <option value="26">Esporte</option>
+                                            <option value="29">Legislação e Justiça</option>
+                                            <option value="30">Política e Governo</option>
+                                            <option value="31">Religião</option>
+                                            <option value="32">Saúde e Bem-Estar</option>
+                                            <option value="33">Sociedade</option>
+
+                                        </select>
+
+                                        <label for="ctl00_cph1_txtPeticaoIDManual"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Identificador
+                                            do Abaixo-Assinado <span style="font-size:13px">(opcional)</span>
+                                            <a href="#" class="tooltip yellow-tooltip">[ajuda]<span>Este campo serve
+                                                    para personalizar o endereço URL do Abaixo-Assinado que está a
+                                                    criar. Pode ter no máximo 20 caracteres e apenas pode conter
+                                                    números, letras e o simbolo -. Não pode conter espaços ou outros
+                                                    símbolos. <br><b>Se preferir pode deixar o campo vazio que o sistema
+                                                        atribui uma identificação
+                                                        automaticamente.</b></span></a></label>
+                                        <input name="ctl00$cmain$txtPeticaoIDManual" type="text" maxlength="20"
+                                            id="cmain_txtPeticaoIDManual" style="width:450px;">
+
+                                        <label for="ctl00_cph1_txtComunidade"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Comunidade
+                                            do abaixo-assinado <span style="font-size:13px">(opcional)</span>
+                                            <a href="#" class="tooltip yellow-tooltip">[ajuda]<span>Preencha se é um
+                                                    grupo ou associação que está oficialmente envolvida e suporta este
+                                                    abaixo-assinado.<br><b>Exemplo</b>: Associação dos Animais;
+                                                    Greenpeace; Comunidade Paz; Movimento Liberdade.</span></a></label>
+                                        <input name="ctl00$cmain$txtComunidade" type="text" maxlength="200"
+                                            id="cmain_txtComunidade" style="width:450px;">
+
+                                        <label for="ctl00_cph1_txtComunidadeURL"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Endereço
+                                            do Site da Comunidade <span style="font-size:13px">(opcional)</span>
+                                            <a href="#" class="tooltip yellow-tooltip">[ajuda]<span>Indique aqui o
+                                                    endereço do site que suporta o Abaixo-Assinado.<br><b>Exemplo</b>:
+                                                    http://www.greenpeace.org</span></a></label>
+                                        <input name="ctl00$cmain$txtComunidadeURL" maxlength="300"
+                                            id="cmain_txtComunidadeURL" type="url" style="width:450px;">
+                                        <label for="ctl00_cph1_fileuploadImg"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Acrescente
+                                            uma imagem ao seu abaixo-assinado <span
+                                                style="font-size:13px">(opcional)</span>
+                                            <a href="#" class="tooltip yellow-tooltip">[ajuda]<span>Para acrescentar a
+                                                    imagem carregue onde diz <i>Escolher arquivo</i><br>Na gestão dos
+                                                    seus abaixo-assinados poderá acrescentar até 3 imagens ao
+                                                    abaixo-assinado.<br><b>Nota:</b> Caso a imagem ultrapasse o limite
+                                                    do tamanho, utilize um programa de edição de imagem para a
+                                                    redimensionar.</span></a></label>
+                                        <input type="file" name="ctl00$cmain$fileuploadImg" id="cmain_fileuploadImg"
+                                            class="fupload">
+                                        <label style="display:block;font-size: 11px;color: #666;">A imagem não deve
+                                            ultrapassar o tamanho de 200KB</label>
+
+                                        <label for="ctl00_cph1_txtYoutube1"
+                                            style="display: block; font-size: 18px; color: #333; padding:10px 0;">Acrescente
+                                            um vídeo ao seu abaixo-assinado <span
+                                                style="font-size:13px">(opcional)</span>
+                                            <a href="#" class="tooltip yellow-tooltip">[ajuda]<span>Escreva na caixa de
+                                                    texto o endereço youtube do vídeo.<br>Na gestão de abaixo-assinados
+                                                    poderá acrescentar até 3 vídeos ao
+                                                    abaixo-assinado.<br><b>Exemplo:</b>
+                                                    http://www.youtube.com/watch?v=j5tFXbhEm1</span></a></label>
+                                        <input name="ctl00$cmain$txtYoutube1" type="text" id="cmain_txtYoutube1">
+                                        <div class="apanhaursos"><input name="ctl00$cmain$txtUrso" type="text"
+                                                maxlength="50" id="cmain_txtUrso" style="width:30px; height:10px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="error-container">
+                                    <h4 style="margin:10px 0 0 40px;padding:0px;">Existem alguns problemas com o
+                                        formulário de criação de Abaixo-Assinado.</h4>
+                                    <ol></ol>
+                                </div>
+                                <div style="text-align:center;margin-top:10px;"><input type="submit"
+                                        name="ctl00$cmain$cmdSubmit" value="Criar Abaixo-Assinado" id="cmain_cmdSubmit"
+                                        class="btn2 bgreen"></div>
+                                <br>
+                            </td>
+                            <td style="width: 229px;background-color:#fff; padding:5px; font: normal 14px Arial,sans-serif; color:#848484;"
+                                valign="top">
+                                <p style="font-size:13px">É necessária apenas uma pessoa para iniciar a mudança.</p>
+                                <p style="font-size:13px">Pode criar aqui um Abaixo-Assinado Online e fazer com que a
+                                    sua mensagem seja ouvida.</p>
+                                <br>
+                                <p><b style="color:#800000">*** Atenção *** </b><br><span
+                                        style="font-size:13px;color:#000">
+                                        Os textos da Petição não podem incluir o nome de pessoas particulares com o
+                                        objectivo de difamação, calúnia ou fato ofensivo à sua reputação.
+                                        <br><br>Não use discurso de ódio, ameaças ou informação falsa.
+                                        <br><br>Difamação, calúnia e cyberbulling na internet configura um crime
+                                        previsto no Código Penal e pode originar ao autor da petição a sua detenção e
+                                        indenização por danos morais.</span></p>
+                                <p><a class="inlinecbwarning cboxElement" href="#inline_content"
+                                        style="text-decoration:underline; color:#800000"><b>Saiba mais e veja
+                                            Exemplos</b></a></p>
+                                <br>
+                                <p style="font-size:13px">O site Petição Pública Brasil é totalmente gratuito e fornece
+                                    a forma mais fácil e rápida de criar ou fazer um abaixo-assinado.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
+            </div>
+        </div>
+        <!-- This contains the hidden content for inline calls -->
+        <div style="display:none">
+            <div id="inline_content" style="padding:5px; background:#fff; font-size:13px; color:#333;">
+                <p style="color:#000;">Por favor não use este espaço para difamação, denúncia de pessoas particulares,
+                    discurso de ódio, insultos ou ameaças.</p>
+                <p><strong>Nunca inclua nomes de pessoas</strong> com o objectivo de difamação, calúnia ou fatos
+                    ofensivos à sua reputação. Este tipo de ação configura um <span
+                        style="text-decoration:underline;">crime previsto no Código Penal</span>. Para denúncia de
+                    pessoas particulares deve usar as autoridade competentes.</p>
+                <p>
+                    <span style="padding:5px; background:#ccc;">Exemplos de situações:</span><br>
+                    <br>- Acha que foi mal atendido num serviço público;<br>
+                    - Acha que um colega de profissão não é ético;<br>
+                    - Entende que determinada pessoa foi desrespeitadora.<br>
+                </p>
+                <p>Não pode criar uma petição onde identifica o nome de pessoas particulares. Veja alguns exemplos:</p>
+                <div style="padding:5px;"><span
+                        style="padding:5px; background:#D8000C; color:#fff; font-weight:bold;">MAL</span> O Sr.José Lima
+                    que trabalha no Serviço Público X não faz o seu trabalho, é preguiçoso e mal educado.</div>
+                <div style="padding:5px;"><span
+                        style="padding:5px; background:#5fba7d; color:#fff; font-weight:bold;">BEM</span> Entendemos que
+                    o Serviço X pode melhorar o atendimento aos usuários, melhorando o serviço Y.</div>
+                <br>
+                <div style="padding:5px;"><span
+                        style="padding:5px; background:#D8000C; color:#fff; font-weight:bold;">MAL</span> Denúncio a
+                    Sra. Maria Lima que não é ética no seu trabalho porque viola o código profissional Y.</div>
+                <div style="padding:5px;"><span
+                        style="padding:5px; background:#5fba7d; color:#fff; font-weight:bold;">BEM</span> Existem
+                    profissionais que não respeitam o código profissional Y e assim apelamos a que a entidade X tenha o
+                    poder de fiscalização a fim de terminar com este problema.</div>
+                <p>Para denúncias de pessoas particulares deve usar os orgãos e autoridades competentes.</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <input type="hidden" name="ctl00$cmain$hftrackreq" id="cmain_hftrackreq"
+            value="Z92026A406A414X514B710B700Z9V6358">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //esconder campos adicionais
+                $(".slidingDiv").hide();
+                $('.show_hide').click(function () { $(".slidingDiv").slideToggle(); });
+                $(".inlinecbwarning").colorbox({ inline: true, width: "60%" });
+                $(':input[placeholder]').placeholder(); //placeholder older browsers
+                $.validator.addMethod("identPet", function (value, element) { return this.optional(element) || /^[a-zA-Z0-9-]*$/.test(value); });
+                $.validator.addMethod("nolinks", function (value, element) { return this.optional(element) || /^((?!.*(href|<|>)).*)$/.test(value); }); //, nolinks: "Não são permitidos caracteres especiais na Declaração, tais como &gt ou &lt."
+                $('#chkbi').change(function () {
+                    if (this.checked) {
+                        $('#ctl00_cmain_txtCampoNome1').val("N° B.I/Cartão Cidadão");
+                        $('#ctl00_cmain_ddlCampoEstado1').val("1");
+                    }
+                    else {
+                        $('#ctl00_cmain_txtCampoNome1').val("");
+                        $('#ctl00_cmain_ddlCampoEstado1').val("2");
+                    }
+                });
+                var container = $('div.error-container');
+                $("#aspnetForm").validate({
+                    errorContainer: container,
+                    errorLabelContainer: $("ol", container),
+                    wrapper: 'li',
+                    rules: {
+                        ctl00$cmain$txtTitulo: { required: true, minlength: 3, nolinks: true },
+                        ctl00$cmain$txtDestinatarios: { required: true, nolinks: true },
+                        ctl00$cmain$txtDeclaracao: { required: true, minlength: 10 },
+                        ctl00$cmain$txtPeticaoIDManual: { identPet: true },
+                        ctl00$cmain$fileuploadImg: { accept: "png|jpe?g|gif" }
+                    },
+                    messages: {
+                        ctl00$cmain$txtTitulo: { required: "É obrigatório indicar o Titulo.", minlength: "Por favor indique título válido.", nolinks: "Não são permitidos caracteres especiais no título, tais como &gt ou &lt." },
+                        ctl00$cmain$txtDestinatarios: { required: "É obrigatório indicar um Destinatário.", nolinks: "Não são permitidos caracteres especiais no título, tais como &gt ou &lt." },
+                        ctl00$cmain$txtDeclaracao: { required: "É obrigatório indicar a Declaração.", minlength: "Por favor indique uma Declaração válida." },
+                        ctl00$cmain$txtPeticaoIDManual: { identPet: "Identificador do Abaixo-Assinado inválido. Só aceita letras, números e o simbolo -" },
+                        ctl00$cmain$fileuploadImg: { accept: "O tipo de ficheiro é inválido. Apenas são aceites ficheiros jpg, png ou gif." }
+                    }
+                });
+            });
+        </script>
+
+    </form>
+    <div class="footer">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <div style="width: 300px; float: left;">
+                <h4 style="margin: 0;">Procurar por Categorias</h4>
+
+                <ul id="ulCat">
+                    <li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
+                    <li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
+                </ul>
+
+            </div>
+            <div style="float: right;">
+                <div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
+                    respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
+                <div class="nav-share">
+                    <iframe
+                        src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398"
+                        width="82" height="32" style="border:none;overflow:hidden;padding-top:20px;" scrolling="no"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <ul style="float:right;">
+                        <li><a target="_blank" href="https://www.facebook.com/peticaopublicabrasil" class="fbshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
+                        <li><a target="_blank" href="https://twitter.com/peticaopublicab" class="twshare32f"
+                                title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
+                        <li><a target="_blank" href="https://peticaopublica.com.br/rss.aspx" class="rss32f"
+                                title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
+                    </ul>
+                </div>
+                <div
+                    style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
+                    O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
+                    face ao poder político,
+                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a
+                        style="font-size: 11px;"
+                        href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm"
+                        target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
+                    Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondfooter">
+        <div style="width: 920px; margin: auto; overflow: hidden;">
+            <ul>
+                <li><a href="../aboutus/index.html">Sobre Nós</a></li>
+                <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../privacy/index.html">Política de Privacidade</a></li>
+                <li><a href="../termsconditions/index.html">Termos e Condições</a></li>
+                <li><a href="../help/index.html">Ajuda</a></li>
+                <li><a href="../contactus/index.html?pi=">Contato</a></li>
+            </ul>
+            <div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+            </div>
+        </div>
+    </div>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-4269839-47');
+    </script>
+    <script defer=""
+        src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+        integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+        data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b46a5cb6f5e049389877892a967b678e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
+        crossorigin="anonymous"></script>
+
+    <div id="cboxOverlay" style="display: none;"></div>
+    <div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;">
+        <div id="cboxWrapper">
+            <div>
+                <div id="cboxTopLeft" style="float: left;"></div>
+                <div id="cboxTopCenter" style="float: left;"></div>
+                <div id="cboxTopRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxMiddleLeft" style="float: left;"></div>
+                <div id="cboxContent" style="float: left;">
+                    <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+                    <div id="cboxTitle" style="float: left;"></div>
+                    <div id="cboxCurrent" style="float: left;"></div>
+                    <div id="cboxNext" style="float: left;"></div>
+                    <div id="cboxPrevious" style="float: left;"></div>
+                    <div id="cboxSlideshow" style="float: left;"></div>
+                    <div id="cboxClose" style="float: left;"></div>
+                </div>
+                <div id="cboxMiddleRight" style="float: left;"></div>
+            </div>
+            <div style="clear: left;">
+                <div id="cboxBottomLeft" style="float: left;"></div>
+                <div id="cboxBottomCenter" style="float: left;"></div>
+                <div id="cboxBottomRight" style="float: left;"></div>
+            </div>
+        </div>
+        <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+    </div>
+</body>
