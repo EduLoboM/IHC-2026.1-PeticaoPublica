@@ -56,6 +56,8 @@ var psearch = $('#txtemailnewsletter').val();
 window.location = '../searchfilter/index.html?q=' + psearch;
 return false;}
 </script>
+    <link rel="stylesheet" type="text/css" href="../accessibility.css?v=1.0.5">
+    <script type="text/javascript" src="../accessibility.js?v=1.0.5" defer></script>
 </head>
 <body>
 <div class="header">
@@ -68,6 +70,7 @@ return false;}
 <ul class="headerMenu">
 <li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
 <li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
+<li class="headerLink"><a href="javascript:void(0)" class="acc-header-btn" onclick="document.querySelector('.acc-panel') && document.querySelector('.acc-panel').classList.toggle('active'); document.querySelector('.acc-backdrop') && document.querySelector('.acc-backdrop').classList.toggle('active');">Acessibilidade</a></li>
 <li class="headerLink">
 	<div id="divLogin">
 	<a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
