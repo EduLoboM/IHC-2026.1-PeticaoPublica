@@ -682,8 +682,35 @@ body.acc-line-spacing-lg td:not(.acc-exclude):not(.acc-exclude *) {
 /* Large Cursor */
 body.acc-cursor-large,
 body.acc-cursor-large *:not(.acc-exclude):not(.acc-exclude *) {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 2.01l15 15-5.3 1.2 3.8 6.8-2.7 1.5-3.8-6.8-4.5 4.5z' fill='white' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E"), auto !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M2,2 L2,32 L11,24 L19,39 L24,36 L16.5,21.5 L26.5,21.5 Z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto !important;
 }
+
+body.acc-cursor-large a:not(.acc-exclude),
+body.acc-cursor-large a:not(.acc-exclude) *,
+body.acc-cursor-large button:not(.acc-exclude),
+body.acc-cursor-large button:not(.acc-exclude) *,
+body.acc-cursor-large input[type="submit"]:not(.acc-exclude),
+body.acc-cursor-large input[type="button"]:not(.acc-exclude),
+body.acc-cursor-large input[type="reset"]:not(.acc-exclude),
+body.acc-cursor-large [role="button"]:not(.acc-exclude),
+body.acc-cursor-large [role="button"]:not(.acc-exclude) *,
+body.acc-cursor-large select:not(.acc-exclude),
+body.acc-cursor-large label:not(.acc-exclude),
+body.acc-cursor-large label:not(.acc-exclude) *,
+body.acc-cursor-large summary:not(.acc-exclude) {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M8.25 3a2.25 2.25 0 0 1 4.5 0v15.75a0.75 0.75 0 0 0 1.5 0v-5.25a2.25 2.25 0 0 1 4.5 0v4.5a0.75 0.75 0 0 0 1.5 0v-6.75a2.25 2.25 0 0 1 4.5 0v7.5a0.75 0.75 0 0 0 1.5 0v-5.25a2.25 2.25 0 0 1 4.5 0v10.5a11.25 11.25 0 0 1-11.25 11.25h-7.5a11.25 11.25 0 0 1-11.25-11.25v-9.75a2.25 2.25 0 0 1 4.5 0v3.75a0.75 0.75 0 0 0 1.5 0V3z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 10 1, pointer !important;
+}
+
+body.acc-cursor-large input[type="text"]:not(.acc-exclude),
+body.acc-cursor-large input[type="search"]:not(.acc-exclude),
+body.acc-cursor-large input[type="email"]:not(.acc-exclude),
+body.acc-cursor-large input[type="password"]:not(.acc-exclude),
+body.acc-cursor-large input[type="tel"]:not(.acc-exclude),
+body.acc-cursor-large input[type="url"]:not(.acc-exclude),
+body.acc-cursor-large textarea:not(.acc-exclude) {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M16,8 H32 M24,8 V40 M16,40 H32' fill='none' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M16,8 H32 M24,8 V40 M16,40 H32' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 24 24, text !important;
+}
+
 
 /* Reading Ruler */
 .acc-reading-ruler {
@@ -1351,6 +1378,7 @@ body.theme-contrast .acc-btn {
     background-color: #000000 !important;
     border: 2px solid #ffffff !important;
     color: #ffffff !important;
+    padding: 9px 11px !important; /* Adjusted padding to compensate for thicker border and prevent sizing shifts */
 }
 body.theme-contrast .acc-btn:hover {
     border-color: #ffff00 !important;
@@ -1379,10 +1407,73 @@ body.theme-contrast .acc-panel-footer {
 body.theme-contrast .acc-reset-btn {
     color: #ffffff !important;
     border: 2px dashed #ffffff !important;
+    padding: 11px !important; /* Adjusted padding to compensate for thicker border */
 }
 body.theme-contrast .acc-reset-btn:hover {
     border-color: #ffff00 !important;
     color: #ffff00 !important;
     background-color: #000000 !important;
 }
+
+/* Ensure black backgrounds everywhere under High Contrast theme, preventing yellow-on-white text */
+body.theme-contrast *:not(.acc-exclude):not(.acc-exclude *) {
+    background-color: #000000 !important;
+    background-image: none !important;
+}
+
+/* Force border-box for inputs in contrast theme to prevent size shifts from thicker borders */
+body.theme-contrast input:not(.acc-exclude):not(.acc-exclude *), 
+body.theme-contrast textarea:not(.acc-exclude):not(.acc-exclude *), 
+body.theme-contrast select:not(.acc-exclude):not(.acc-exclude *) {
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   LAYOUT STABILIZATION FOR FONT AND THEME CHANGES
+   ========================================================================== */
+
+/* 1. Prevent size/height shifts and text wrapping for all page buttons */
+.btn2:not(.acc-exclude):not(.acc-exclude *), 
+.btn2small:not(.acc-exclude):not(.acc-exclude *), 
+.btnSignGray:not(.acc-exclude):not(.acc-exclude *), 
+button:not(.acc-exclude):not(.acc-exclude *), 
+input[type="submit"]:not(.acc-exclude):not(.acc-exclude *),
+input[type="button"]:not(.acc-exclude):not(.acc-exclude *),
+input[type="reset"]:not(.acc-exclude):not(.acc-exclude *) {
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+}
+
+/* 2. Stabilize Header Menu items to prevent layout shifts */
+ul.headerMenu {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+}
+ul.headerMenu li {
+    float: none !important;
+    white-space: nowrap !important;
+}
+
+/* 3. Stabilize Main Tabs Menu to prevent horizontal wrapping */
+ul#menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    padding-top: 10px !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+ul#menu > li {
+    float: none !important;
+    padding-right: 5px !important;
+    flex: 1 !important;
+}
+ul#menu > li > a {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
 
