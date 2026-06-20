@@ -1,444 +1,840 @@
-<html><head>
-<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<html>
+<head>
+<meta charset="utf-8"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
 <title>Petição Pública Brasil</title>
-<meta name="description" content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros.">
-<meta name="Robots" content="INDEX,FOLLOW">
-
-<link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon">
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js"></script><script type="text/javascript" src="https://peticaopublica.com.br/scripts/default.js"></script>
-<meta property="og:image" content="https://peticaopublica.com.br/images/fbShareLogo.gif">
-<script type="text/javascript">$(function() {
-	$("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
-	$("#txtemailnewsletter").keypress(function(e) { if (e.keyCode == 13) { doSearch(); } });
-	var pesq = $("#txtemailnewsletter").val();
-	if (pesq === "")
-		$("#txtemailnewsletter").val('Procure Abaixo-Assinados');
-	$("#txtemailnewsletter").live("focus", function() {
-		if ($(this).val() === $(this).attr("title")) {
-			$(this).val("")
-		}
-	}).live("blur", function() {
-		if ($(this).val() === "") {
-		$(this).val($(this).attr("title"))
-		}
-	});
-});
-</script>
+<meta content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros." name="description"/>
+<meta content="INDEX,FOLLOW" name="Robots"/>
+<link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="https://peticaopublica.com.br/scripts/default.js" type="text/javascript"></script>
+<meta content="https://peticaopublica.com.br/images/fbShareLogo.gif" property="og:image"/>
+<script type="text/javascript">$(function () {
+			$("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
+			$("#txtemailnewsletter").keypress(function (e) { if (e.keyCode == 13) { doSearch(); } });
+			var pesq = $("#txtemailnewsletter").val();
+			if (pesq === "")
+				$("#txtemailnewsletter").val('Procure Abaixo-Assinados');
+			$("#txtemailnewsletter").live("focus", function () {
+				if ($(this).val() === $(this).attr("title")) {
+					$(this).val("")
+				}
+			}).live("blur", function () {
+				if ($(this).val() === "") {
+					$(this).val($(this).attr("title"))
+				}
+			});
+		});
+	</script>
 <script type="text/javascript">
-$(document).ready(function() {
-	$(".account").click(function() {
-		var X = $(this).attr('id');
-		if (X == 1) {$(".submenu").hide(); $(this).attr('id', '0');}
-		else {$(".submenu").show(); $(this).attr('id', '1');}
-	});
-	$(".submenu").mouseup(function () {return false});//Mouseup textarea false
-	$(".account").mouseup(function() {return false});
-	$(document).mouseup(function () { $(".submenu").hide(); $(".account").attr('id', ''); });//Textarea without editing.
-	
-	// Tab switching logic
-	$("#menu li a").click(function(e) {
-		e.preventDefault();
-		var tabName = $(this).attr("name");
-		if (tabName) {
-			$("#menu li").removeClass("active");
-			$(this).parent().addClass("active");
-			$("#tabcontent > div").hide();
-			$("#" + tabName).show();
+		$(document).ready(function () {
+			$(".account").click(function () {
+				var X = $(this).attr('id');
+				if (X == 1) { $(".submenu").hide(); $(this).attr('id', '0'); }
+				else { $(".submenu").show(); $(this).attr('id', '1'); }
+			});
+			$(".submenu").mouseup(function () { return false });//Mouseup textarea false
+			$(".account").mouseup(function () { return false });
+			$(document).mouseup(function () { $(".submenu").hide(); $(".account").attr('id', ''); });//Textarea without editing.
+
+			// Tab switching logic
+			$("#menu li a").click(function (e) {
+				e.preventDefault();
+				var tabName = $(this).attr("name");
+				if (tabName) {
+					$("#menu li").removeClass("active");
+					$(this).parent().addClass("active");
+					$("#tabcontent > div").hide();
+					$("#" + tabName).show();
+				}
+			});
+		});
+		function doSearch() {
+			if ($('#txtemailnewsletter').val() == $('#txtemailnewsletter').attr("title")) $('#txtemailnewsletter').val("");
+			var psearch = $('#txtemailnewsletter').val();
+			window.location = '../searchfilter/index.html?q=' + psearch;
+			return false;
 		}
-	});
-});
-function doSearch() {
-if ($('#txtemailnewsletter').val() == $('#txtemailnewsletter').attr("title")) $('#txtemailnewsletter').val("");
-var psearch = $('#txtemailnewsletter').val();
-window.location = '../searchfilter/index.html?q=' + psearch;
-return false;}
-</script>
-    <link rel="stylesheet" type="text/css" href="../accessibility.css?v=1.0.5">
-    <script type="text/javascript" src="../accessibility.js?v=1.0.5" defer></script>
+	</script>
+<link href="../accessibility.css?v=1.0.17" rel="stylesheet" type="text/css"/>
+<script defer="" src="../accessibility.js?v=1.0.17" type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body>
 <div class="header">
 <div class="innerHeader">
 <div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
-<a href="../home/index.html"><img src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px" alt="Petição Pública Brasil Logotipo" title="Um dos mais antigos métodos da democracia." width="304px" height="82px"></a>
+<a href="../home/index.html"><img alt="Petição Pública Brasil Logotipo" height="82px" src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px" title="Um dos mais antigos métodos da democracia." width="304px"/></a>
 </div>
 <div style="float: right; width: 650px; height: 90px; background-color: #000;">
 <div style="height: 40px">
 <ul class="headerMenu">
-<li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
-<li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
-<li class="headerLink"><a href="javascript:void(0)" class="acc-header-btn" onclick="document.querySelector('.acc-panel') && document.querySelector('.acc-panel').classList.toggle('active'); document.querySelector('.acc-backdrop') && document.querySelector('.acc-backdrop').classList.toggle('active');">Acessibilidade</a></li>
 <li class="headerLink">
-	<div id="divLogin">
-	<a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
-	</div>
-
+<a href="../pcreate/index.html" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">add_circle</span>Criar Abaixo-assinado
+    </a>
+</li>
+<li class="headerLink">
+<a class="acc-header-btn" href="javascript:void(0)" onclick="document.querySelector('.acc-panel') &amp;&amp; document.querySelector('.acc-panel').classList.toggle('active'); document.querySelector('.acc-backdrop') &amp;&amp; document.querySelector('.acc-backdrop').classList.toggle('active');" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">accessibility</span>Acessibilidade
+    </a>
+</li>
+<li class="headerLink">
+<div id="divLogin">
+<a class="cboxElement" href="../loginregister/index.html" id="login" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">login</span>Login ou Registar
+        </a>
+</div>
 </li>
 </ul>
 </div>
 <div style="height: 70px; float: right; margin: 10px 20px;">
-<div class="emailnewsletter" id="divemailnewsletter">
-	<input id="txtemailnewsletter" type="text" value="" maxlength="50" title="Procure Abaixo-Assinados"><a id="submitEmailNewsletter" href="javascript:doSearch();">procurar</a>
+<div class="emailnewsletter" id="divemailnewsletter"><span class="material-icons search-icon" onclick="doSearch();" style="font-size: 20px; color: #888; margin-left: 10px; margin-right: 5px; cursor: pointer; vertical-align: middle;">search</span>
+<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
 </div>
 </div>
 </div>
 </div>
 </div>
-<form method="post" action="./" id="aspnetForm">
+<form action="./" id="aspnetForm" method="post">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTUxNzExMDMwMWRkUWcTo43aS8IIwa1Ag0CSj3G1iFlhiG9Wp41XwlRBwvU=">
+<input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKMTUxNzExMDMwMWRkUWcTo43aS8IIwa1Ag0CSj3G1iFlhiG9Wp41XwlRBwvU="/>
 </div>
-
 <div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
-</div>
-
-<div class="petition-victories" style="height: 55px; padding-top:10px">
-	<div style="width: 960px; margin: 0 auto; height:55px; line-height:55px;">
-		<h2 style="margin:0; border:0; padding:0; font-size:24px; font-weight:600; float: left; line-height:46px; height:46px;">É preciso só uma pessoa para iniciar a mudança.</h2>
-		<a href="../pcreate/index.html" class="btn2 bgreen" style="padding: 8px 28px; float:right; text-transform:uppercase;">Criar Abaixo-assinado</a>
-	</div>
+<input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="CA0B0334"/>
 </div>
 <div class="create-change">
-	<div style="width: 960px; margin: 0 auto;">
-		<div style="float: left; width:600px">
-			<h1>Petição Pública Brasil - Serviço público gratuito de abaixo-assinados</h1>
-			<h2>Se você pensa em exercer pressão em organismos, organizações ou empresas, sensibilizar políticos, organizar um protesto ou boicote,
-criar uma onda de indignação, alterar ou criar leis, você está no local certo. As petições e abaixo-assinados online mobilizam a população sobre temas relevantes e são muitas vezes destacados nos  principais meios de comunicação e grupos de mídia.</h2>
-			<h3><p>Faça o seu abaixo-assinado online de forma rápida e segura. Chegou a hora de fazer algo e a sua contribuição é fundamental. Crie um abaixo-assinado ou petição.</p></h3>
-		</div>
-		<div style="float: right;">
-			<table border="0" style="border:0; padding:0; margin:0;">
-				<tbody><tr><td><div style="background: url(https://peticaopublica.com.br/images/bgballgreen.png) 0 0 no-repeat; width:45px; height: 45px;text-align: center;font-size: 33px; line-height: 42px;color: white;font-weight: 700;">1</div></td><td><span style="font-size:22px; font-weight: 600;">Fazer Abaixo-Assinado</span></td></tr>
-				<tr><td><div style="background: url(https://peticaopublica.com.br/images/bgballgreen.png) 0 0 no-repeat; width:45px; height: 45px;text-align: center;font-size: 33px; line-height: 42px;color: white;font-weight: 700;">2</div></td><td><span style="font-size:22px; font-weight: 600;">Mobilizar Apoio</span></td></tr>
-				<tr><td><div style="background: url(https://peticaopublica.com.br/images/bgballgreen.png) 0 0 no-repeat; width:45px; height: 45px;text-align: center;font-size: 33px; line-height: 42px;color: white;font-weight: 700;">3</div></td><td><span style="font-size:22px; font-weight: 600;">Ganhar Causa</span></td></tr>
-			</tbody></table>
-		</div>
-	</div>
-	<div style="clear:both;"></div>
+<div style="width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+<div style="width: 580px;">
+<h1>Petição Pública Brasil</h1>
+<p class="create-change-subtitle">Serviço público gratuito de abaixo-assinados</p>
+<p class="create-change-description">Exerça pressão em organismos, organizações ou empresas.
+						Sensibilize políticos, organize um protesto ou boicote. As petições online mobilizam a população
+						sobre temas relevantes e são destaque nos principais meios de comunicação.</p>
+<p class="create-change-cta">Faça o seu abaixo-assinado online de forma rápida e segura. A sua
+						contribuição é fundamental.</p>
+</div>
+<div style="width: 320px;">
+<div class="petition-roadmap">
+<div class="roadmap-step">
+<div class="roadmap-badge">1</div>
+<div class="roadmap-text">Fazer Abaixo-Assinado</div>
+</div>
+<div class="roadmap-step">
+<div class="roadmap-badge">2</div>
+<div class="roadmap-text">Mobilizar Apoio</div>
+</div>
+<div class="roadmap-step">
+<div class="roadmap-badge">3</div>
+<div class="roadmap-text">Ganhar Causa</div>
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="petition-victories" style="padding: 30px 0; text-align: center; background-color: #ffffff; border-bottom: 2px solid #B3C287;">
+<div style="width: 960px; margin: 0 auto;">
+<div style="margin-bottom: 20px;">
+<h2 style="margin: 0; border: 0; padding: 0; font-size: 32px; font-weight: 600; color: #486620; text-align: center; line-height: 1.4;">
+					É preciso só uma pessoa para iniciar a mudança.</h2>
+</div>
+<div style="margin-top: 20px;">
+<a class="btn2 bgreen" href="../pcreate/index.html" style="padding: 16px 48px; font-size: 24px; font-weight: bold; text-transform: uppercase; border-radius: 8px; box-shadow: 0 4px 15px rgba(150, 213, 0, 0.4); display: inline-block;">Criar Abaixo-assinado</a>
+</div>
+</div>
 </div>
 <div style="background-color: #fff;">
 <div style="width: 960px; margin: 0 auto;">
-<div style="width: 960px; margin: 0 auto; padding: 10px 0 30px 0;">
-<h4 style="font: 12pt Tahoma, Geneva, sans-serif; margin: 0 0 10px 0; float: left;">Abaixo-Assinados Populares</h4>
-<div style="float: right;">
-Crie ou Assine um Abaixe-Assinado. Apoie as causas em que acredita. Faça parte da mudança.</div>
-<p style="clear: both;"></p>
-<div style="border-top: 1px solid #E5E5E5; padding: 10px 0 0 0;">
+<table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding: 0; width: 960px;">
+<tbody>
+<tr>
+<td class="zsection" valign="top" style="width: 960px; border-right: none !important; background-color: #fff; padding: 20px 0 40px 0;">
+<div class="home-carousel-container">
+  <!-- Tabs Navigation -->
+  <div class="carousel-tabs">
+    <button type="button" class="carousel-tab-btn active" id="tabBtn0" onclick="switchCategory(0)">Os Abaixo-Assinados mais ativos</button>
+    <button type="button" class="carousel-tab-btn" id="tabBtn1" onclick="switchCategory(1)">Os Maiores Abaixo-Assinados</button>
+    <button type="button" class="carousel-tab-btn" id="tabBtn2" onclick="switchCategory(2)">Últimos Abaixo-Assinados criados</button>
+  </div>
+  
+  <!-- Carousel Track Container -->
+  <div class="carousel-track-wrapper">
+    <!-- Category 0 (Ativos) -->
+    <div class="carousel-category-view" id="carouselCategory0" style="display: block;">
+      <div class="carousel-track" id="trackCategory0">
+        <!-- Page 1 (Ativos: 1-5) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Davi Alcolumbre" src="https://picsum.photos/200/150?random=1" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160019" class="carousel-card-title">Rick Azevedo e VAT - Pedido de impeachment do Senador Davi Alcolumbre!</a>
+            <p class="carousel-card-desc">Exigimos o impeachment do senador Davi Alcolumbre por obstruir pautas e debates de interesse dos trabalhadores.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>28.548</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160019" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="SELAM Piracicaba" src="https://picsum.photos/200/150?random=2" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160121" class="carousel-card-title">Contra o desmonte da SELAM Piracicaba e transferência de professores</a>
+            <p class="carousel-card-desc">Contra a transferência prejudicial de professores e o desmonte da Secretaria de Esportes e Lazer de Piracicaba.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>529</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160121" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Exoneração" src="https://picsum.photos/200/150?random=3" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160103" class="carousel-card-title">Revogação da exoneração de servidores essenciais à comunidade</a>
+            <p class="carousel-card-desc">Manifestação pública pela anulação da exoneração de servidores municipais fundamentais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>576</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160103" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Fim 6x1" src="https://picsum.photos/200/150?random=4" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR135067" class="carousel-card-title">Por um Brasil que Vai Além do Trabalho: VAT e Ricardo Azevedo</a>
+            <p class="carousel-card-desc">Movimento nacional VAT (Vida Além do Trabalho) pelo fim da escala de trabalho 6x1 e por mais dignidade.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>3.011.400</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR135067" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Monitores Inclusiva" src="https://picsum.photos/200/150?random=5" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160108" class="carousel-card-title">Defesa dos Monitores da Educação Inclusiva em Taubaté</a>
+            <p class="carousel-card-desc">Garantia de atendimento e monitoramento especializado para alunos portadores de necessidades especiais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>145</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160108" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+        
+        <!-- Page 2 (Ativos: 6-10) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Pais de Taubaté" src="https://picsum.photos/200/150?random=6" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160079" class="carousel-card-title">Abaixo-Assinado dos Pais e Responsáveis de Alunos em Taubaté</a>
+            <p class="carousel-card-desc">Manifestação de pais e responsáveis por melhorias no ensino, infraestrutura e alimentação escolar.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>448</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160079" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Rua Imperial" src="https://picsum.photos/200/150?random=7" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160122" class="carousel-card-title">Pavimentação urgente na Rua Fazenda Imperial (Barra Nova)</a>
+            <p class="carousel-card-desc">Reivindicação de asfalto, saneamento básico e iluminação pública de qualidade no bairro Barra Nova.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>43</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160122" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Energia Setor Buriti" src="https://picsum.photos/200/150?random=8" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160114" class="carousel-card-title">Melhoria Urgente na Qualidade da Energia nos Setores Buriti</a>
+            <p class="carousel-card-desc">Ação contra a péssima qualidade de fornecimento elétrico e oscilações constantes na região Buriti.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>34</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160114" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Colégio São José" src="https://picsum.photos/200/150?random=9" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR159917" class="carousel-card-title">Segurança em torno do colégio São José</a>
+            <p class="carousel-card-desc">Pedido de reforço no policiamento e melhorias na sinalização de trânsito ao redor do colégio São José.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>573</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR159917" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Parque Ecológico" src="https://picsum.photos/200/150?random=10" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR157949" class="carousel-card-title">Criação de um Parque Ecológico no bairro Jaqueline</a>
+            <p class="carousel-card-desc">Solicitação para a criação e preservação de uma área verde de lazer para a comunidade de Belo Horizonte.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>753</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR157949" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 1 (Maiores) -->
+    <div class="carousel-category-view" id="carouselCategory1" style="display: none;">
+      <div class="carousel-track" id="trackCategory1">
+        <!-- Page 1 (Maiores: 1-5) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Fim 6x1" src="https://picsum.photos/200/150?random=11" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR135067" class="carousel-card-title">Por um Brasil que Vai Além do Trabalho: VAT e Ricardo Azevedo</a>
+            <p class="carousel-card-desc">Movimento nacional VAT (Vida Além do Trabalho) pelo fim da escala de trabalho 6x1 e por mais dignidade.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>3.011.400</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR135067" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Uso Celular" src="https://picsum.photos/200/150?random=12" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR146748" class="carousel-card-title">SUBSTITUIÇÃO DA LEI DE PROIBIÇÃO DE CELULAR EM ESCOLA</a>
+            <p class="carousel-card-desc">Pedido de regulamentação pedagógica inteligente em vez da proibição total do uso de celulares em sala.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>1.543.696</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR146748" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Sesc Senac" src="https://picsum.photos/200/150?random=13" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR113905" class="carousel-card-title">Apoie a atuação do Sistema CNC-Sesc-Senac no Brasil</a>
+            <p class="carousel-card-desc">Movimento em defesa dos serviços de cultura, lazer e assistência prestados pelo Sesc e Senac.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>1.532.896</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR113905" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Corte Sesc" src="https://picsum.photos/200/150?random=14" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR131846" class="carousel-card-title">Defenda o Sesc e o Senac - Não ao corte de 5% das verbas</a>
+            <p class="carousel-card-desc">Apelo contra a perda orçamentária do Sesc e Senac que financiam atividades educacionais públicas.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>1.082.880</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR131846" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="PL 257" src="https://picsum.photos/200/150?random=15" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR89572" class="carousel-card-title">Petição nacional pública contra o PL 257/16</a>
+            <p class="carousel-card-desc">Petição nacional contra o Projeto de Lei 257/16 que afeta direitos dos servidores públicos.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>795.160</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR89572" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+        
+        <!-- Page 2 (Maiores: 6-10) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Fusão MMA" src="https://picsum.photos/200/150?random=16" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR108740" class="carousel-card-title">Não à fusão do Ministério do Meio Ambiente e da Agricultura</a>
+            <p class="carousel-card-desc">Em defesa da preservação ambiental e da independência institucional do Ministério do Meio Ambiente.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>785.213</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR108740" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="PEC 241" src="https://picsum.photos/200/150?random=17" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR92916" class="carousel-card-title">Petição pública contra aprovação da PEC 241/2016</a>
+            <p class="carousel-card-desc">Petição pública contra a Proposta de Emenda à Constituição que limita os gastos públicos em áreas sociais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>567.178</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR92916" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Belo Monte" src="https://picsum.photos/200/150?random=18" />
+            </div>
+            <a href="../pviewsign/index.html?pi=P2012N19449" class="carousel-card-title">Abaixo-assinado NÃO À USINA DE BELO MONTE!</a>
+            <p class="carousel-card-desc">Movimento contra a construção e os impactos socioambientais da Usina Hidrelétrica de Belo Monte.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>447.461</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=P2012N19449" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Caso Yorkshire" src="https://picsum.photos/200/150?random=19" />
+            </div>
+            <a href="../pviewsign/index.html?pi=Yorkshir" class="carousel-card-title">Pena máxima de crime de maus tratos no caso Yorkshire</a>
+            <p class="carousel-card-desc">Exigência de punição exemplar e aplicação da pena máxima por maus-tratos contra os animais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>435.733</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=Yorkshir" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Eleições FA" src="https://picsum.photos/200/150?random=20" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR107504" class="carousel-card-title">Fiscalização especial das eleições pelas Forças Armadas</a>
+            <p class="carousel-card-desc">Petição que solicita a auditoria e acompanhamento especial no processo de contagem dos votos nacionais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>372.769</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR107504" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 2 (Últimos) -->
+    <div class="carousel-category-view" id="carouselCategory2" style="display: none;">
+      <div class="carousel-track" id="trackCategory2">
+        <!-- Page 1 (Últimos: 1-5) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Rua Imperial" src="https://picsum.photos/200/150?random=21" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160122" class="carousel-card-title">Pavimentação urgente na Rua Fazenda Imperial (Barra Nova)</a>
+            <p class="carousel-card-desc">Reivindicação de asfalto, saneamento básico e iluminação pública de qualidade no bairro Barra Nova.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>43</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160122" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="SELAM Piracicaba" src="https://picsum.photos/200/150?random=22" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160121" class="carousel-card-title">Contra o desmonte da SELAM Piracicaba e transferência de professores</a>
+            <p class="carousel-card-desc">Contra a transferência prejudicial de professores e o desmonte da Secretaria de Esportes e Lazer de Piracicaba.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>529</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160121" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Energia Setor Buriti" src="https://picsum.photos/200/150?random=23" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160114" class="carousel-card-title">Melhoria Urgente na Qualidade da Energia nos Setores Buriti</a>
+            <p class="carousel-card-desc">Ação contra a péssima qualidade de fornecimento elétrico e oscilações constantes na região Buriti.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>34</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160114" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Monitores Inclusiva" src="https://picsum.photos/200/150?random=24" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160108" class="carousel-card-title">Defesa dos Monitores da Educação Inclusiva em Taubaté</a>
+            <p class="carousel-card-desc">Garantia de atendimento e monitoramento especializado para alunos portadores de necessidades especiais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>145</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160108" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Jardim Pacaembu" src="https://picsum.photos/200/150?random=25" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160104" class="carousel-card-title">Melhorias urbanas no Jardim Pacaembu em Campinas</a>
+            <p class="carousel-card-desc">Solicitação de melhorias na infraestrutura urbana, segurança pública e sinalização do Jardim Pacaembu.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>89</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160104" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+        
+        <!-- Page 2 (Últimos: 6-10) -->
+        <div class="carousel-page">
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Exoneração" src="https://picsum.photos/200/150?random=26" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160103" class="carousel-card-title">Revogação da exoneração de servidores essenciais à comunidade</a>
+            <p class="carousel-card-desc">Manifestação pública pela anulação da exoneração de servidores municipais fundamentais.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>576</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160103" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Paulo Sérgio" src="https://picsum.photos/200/150?random=27" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160098" class="carousel-card-title">Retorno do Diretor Paulo Sérgio de Souza à Direção da Escola</a>
+            <p class="carousel-card-desc">Abaixo-assinado da comunidade escolar solicitando o retorno imediato do diretor Paulo Sérgio de Souza.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>922</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160098" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Estacionamento" src="https://picsum.photos/200/150?random=28" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160097" class="carousel-card-title">Estacionamento livre para estudantes na Metodista</a>
+            <p class="carousel-card-desc">Pedido de acesso livre e segurança no estacionamento para todos os alunos matriculados na Metodista.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>310</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160097" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Amazônia Inter" src="https://picsum.photos/200/150?random=29" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160095" class="carousel-card-title">Transporte público digno e saída da Amazônia Inter em Planaltina</a>
+            <p class="carousel-card-desc">Pedido por um transporte coletivo de qualidade e rescisão do contrato com a operadora atual Amazônia Inter.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>1.205</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160095" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+          
+          <div class="carousel-card">
+            <div class="carousel-card-img-wrapper">
+              <img alt="Dona Diva" src="https://picsum.photos/200/150?random=30" />
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160091" class="carousel-card-title">Permanência Dona Diva no Parque das Bicicletas - SBC</a>
+            <p class="carousel-card-desc">Manifestação em apoio à permanência da barraca tradicional da Dona Diva no Parque das Bicicletas.</p>
+            <div class="carousel-card-signatures">
+              <span class="material-icons" style="font-size: 15px; margin-right: 4px; color: #5f870e; vertical-align: middle;">people</span>
+              <span>642</span> assinaturas
+            </div>
+            <a href="../pviewsign/index.html?pi=BR160091" class="carousel-card-btn">
+              <span class="material-icons" style="font-size: 14px; margin-right: 4px; color: inherit; vertical-align: middle;">assignment_turned_in</span>
+              Quero Assinar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-			<div class="petpop">
-				<div class="petpopborder">
-					<div class="project-card">
-						<div style="margin-bottom: 5px;">
-							<a href="../pviewsign/index.html?pi=P2010N4596" target=""><img alt="Photo-little" height="150" src="https://peticaopublica.com.br/images/pop/br/aumentodesalarios.jpg" width="200" style="border: 0"></a></div>
-						<a href="../pviewsign/index.html?pi=P2010N4596" target="" style="font-size: 12px; font-weight: bold; line-height: 12px; height:47px; padding: 0;">Contra o aumento nos salários</a>
-						<p style="height: 88px; margin-top:8px;">Contra o autoritarismo evidente na manipulação do orçamento e dos recursos provenientes de arrecadação de impostos e cofres públicos.</p>
-						<div style="text-align: center; position: absolute; bottom:10px; left: 33px">
-							<a href="../pviewsign/index.html?pi=P2010N4596" class="btn2 bgreen2" style="font: 600 11px Arial, Helvetica, sans-serif; text-transform: uppercase;">Quero Assinar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="petpop">
-				<div class="petpopborder">
-					<div class="project-card">
-						<div style="margin-bottom: 5px;">
-							<a href="../pviewsign/index.html?pi=P2012N20540" target=""><img alt="Photo-little" height="150" src="https://peticaopublica.com.br/images/pop/br/atomedico.jpg" width="200" style="border: 0"></a></div>
-						<a href="../pviewsign/index.html?pi=P2012N20540" target="" style="font-size: 12px; font-weight: bold; line-height: 12px; height:47px; padding: 0;">Sancionar Ato Médico</a>
-						<p style="height: 88px; margin-top:8px;">Se é contra os limites de realização de determinadas actividades médicas participe na mudança!</p>
-						<div style="text-align: center; position: absolute; bottom:10px; left: 33px">
-							<a href="../pviewsign/index.html?pi=P2012N20540" class="btn2 bgreen2" style="font: 600 11px Arial, Helvetica, sans-serif; text-transform: uppercase;">Quero Assinar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="petpop">
-				<div class="petpopborder">
-					<div class="project-card">
-						<div style="margin-bottom: 5px;">
-							<a href="../pviewsign/index.html?pi=Yorkshir" target=""><img alt="Photo-little" height="150" src="https://peticaopublica.com.br/images/pop/br/yorkshire.jpg" width="200" style="border: 0"></a></div>
-						<a href="../pviewsign/index.html?pi=Yorkshir" target="" style="font-size: 12px; font-weight: bold; line-height: 12px; height:47px; padding: 0;">Pena máxima pela morte do Yorkshire</a>
-						<p style="height: 88px; margin-top:8px;">Punição por crime de maus tratos para a enfermeira que matou.</p>
-						<div style="text-align: center; position: absolute; bottom:10px; left: 33px">
-							<a href="../pviewsign/index.html?pi=Yorkshir" class="btn2 bgreen2" style="font: 600 11px Arial, Helvetica, sans-serif; text-transform: uppercase;">Quero Assinar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="petpop">
-				<div class="petpopborder">
-					<div class="project-card">
-						<div style="margin-bottom: 5px;">
-							<a href="../pviewsign/index.html?pi=P2011N15216" target=""><img alt="Photo-little" height="150" src="https://peticaopublica.com.br/images/pop/br/conduziralcool.jpg" width="200" style="border: 0"></a></div>
-						<a href="../pviewsign/index.html?pi=P2011N15216" target="" style="font-size: 12px; font-weight: bold; line-height: 12px; height:47px; padding: 0;">Contra a Embriaguez ao Volante!</a>
-						<p style="height: 88px; margin-top:8px;">Participe na tolerência zero para quem conduz embriagado.</p>
-						<div style="text-align: center; position: absolute; bottom:10px; left: 33px">
-							<a href="../pviewsign/index.html?pi=P2011N15216" class="btn2 bgreen2" style="font: 600 11px Arial, Helvetica, sans-serif; text-transform: uppercase;">Quero Assinar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
+  <!-- Dots Indicators -->
+  <div class="carousel-dots">
+    <span class="carousel-dot active" onclick="slideCategoryPage(0)"></span>
+    <span class="carousel-dot" onclick="slideCategoryPage(1)"></span>
+  </div>
 </div>
-</div>
-<center></center>
-<p style="clear: both;"></p>
-<div style="width: 935px; margin: 0 auto; padding: 20px 0 10px 0;">
-
-<div style="background-color: #fff; height: 43px; border-bottom: 5px solid #5f870e;">
-	<ul id="menu">
-		<li class="active"><a name="tab1" href="">Os Abaixo-Assinados mais ativos</a></li>
-		<li><a name="tab2" href="">Os Maiores Abaixo-Assinados</a></li>
-		<li><a name="tab3" href="">Últimos Abaixo-Assinados criados</a></li>
-	</ul>
-</div>
-
-<div id="tabcontent">
-	<div id="tab1">
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160019"><span style="color:#466604; margin-left:20px; font-size: 13px;">Rick Azevedo e VAT - Pedido de impeachment do Senador Davi Alcolumbre!</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">28548 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160121"><span style="color:#466604; margin-left:20px; font-size: 13px;">Contra o desmonte da SELAM Piracicaba e a transferência dos professores para a Educação</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">529 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160103"><span style="color:#466604; margin-left:20px; font-size: 13px;">Revogação da exoneração </span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">576 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR135067"><span style="color:#466604; margin-left:20px; font-size: 13px;">Por um Brasil que Vai Além do Trabalho: VAT e Ricardo Azevedo na Vanguarda da Mudança</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">3011400 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160108"><span style="color:#466604; margin-left:20px; font-size: 13px;">ABAIXO-ASSINADO EM DEFESA DOS MONITORES DA EDUCAÇÃO INCLUSIVA E DOS DIREITOS DAS CRIANÇAS COM DEFICIÊNCIA</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">145 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160079"><span style="color:#466604; margin-left:20px; font-size: 13px;">ABAIXO-ASSINADO DOS PAIS E RESPONSÁVEIS DOS ALUNOS DA REDE MUNICIPAL DE TAUBATÉ</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">448 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160122"><span style="color:#466604; margin-left:20px; font-size: 13px;">Solicitação urgente de pavimentação e melhorias na infraestrutura da Rua Fazenda Imperial (Barra Nova).</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">43 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160114"><span style="color:#466604; margin-left:20px; font-size: 13px;">Melhoria Urgente na Qualidade da Energia Elétrica nos Setores Buriti I, Buriti II, Independência e Admar </span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">34 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR159917"><span style="color:#466604; margin-left:20px; font-size: 13px;">Segurança em torno do colégio São José </span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">573 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-            <div style="border-bottom: 1px solid #E5E5E5;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR157949"><span style="color:#466604; margin-left:20px; font-size: 13px;">Criação de um Parque Ecológico no bairro Jaqueline - BH/MG</span></a>
-
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">753 <label style="color:#999">assinaturas</label></span>
-            </div>
-
-	</div>
-	<div id="tab2" style="display: none;">
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR135067" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Por um Brasil que Vai Além do Trabalho: VAT e Ricardo Azevedo na Vanguarda da Mudança</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">3011400 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR146748" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">SUBSTITUIÇÃO DA LEI DE PROIBIÇÃO DE CELULAR EM ESCOLA POR UMA REGULAMENTAÇÃO PEDAGÓGICA</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">1543696 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR113905" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Apoie a atuação do Sistema CNC-Sesc-Senac, um trabalho que valoriza o Brasil</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">1532896 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR131846" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Defenda o Sesc e o Senac - Não ao corte de 5% das verbas do Sesc e do Senac para Embratur</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">1082880 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR89572" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">PETIÇÃO CONTRA O PL 257/16</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">795160 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR108740" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Não à fusão do ministério do meio ambiente com o ministério da agricultura. </span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">785213 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR92916" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Contra aprovação da PEC 241/2016</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">567178 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=P2012N19449" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Abaixo-assinado NÃO À USINA DE BELO MONTE!</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">447461 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=Yorkshir" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Abaixo-assinado PENA MÁXIMA DE CRIME DE MAUS TRATOS PARA A ENFERMEIRA QUE MATOU O YORKSHIRE</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">435733 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-			<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-
-                <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR107504" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">PETIÇÃO PÚBLICA - FISCALIZAÇÃO DAS ELEIÇÕES PELAS FORÇAS ARMADAS</span></a>
-                <span style="border: 1px solid #ccc; border-radius: 3px; padding: 2px; color: #666; margin-left: 10px; font-size: 11px;">372769 <label style="color:#999">assinaturas</label></span>
-			</div>
-
-	</div>
-	<div id="tab3" style="display:none">
-		<div class="tabgrid">
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160122" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Solicitação urgente de pavimentação e melhorias na infraestrutura da Rua Fazenda Imperial (Barra Nova).</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160121" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Contra o desmonte da SELAM Piracicaba e a transferência dos professores para a Educação</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160114" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Melhoria Urgente na Qualidade da Energia Elétrica nos Setores Buriti I, Buriti II, Independência e Admar Guimarães – Redenção/PA</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160108" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">ABAIXO-ASSINADO EM DEFESA DOS MONITORES DA EDUCAÇÃO INCLUSIVA E DOS DIREITOS DAS CRIANÇAS COM DEFICIÊNCIA</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160104" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">MELHORIAS JARDIM PACAEMBU CAMPINAS</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160103" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Revogação da exoneração </span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160098" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">QUEREMOS PAULO SÉRGIO DE SOUZA  DE VOLTA À DIREÇÃO DA ESCOLA!</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160097" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Solicitação de liberação do estacionamento para estudantes da Universidade Metodista</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160095" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Abaixo-assinado de iniciativa populares por um transporte público digno e retirada da empresa Amazônia Inter da cidade de Planalti</span></a>
-				</div>
-
-				<div style="border-bottom: 1px solid #E5E5E5; font-size: 13px;">
-		            <a style="background:url(https://peticaopublica.com.br/images/iconPetitonSign.png) no-repeat center left; height: 28px; line-height: 28px;" href="../pviewsign/index.html?pi=BR160091" target="_blank"><span style="color:#466604; margin-left:20px; font-size: 13px;">Permanência Dona Diva no Parque das Bicicletas - SBC</span></a>
-				</div>
-
-		</div>
-	</div>
-</div>
-
-
-
-</div>
-<p style="clear: both;"></p>
+</td>
+</tr>
+</tbody>
+</table>
 <div style="width: 935px; margin: 0 auto; padding: 5px 0 30px 0;">
-<h4 style="font: 12pt Tahoma, Geneva, sans-serif; margin: 0 0 10px 0;">Destacado nos principais meios de comunicação e grupos de mídia</h4>
+<h4 style="font: 12pt Tahoma, Geneva, sans-serif; margin: 0 0 10px 0;">Destacado nos principais
+						meios de comunicação e grupos de mídia</h4>
 <div style="border-top: 1px solid #E5E5E5; padding: 10px 0 0 0;">
-<a href="https://www.google.com.br/#hl=pt-BR&amp;q=abaixo-assinado+OR+Peti%C3%A7%C3%A3o&amp;tbm=nws" rel="nofollow" target="_blank"><img alt="Press" src="https://peticaopublica.com.br/images/featuredin-pt-br.png" style="border: 0;"></a>
+<a href="https://www.google.com.br/#hl=pt-BR&amp;q=abaixo-assinado+OR+Peti%C3%A7%C3%A3o&amp;tbm=nws" rel="nofollow" target="_blank"><img alt="Press" src="https://peticaopublica.com.br/images/featuredin-pt-br.png" style="border: 0;"/></a>
 </div>
 </div>
 </div>
 </div>
-
 </form>
 <div class="footer">
 <div style="width: 920px; margin: auto; overflow: hidden;">
 <div style="width: 300px; float: left;">
 <h4 style="margin: 0;">Procurar por Categorias</h4>
-
 <ul id="ulCat">
-<li><a href="../searchfilter/index.html?cat=23">Ambiente</a></li><li><a href="../searchfilter/index.html?cat=24">Artes e Cultura</a></li><li><a href="../searchfilter/index.html?cat=25">Ciência e Tecnologia</a></li><li><a href="../searchfilter/index.html?cat=101">Direitos dos Animais</a></li><li><a href="../searchfilter/index.html?cat=27">Educação</a></li><li><a href="../searchfilter/index.html?cat=28">Entretenimento e Media</a></li><li><a href="../searchfilter/index.html?cat=26">Esporte</a></li><li><a href="../searchfilter/index.html?cat=29">Legislação e Justiça</a></li><li><a href="../searchfilter/index.html?cat=30">Política e Governo</a></li><li><a href="../searchfilter/index.html?cat=31">Religião</a></li><li><a href="../searchfilter/index.html?cat=32">Saúde e Bem-Estar</a></li><li><a href="../searchfilter/index.html?cat=33">Sociedade</a></li>
+<li><a href="../searchfilter/index.html?cat=23">Ambiente</a></li>
+<li><a href="../searchfilter/index.html?cat=24">Artes e Cultura</a></li>
+<li><a href="../searchfilter/index.html?cat=25">Ciência e Tecnologia</a></li>
+<li><a href="../searchfilter/index.html?cat=101">Direitos dos Animais</a></li>
+<li><a href="../searchfilter/index.html?cat=27">Educação</a></li>
+<li><a href="../searchfilter/index.html?cat=28">Entretenimento e Media</a></li>
+<li><a href="../searchfilter/index.html?cat=26">Esporte</a></li>
+<li><a href="../searchfilter/index.html?cat=29">Legislação e Justiça</a></li>
+<li><a href="../searchfilter/index.html?cat=30">Política e Governo</a></li>
+<li><a href="../searchfilter/index.html?cat=31">Religião</a></li>
+<li><a href="../searchfilter/index.html?cat=32">Saúde e Bem-Estar</a></li>
+<li><a href="../searchfilter/index.html?cat=33">Sociedade</a></li>
 </ul>
-
 </div>
 <div style="float: right;">
-<div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil, respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
+<div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
+					respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
 <div class="nav-share">
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398" width="82" height="32" style="border:none;overflow:hidden;padding-top:20px;" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="32" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398" style="border:none;overflow:hidden;padding-top:20px;" width="82"></iframe>
 <ul style="float:right;">
-<li><a target="_blank" href="https://www.facebook.com/peticaopublicabrasil" class="fbshare32f" title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
-<li><a target="_blank" href="https://twitter.com/peticaopublicab" class="twshare32f" title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
-<li><a target="_blank" href="https://peticaopublica.com.br/rss.aspx" class="rss32f" title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
+<li><a class="fbshare32f" href="https://www.facebook.com/peticaopublicabrasil" target="_blank" title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
+<li><a class="twshare32f" href="https://twitter.com/peticaopublicab" target="_blank" title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
+<li><a class="rss32f" href="https://peticaopublica.com.br/rss.aspx" target="_blank" title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
 </ul>
 </div>
 <div style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
-O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos face ao poder político,
-encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a style="font-size: 11px;" href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm" target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
-</div>
+					O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
+					face ao poder político,
+					encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm" style="font-size: 11px;" target="_blank">Constituição Federal de 1988</a> nos seguintes termos:
+					"o direito de petição aos Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de
+					poder".
+				</div>
 </div>
 </div>
 </div>
 <div class="secondfooter">
 <div style="width: 920px; margin: auto; overflow: hidden;">
-<ul><li><a href="../aboutus/index.html">Sobre Nós</a></li>
-<li><a href="../faq/index.html">FAQ</a></li><li><a href="../privacy/index.html">Política de Privacidade</a></li>
-<li><a href="../termsconditions/index.html">Termos e Condições</a></li><li><a href="../help/index.html">Ajuda</a></li>
-<li><a href="../help/index.html">Contato</a></li></ul><div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
-</div></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+<ul>
+<li><a href="../aboutus/index.html">Sobre Nós</a></li>
+<li><a href="../faq/index.html">FAQ</a></li>
+<li><a href="../privacy/index.html">Política de Privacidade</a></li>
+<li><a href="../termsconditions/index.html">Termos e Condições</a></li>
+<li><a href="../help/index.html">Ajuda</a></li>
+<li><a href="../contactus/index.html">Contato</a></li>
+</ul>
+<div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+			</div>
+</div>
+</div>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-4269839-47');
-</script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0b9bf6bcbb6b3b9',t:'MTc4MTQ0NDQzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b46a5cb6f5e049389877892a967b678e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+let activeCategory = 0;
+let categoryPages = [0, 0, 0];
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+function switchCategory(catIdx) {
+    activeCategory = catIdx;
+    
+    // Hide all category track containers except active
+    for (let i = 0; i < 3; i++) {
+        const catView = document.getElementById(`carouselCategory${i}`);
+        const tabBtn = document.getElementById(`tabBtn${i}`);
+        if (catView) {
+            catView.style.display = (i === catIdx) ? 'block' : 'none';
+        }
+        if (tabBtn) {
+            if (i === catIdx) {
+                tabBtn.classList.add('active');
+            } else {
+                tabBtn.classList.remove('active');
+            }
+        }
+    }
+    
+    // Sync the dots and track sliding offset for the active category
+    slideCategoryPage(categoryPages[catIdx]);
+}
+
+function slideCategoryPage(pageIdx) {
+    categoryPages[activeCategory] = pageIdx;
+    
+    // Slide the active category track
+    const activeTrack = document.getElementById(`trackCategory${activeCategory}`);
+    if (activeTrack) {
+        // Each page has width of 960px, slide by (pageIdx * 960)px
+        activeTrack.style.transform = `translateX(-${pageIdx * 960}px)`;
+    }
+    
+    // Update active dots
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+        if (idx === pageIdx) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-4269839-47');
+	</script>
+<script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a0b9bf6bcbb6b3b9',t:'MTc4MTQ0NDQzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+<iframe height="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;" width="1"></iframe>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"b46a5cb6f5e049389877892a967b678e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"></script>
+<div id="cboxOverlay" style="display: none;"></div>
+<div class="" id="colorbox" style="display: none; padding-bottom: 42px; padding-right: 42px;">
+<div id="cboxWrapper">
+<div>
+<div id="cboxTopLeft" style="float: left;"></div>
+<div id="cboxTopCenter" style="float: left;"></div>
+<div id="cboxTopRight" style="float: left;"></div>
+</div>
+<div style="clear: left;">
+<div id="cboxMiddleLeft" style="float: left;"></div>
+<div id="cboxContent" style="float: left;">
+<div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+<div id="cboxTitle" style="float: left;"></div>
+<div id="cboxCurrent" style="float: left;"></div>
+<div id="cboxNext" style="float: left;"></div>
+<div id="cboxPrevious" style="float: left;"></div>
+<div id="cboxSlideshow" style="float: left;"></div>
+<div id="cboxClose" style="float: left;"></div>
+</div>
+<div id="cboxMiddleRight" style="float: left;"></div>
+</div>
+<div style="clear: left;">
+<div id="cboxBottomLeft" style="float: left;"></div>
+<div id="cboxBottomCenter" style="float: left;"></div>
+<div id="cboxBottomRight" style="float: left;"></div>
+</div>
+</div>
+<div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+</body>
+</html>

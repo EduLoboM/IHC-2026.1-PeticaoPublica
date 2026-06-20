@@ -1,21 +1,16 @@
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Petição Pública Brasil</title>
-    <meta name="description"
-        content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros.">
-    <meta name="Robots" content="INDEX,FOLLOW">
-    
-    <link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" async=""
-        src="https://www.googletagmanager.com/gtag/js?id=G-4QFTX7SRFF&amp;cx=c&amp;gtm=4e66b0h2"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js"></script>
-
-    <meta property="og:image" content="https://peticaopublica.com.br/images/fbShareLogo.gif">
-    <script type="text/javascript">$(function () {
+<meta charset="utf-8"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>Petição Pública Brasil</title>
+<meta content="Hospedagem online gratuita para Abaixo-assinados e Petições, disponível gratuitamente 24 horas por dia. Um serviço público de qualidade para todos os cidadãos brasileiros." name="description"/>
+<meta content="INDEX,FOLLOW" name="Robots"/>
+<link href="https://peticaopublica.com.br/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<script async="" src="https://www.google-analytics.com/analytics.js" type="text/javascript"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4QFTX7SRFF&amp;cx=c&amp;gtm=4e66b0h2" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://peticaopublica.com.br/scripts/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<meta content="https://peticaopublica.com.br/images/fbShareLogo.gif" property="og:image"/>
+<script type="text/javascript">$(function () {
             $("a#login").colorbox({ iframe: true, opacity: 0.5, innerWidth: 960, innerHeight: 350 });
             $("#txtemailnewsletter").keypress(function (e) { if (e.keyCode == 13) { doSearch(); } });
             var pesq = $("#txtemailnewsletter").val();
@@ -32,7 +27,7 @@
             });
         });
     </script>
-    <script type="text/javascript">
+<script type="text/javascript">
         $(document).ready(function () {
             $(".account").click(function () {
                 var X = $(this).attr('id');
@@ -50,270 +45,234 @@
             return false;
         }
     </script>
-    <link rel="stylesheet" type="text/css" href="../accessibility.css?v=1.0.5">
-    <script type="text/javascript" src="../accessibility.js?v=1.0.5" defer></script>
-</head>
-
+<link href="../accessibility.css?v=1.0.17" rel="stylesheet" type="text/css"/>
+<script defer="" src="../accessibility.js?v=1.0.17" type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head>
 <body>
-    <div class="header">
-        <div class="innerHeader">
-            <div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
-                <a href="../home/index.html"><img src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px"
-                        alt="Petição Pública Brasil Logotipo" title="Um dos mais antigos métodos da democracia."
-                        width="304px" height="82px"></a>
-            </div>
-            <div style="float: right; width: 650px; height: 90px; background-color: #000;">
-                <div style="height: 40px">
-                    <ul class="headerMenu">
-                        <li class="headerLink"><a href="../home/index.html">Petição Pública Brasil</a></li>
-                        <li class="headerLink"><a href="../pcreate/index.html">Criar Abaixo-assinado</a></li>
-                        <li class="headerLink"><a href="javascript:void(0)" class="acc-header-btn" onclick="document.querySelector('.acc-panel') && document.querySelector('.acc-panel').classList.toggle('active'); document.querySelector('.acc-backdrop') && document.querySelector('.acc-backdrop').classList.toggle('active');">Acessibilidade</a></li>
-                        <li class="headerLink">
-                            <div id="divLogin">
-                                <a id="login" href="../loginregister/index.html" class="cboxElement">Login ou Registar</a>
-                            </div>
-
-                        </li>
-                    </ul>
-                </div>
-                <div style="height: 70px; float: right; margin: 10px 20px;">
-                    <div class="emailnewsletter" id="divemailnewsletter">
-                        <input id="txtemailnewsletter" type="text" value="" maxlength="50"
-                            title="Procure Abaixo-Assinados"><a id="submitEmailNewsletter"
-                            href="javascript:doSearch();">procurar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <form method="post" action=".../termsconditions/index.html" id="aspnetForm">
-        <div class="aspNetHidden">
-            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
-                value="/wEPDwUKLTU1MTkwNjMzMA9kFgJmD2QWBAIBDxYCHgdWaXNpYmxlZ2QCAw9kFgICAQ9kFgICAQ8WAh4EVGV4dAXsMDxkaXYgY2xhc3M9IndyYXBwZXIiPg0KCTxkaXYgY2xhc3M9InBjb250ZW50Ij4NCiAgICAgICAgPGRpdiBjbGFzcz0icGV0aGVhZCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICM2ODg2MDI7IHZlcnRpY2FsLWFsaWduOiB0b3A7Ij4NCgkJCTxzcGFuPlRlcm1vcyBkZSBVdGlsaXphw6fDo28gZGUgU2VydmnDp29zIGRvIHNpdGUgUGV0aWNhb3B1YmxpY2EuY29tLmJyPC9zcGFuPg0KCQk8L2Rpdj4NCgkJPHRhYmxlIGJvcmRlcj0iMCIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIiBzdHlsZT0iYm9yZGVyOiAwOyBtYXJnaW46IDA7IHBhZGRpbmc6MDsiPg0KCQk8dHI+DQogICAgICAgICAgICA8dGQgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IHBhZGRpbmc6MCAyMHB4OyI+DQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+MS4gRGVzY3Jpw6fDo28gZSBDb25kacOnw7VlcyBkbyBTZXJ2acOnbzwvaDE+DQogDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIHBldGljYW9wdWJsaWNhLmNvbS5iciBwb2RlcsOhIG9mZXJlY2VyIHNlcnZpw6dvcyBkZSBhbG9qYW1lbnRvIGRlIGFiYWl4by1hc3NpbmFkb3MsIHBldGnDp8O1ZXMgcMO6YmxpY2FzLCBlLW1haWwsIGbDs3J1bnMsIHDDoWdpbmFzIHBlc3NvYWlzLCBlIG91dHJvcyBzZXJ2acOnb3MgZGUgY29tdW5pY2HDp8OjbyBlbGFib3JhZG9zIHBhcmEgcGVybWl0aXIgYW8gdXN1w6FyaW8gYSBjb211bmljYcOnw6NvIGNvbSBvdXRyb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkFvIHVzdWZydWlyIGRlc3RlcyBzZXJ2acOnb3MsIG8gdXN1w6FyaW8gc2UgY29tcHJvbWV0ZSBhIGFwZW5hcyBlbnZpYXIsIHJlY2ViZXIgZSB1dGlsaXphciBpbmZvcm1hw6fDo28gcHLDs3ByaWEgZSBhIG7Do28gZW1wcmVnYXIgbGluZ3VhZ2VtIGUgdGVybW9zIG9ic2Nlbm9zLCBvZmVuc2l2b3MsIGluYWRlcXVhZG9zLCBpbXByw7NwcmlvcyBvdSBjb21lbnTDoXJpb3MgcXVlIHBvc3NhbSBmZXJpciBvdXRyb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPlPDo28gcHJvcHJpZWRhZGUgZG8gcGV0aWNhb3B1YmxpY2EuY29tLmJyIG9zIGNvbnRlw7pkb3MgZGUgYXJ0aWdvcywgc29mdHdhcmUsIG3DunNpY2EsIHNvbnMsIGdyw6FmaWNvcywgdsOtZGVvcywgbWVuc2FnZW5zIGUgb3V0cm9zIG1hdGVyaWFpcyBxdWUgaW50ZWdyYW0gbyBzaXRlIHByb2R1emlkb3MgcG9yIGZvbnRlcyBpbnRlcm5hcy4NCiAgICAgICAgICAgICAgICBPcyBjb250ZcO6ZG9zIGluc2VyaWRvcyBwb3IgZm9udGVzIGV4dGVybmFzIChlbWFpbCBwb3IgZXhlbXBsbykgc8OjbyBkYSByZXNwb25zYWJpbGlkYWRlIGRlIHF1ZW0gZW52aWEsIG7Do28gcG9kZW5kbyBvIHBldGljYW9wdWJsaWNhLmNvbS5iciBzZSByZXNwb25zYWJpbGl6YXIgcGVsb3MgbWVzbW9zLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PIHBldGljYW9wdWJsaWNhLmNvbS5iciBwb2RlcsOhLCBhIHF1YWxxdWVyIG1vbWVudG8sIHJldGlyYXIgb3UgYW51bGFyIG91dHJvcyBjb250ZcO6ZG9zIGUgc2VydmnDp29zLCBzZW0gbm90aWZpY2HDp8OjbyBwcsOpdmlhIGFvIHV0aWxpemFkb3IsIHNlIGVudGVuZGVyIHF1ZSB2aW9sYW0gcXVhaXNxdWVyIGRhcyBkaXNwb3Npw6fDtWVzIGVzdGFiZWxlY2lkYXMuDQpEbyBtZXNtbyBtb2RvIHBvZGVyw6EgaW50ZWdyYXIgbm92b3MgY29udGXDumRvcyBvdSBzZXJ2acOnb3MgZSBlZmVjdHVhciBhcyBhbHRlcmHDp8O1ZXMgcXVlIGVudGVuZGVyIG5lY2Vzc8Ohcmlhcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIHBldGljYW9wdWJsaWNhLmNvbS5iciBuw6NvIHNlIHJlc3BvbnNhYmlsaXphIHBvciBwcm9ibGVtYXMgZGUgbcOhIGVtaXNzw6NvLCBmYWx0YSBvdSBmYWxoYSBxdWUgb2NvcnJhIG5hIGNvbXVuaWNhw6fDo28gZGUgb3UgcGFyYSBvIHVzdcOhcmlvLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PIHNpdGUgbsOjbyBzZSByZXNwb25zYWJpbGl6YSBwb3IgZXZlbnR1YWlzIGZhbGhhcyB0w6ljbmljYXMsIHF1ZSBjYXVzZW0gcXVhbHF1ZXIgdGlwbyBkZSBwZXJkYXMuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPk8gdXN1w6FyaW8gc2Ugc3VibWV0ZSBhb3MgcHJlc2VudGVzIFRlcm1vcyBkZSBVc28gZGUgU2VydmnDp29zIHF1ZSBwb2RlcsOjbyBzZXIgYWx0ZXJhZGFzIHNlbSBub3RpZmljYcOnw6NvIHByw6l2aWEuIFBvZGVyw6Egc2VtcHJlIHJldmVyIGEgdmVyc8OjbyBtYWlzIGFjdHVhbGl6YWRhIG5lc3RlIG1lc21vIGxvY2FsLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij4yLiBEZXZlcmVzIGRvIHVzdcOhcmlvPC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PcyBTZXJ2acOnb3MgZGUgQ29tdW5pY2HDp8OjbyBuw6NvIHBvZGVyw6NvIHNlciB1c2Fkb3M6PC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDx1bD4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5lbSBhc3NvY2lhw6fDo28gY29tIGNvbmN1cnNvcywgc3BhbW1pbmcsIGNvcnJlbnRlcyBkZSBlLW1haWwsIGp1bmsgZS1tYWlsIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgbWVuc2FnZW5zIG7Do28gc29saWNpdGFkYXMgKGNvbWVyY2lhaXMgb3UgbsOjbyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIGRpZmFtYXIsIGFidXNhciwgYXNzZWRpYXIsIHBlcnNlZ3VpciwgYW1lYcOnYXIgb3UgdmlvbGFyLCBzb2IgcXVhbHF1ZXIgb3V0cmEgZm9ybWEgb3MgZGlyZWl0b3MgZGUgb3V0cmVtICh0YWlzIGNvbW8gbyBkaXJlaXRvIMOgIHByaXZhY2lkYWRlLCBwb3IgZXhlbXBsbyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIHB1YmxpY2FyLCBjb2xvY2FyIHVtIHBvc3QsIGZhemVyIG8gdXBsb2FkLCBkaXN0cmlidWlyIG91IGRpc3NlbWluYXIgdG9kbyBlIHF1YWxxdWVyIHRpcG8gZGUgbWF0ZXJpYWwvaW5mb3JtYcOnw6NvIGltcHLDs3ByaW8sIGRpZmFtYXTDs3Jpbywgb2JzY2VubywgZGVzcmVzcGVpdGFkb3Igb3UgaWxlZ2FsOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cGFyYSBlZmV0dWFyIHVwbG9hZHMgZGUgZmljaGVpcm9zIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgbWF0ZXJpYWwgcXVlIGVzdGVqYSBwcm90ZWdpZG8gcGVsbyBDw7NkaWdvIGRvIERpcmVpdG8gZGUgQXV0b3Igb3UgcXVlIHZpb2xlIGEgbGVnaXNsYcOnw6NvIGRlIHByb3Rlw6fDo28gZGUgZGFkb3MgcGVzc29haXMgLyBwcml2YWNpZGFkZSBlIHF1YWlzcXVlciBvdXRyb3MgZGlyZWl0b3MgZGUgcHJvcHJpZWRhZGUsIGEgbsOjbyBzZXIgcXVlIHNlamEgbyBkZXRlbnRvciBkZXNzZXMgZGlyZWl0b3Mgb3UgdGVuaGEgcmVjZWJpZG8gYXMgbmVjZXNzw6FyaWFzIGF1dG9yaXphw6fDtWVzIHBhcmEgbyBmYXplcjs8L2xpPg0KICAgICAgICAgICAgICAgICAgICA8bGkgc3R5bGU9Imxpc3Qtc3R5bGUtdHlwZTogZGlzYzsiPnBhcmEgZWZldHVhciB1cGxvYWRzIGRlIGZpY2hlaXJvcyBxdWUgY29udGVuaGFtIHbDrXJ1cywgdHJvamFuIGhvcnNlcywgd29ybXMsIHRpbWUgYm9tYnMsIGNhbmNlbGJvb3RzLCBmaWNoZWlyb3MgY29ycnVwdG9zIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgZmljaGVpcm9zIGlkw6pudGljb3MgcXVlIHNlamFtIHBhc3PDrXZlaXMgZGUgZGFuaWZpY2FyIG8gY29tcHV0YWRvciBvdSBwcm9wcmllZGFkZSBkZSBvdXRyZW07PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIHB1YmxpY2l0YXIgb3Ugb2ZlcmVjZXIgcGFyYSBjb21wcmEvdmVuZGEgYmVucyBlL291IHNlcnZpw6dvcywgb3UgcXVlIGVuY2VycmVtIHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgb2JqZXRpdm8gY29tZXJjaWFsLCBhIG7Do28gc2VyIGVtIHNlcnZpw6dvcyBxdWUgbyBwZXJtaXRhbSAoYW7Dum5jaW9zIGUgY2xhc3NpZmljYWRvcyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIGVmZXR1YXIgZG93bmxvYWRzIGRlIGZpY2hlaXJvcyBkZSBvdXRybyB1c3XDoXJpbywgcXVlIHNlIHNhaWJhIG7Do28gc2VyIHBlcm1pdGlkbyBzZXJlbSBkaXN0cmlidcOtZG9zIHBvciBlc3NlIG1vZG8uPC9saT4NCiAgICAgICAgICAgICAgICA8L3VsPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkFvIHVzdcOhcmlvIG7Do28gw6kgcGVybWl0aWRvOjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8dWw+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+ZmFsc2lmaWNhciwgb21pdGlyIG91IGFwYWdhciBxdWFscXVlciBhdHJpYnVpw6fDo28gYXV0b3JhbCwgbGVnYWwgb3UgcXVhbHF1ZXIgb3V0cm8gdGlwbyBkZSBldGlxdWV0YXMgLyBkZXNpZ25hw6fDtWVzIGRlIHByb3ByaWVkYWRlIG5hIG9yaWdlbSAvIGZvbnRlIGRvIHNvZnR3YXJlIC8gbWF0ZXJpYWwgY29udGlkbyBudW0gZmljaGVpcm8gdXBsb2FkZWQ7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5tYW5pcHVsYXIgb3UgZmFsc2lmaWNhciBpbmZvcm1hw6fDo28sIGNvbSB2aXN0YSBhIG9jdWx0YXIgYSBvcmlnZW0gZGUgcHJvZHV0b3Mgb3Ugc2VydmnDp29zOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cmVzdHJpbmdpciBvdSBpbmliaXIgb3V0cm8gdXN1w6FyaW8gZGUgdXNhciBlIGdvemFyIG9zIHNlcnZpw6dvcyBkZSBjb211bmljYcOnw6NvOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+Z3JhdmFyLCByZWNvbGhlciwgcmV0ZXIgb3UgY29sZWNjaW9uYXIgaW5mb3JtYcOnw6NvIHNvYnJlIG91dHJvcyB1c3XDoXJpb3M7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij52aW9sYXIgdG9kYSBlIHF1YWxxdWVyIGxlaSAvIHJlZ3VsYW1lbnRhw6fDo28gYXBsaWPDoXZlbCwgZW0gZXNwZWNpYWwgYXMgcmVndWxhbWVudGFtIGEgcHJvdGXDp8OjbyBlIG8gZGlyZWl0byBhdXRvcmFsLCBiZW0gY29tbyBjb3Jyb21wZXIgb3UgYWx0ZXJhciBwcm9jZWRpbWVudG9zLCBwb2zDrXRpY2FzLCByZXF1ZXJpbWVudG9zIG91IHJlZ3VsYW1lbnRvcyBsaWdhZG9zIGFvcyBzZXJ2acOnb3M7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5jcmlhciB1bWEgaWRlbnRpZGFkZSBmYWxzYSBjb20gbyBvYmpldGl2byBkZSBlbmdhbmFyIG91dHJlbS48L2xpPg0KICAgICAgICAgICAgICAgIDwvdWw+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+My4gUG9sw610aWNhIGRlIFByaXZhY2lkYWRlIGRvIHNpdGUgcGV0aWNhb3B1YmxpY2EuY29tLmJyPC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PcyBkYWRvcyBkZSByZWdpc3RvIGRvIHVzdcOhcmlvIGVzdMOjbyBzdWplaXRvcyDDoCBQb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGUgZG8gc2l0ZSBwZXRpY2FvcHVibGljYS5jb20uYnIuIFZlamEgYSA8YSBjbGFzcz0iZ3JlZW4tbGluayIgaHJlZj0iL2luZm8vcHJpdmFjeS5hc3B4Ij5Qb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGU8L2E+PC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgPC90cj4NCgkJPC90YWJsZT4JCQ0KCQk8ZGl2IGNsYXNzPSJwZXRGb290ZXIiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmOyBwYWRkaW5nOiA1cHggMDsiPjwvZGl2PgkNCgk8L2Rpdj4NCjwvZGl2PmRkjoZJTSQwHaQLcvHjKd/csp8RLo9jGPSJQPlH13IX7ck=">
-        </div>
-
-        <div class="aspNetHidden">
-
-            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5B0B0FAB">
-        </div>
-
-        <div class="wrapper">
-            <div class="pcontent">
-                <div class="pethead" style="background-color: #688602; vertical-align: top;">
-                    <span>Termos de Utilização de Serviços do site Peticaopublica.com.br</span>
-                </div>
-                <table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding:0;">
-                    <tbody>
-                        <tr>
-                            <td style="background-color: #fff; padding:0 20px;">
-                                <h1 style="margin-top: 20px;">1. Descrição e Condições do Serviço</h1>
-
-                                <p>O site peticaopublica.com.br poderá oferecer serviços de alojamento de
+<div class="header">
+<div class="innerHeader">
+<div style="float: left; width: 310px; height: 90px; padding: 0px; background-color: #000000;">
+<a href="../home/index.html"><img alt="Petição Pública Brasil Logotipo" height="82px" src="https://peticaopublica.com.br/images/logoPetitionpt-pt.gif" style="border: 0px" title="Um dos mais antigos métodos da democracia." width="304px"/></a>
+</div>
+<div style="float: right; width: 650px; height: 90px; background-color: #000;">
+<div style="height: 40px">
+<ul class="headerMenu">
+<li class="headerLink">
+<a href="../pcreate/index.html" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">add_circle</span>Criar Abaixo-assinado
+    </a>
+</li>
+<li class="headerLink">
+<a class="acc-header-btn" href="javascript:void(0)" onclick="document.querySelector('.acc-panel') &amp;&amp; document.querySelector('.acc-panel').classList.toggle('active'); document.querySelector('.acc-backdrop') &amp;&amp; document.querySelector('.acc-backdrop').classList.toggle('active');" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">accessibility</span>Acessibilidade
+    </a>
+</li>
+<li class="headerLink">
+<div id="divLogin">
+<a class="cboxElement" href="../loginregister/index.html" id="login" style="display: inline-flex; align-items: center;">
+<span class="material-icons" style="font-size: 18px; margin-right: 4px; color: inherit; vertical-align: middle;">login</span>Login ou Registar
+        </a>
+</div>
+</li>
+</ul>
+</div>
+<div style="height: 70px; float: right; margin: 10px 20px;">
+<div class="emailnewsletter" id="divemailnewsletter"><span class="material-icons search-icon" onclick="doSearch();" style="font-size: 20px; color: #888; margin-left: 10px; margin-right: 5px; cursor: pointer; vertical-align: middle;">search</span>
+<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<form action=".../termsconditions/index.html" id="aspnetForm" method="post">
+<div class="aspNetHidden">
+<input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKLTU1MTkwNjMzMA9kFgJmD2QWBAIBDxYCHgdWaXNpYmxlZ2QCAw9kFgICAQ9kFgICAQ8WAh4EVGV4dAXsMDxkaXYgY2xhc3M9IndyYXBwZXIiPg0KCTxkaXYgY2xhc3M9InBjb250ZW50Ij4NCiAgICAgICAgPGRpdiBjbGFzcz0icGV0aGVhZCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICM2ODg2MDI7IHZlcnRpY2FsLWFsaWduOiB0b3A7Ij4NCgkJCTxzcGFuPlRlcm1vcyBkZSBVdGlsaXphw6fDo28gZGUgU2VydmnDp29zIGRvIHNpdGUgUGV0aWNhb3B1YmxpY2EuY29tLmJyPC9zcGFuPg0KCQk8L2Rpdj4NCgkJPHRhYmxlIGJvcmRlcj0iMCIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIiBzdHlsZT0iYm9yZGVyOiAwOyBtYXJnaW46IDA7IHBhZGRpbmc6MDsiPg0KCQk8dHI+DQogICAgICAgICAgICA8dGQgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmY7IHBhZGRpbmc6MCAyMHB4OyI+DQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+MS4gRGVzY3Jpw6fDo28gZSBDb25kacOnw7VlcyBkbyBTZXJ2acOnbzwvaDE+DQogDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIHBldGljYW9wdWJsaWNhLmNvbS5iciBwb2RlcsOhIG9mZXJlY2VyIHNlcnZpw6dvcyBkZSBhbG9qYW1lbnRvIGRlIGFiYWl4by1hc3NpbmFkb3MsIHBldGnDp8O1ZXMgcMO6YmxpY2FzLCBlLW1haWwsIGbDs3J1bnMsIHDDoWdpbmFzIHBlc3NvYWlzLCBlIG91dHJvcyBzZXJ2acOnb3MgZGUgY29tdW5pY2HDp8OjbyBlbGFib3JhZG9zIHBhcmEgcGVybWl0aXIgYW8gdXN1w6FyaW8gYSBjb211bmljYcOnw6NvIGNvbSBvdXRyb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkFvIHVzdWZydWlyIGRlc3RlcyBzZXJ2acOnb3MsIG8gdXN1w6FyaW8gc2UgY29tcHJvbWV0ZSBhIGFwZW5hcyBlbnZpYXIsIHJlY2ViZXIgZSB1dGlsaXphciBpbmZvcm1hw6fDo28gcHLDs3ByaWEgZSBhIG7Do28gZW1wcmVnYXIgbGluZ3VhZ2VtIGUgdGVybW9zIG9ic2Nlbm9zLCBvZmVuc2l2b3MsIGluYWRlcXVhZG9zLCBpbXByw7NwcmlvcyBvdSBjb21lbnTDoXJpb3MgcXVlIHBvc3NhbSBmZXJpciBvdXRyb3MuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPlPDo28gcHJvcHJpZWRhZGUgZG8gcGV0aWNhb3B1YmxpY2EuY29tLmJyIG9zIGNvbnRlw7pkb3MgZGUgYXJ0aWdvcywgc29mdHdhcmUsIG3DunNpY2EsIHNvbnMsIGdyw6FmaWNvcywgdsOtZGVvcywgbWVuc2FnZW5zIGUgb3V0cm9zIG1hdGVyaWFpcyBxdWUgaW50ZWdyYW0gbyBzaXRlIHByb2R1emlkb3MgcG9yIGZvbnRlcyBpbnRlcm5hcy4NCiAgICAgICAgICAgICAgICBPcyBjb250ZcO6ZG9zIGluc2VyaWRvcyBwb3IgZm9udGVzIGV4dGVybmFzIChlbWFpbCBwb3IgZXhlbXBsbykgc8OjbyBkYSByZXNwb25zYWJpbGlkYWRlIGRlIHF1ZW0gZW52aWEsIG7Do28gcG9kZW5kbyBvIHBldGljYW9wdWJsaWNhLmNvbS5iciBzZSByZXNwb25zYWJpbGl6YXIgcGVsb3MgbWVzbW9zLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PIHBldGljYW9wdWJsaWNhLmNvbS5iciBwb2RlcsOhLCBhIHF1YWxxdWVyIG1vbWVudG8sIHJldGlyYXIgb3UgYW51bGFyIG91dHJvcyBjb250ZcO6ZG9zIGUgc2VydmnDp29zLCBzZW0gbm90aWZpY2HDp8OjbyBwcsOpdmlhIGFvIHV0aWxpemFkb3IsIHNlIGVudGVuZGVyIHF1ZSB2aW9sYW0gcXVhaXNxdWVyIGRhcyBkaXNwb3Npw6fDtWVzIGVzdGFiZWxlY2lkYXMuDQpEbyBtZXNtbyBtb2RvIHBvZGVyw6EgaW50ZWdyYXIgbm92b3MgY29udGXDumRvcyBvdSBzZXJ2acOnb3MgZSBlZmVjdHVhciBhcyBhbHRlcmHDp8O1ZXMgcXVlIGVudGVuZGVyIG5lY2Vzc8Ohcmlhcy48L3A+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPHA+TyBzaXRlIHBldGljYW9wdWJsaWNhLmNvbS5iciBuw6NvIHNlIHJlc3BvbnNhYmlsaXphIHBvciBwcm9ibGVtYXMgZGUgbcOhIGVtaXNzw6NvLCBmYWx0YSBvdSBmYWxoYSBxdWUgb2NvcnJhIG5hIGNvbXVuaWNhw6fDo28gZGUgb3UgcGFyYSBvIHVzdcOhcmlvLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PIHNpdGUgbsOjbyBzZSByZXNwb25zYWJpbGl6YSBwb3IgZXZlbnR1YWlzIGZhbGhhcyB0w6ljbmljYXMsIHF1ZSBjYXVzZW0gcXVhbHF1ZXIgdGlwbyBkZSBwZXJkYXMuPC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPk8gdXN1w6FyaW8gc2Ugc3VibWV0ZSBhb3MgcHJlc2VudGVzIFRlcm1vcyBkZSBVc28gZGUgU2VydmnDp29zIHF1ZSBwb2RlcsOjbyBzZXIgYWx0ZXJhZGFzIHNlbSBub3RpZmljYcOnw6NvIHByw6l2aWEuIFBvZGVyw6Egc2VtcHJlIHJldmVyIGEgdmVyc8OjbyBtYWlzIGFjdHVhbGl6YWRhIG5lc3RlIG1lc21vIGxvY2FsLjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8aDEgc3R5bGU9Im1hcmdpbi10b3A6IDIwcHg7Ij4yLiBEZXZlcmVzIGRvIHVzdcOhcmlvPC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PcyBTZXJ2acOnb3MgZGUgQ29tdW5pY2HDp8OjbyBuw6NvIHBvZGVyw6NvIHNlciB1c2Fkb3M6PC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDx1bD4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5lbSBhc3NvY2lhw6fDo28gY29tIGNvbmN1cnNvcywgc3BhbW1pbmcsIGNvcnJlbnRlcyBkZSBlLW1haWwsIGp1bmsgZS1tYWlsIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgbWVuc2FnZW5zIG7Do28gc29saWNpdGFkYXMgKGNvbWVyY2lhaXMgb3UgbsOjbyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIGRpZmFtYXIsIGFidXNhciwgYXNzZWRpYXIsIHBlcnNlZ3VpciwgYW1lYcOnYXIgb3UgdmlvbGFyLCBzb2IgcXVhbHF1ZXIgb3V0cmEgZm9ybWEgb3MgZGlyZWl0b3MgZGUgb3V0cmVtICh0YWlzIGNvbW8gbyBkaXJlaXRvIMOgIHByaXZhY2lkYWRlLCBwb3IgZXhlbXBsbyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIHB1YmxpY2FyLCBjb2xvY2FyIHVtIHBvc3QsIGZhemVyIG8gdXBsb2FkLCBkaXN0cmlidWlyIG91IGRpc3NlbWluYXIgdG9kbyBlIHF1YWxxdWVyIHRpcG8gZGUgbWF0ZXJpYWwvaW5mb3JtYcOnw6NvIGltcHLDs3ByaW8sIGRpZmFtYXTDs3Jpbywgb2JzY2VubywgZGVzcmVzcGVpdGFkb3Igb3UgaWxlZ2FsOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cGFyYSBlZmV0dWFyIHVwbG9hZHMgZGUgZmljaGVpcm9zIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgbWF0ZXJpYWwgcXVlIGVzdGVqYSBwcm90ZWdpZG8gcGVsbyBDw7NkaWdvIGRvIERpcmVpdG8gZGUgQXV0b3Igb3UgcXVlIHZpb2xlIGEgbGVnaXNsYcOnw6NvIGRlIHByb3Rlw6fDo28gZGUgZGFkb3MgcGVzc29haXMgLyBwcml2YWNpZGFkZSBlIHF1YWlzcXVlciBvdXRyb3MgZGlyZWl0b3MgZGUgcHJvcHJpZWRhZGUsIGEgbsOjbyBzZXIgcXVlIHNlamEgbyBkZXRlbnRvciBkZXNzZXMgZGlyZWl0b3Mgb3UgdGVuaGEgcmVjZWJpZG8gYXMgbmVjZXNzw6FyaWFzIGF1dG9yaXphw6fDtWVzIHBhcmEgbyBmYXplcjs8L2xpPg0KICAgICAgICAgICAgICAgICAgICA8bGkgc3R5bGU9Imxpc3Qtc3R5bGUtdHlwZTogZGlzYzsiPnBhcmEgZWZldHVhciB1cGxvYWRzIGRlIGZpY2hlaXJvcyBxdWUgY29udGVuaGFtIHbDrXJ1cywgdHJvamFuIGhvcnNlcywgd29ybXMsIHRpbWUgYm9tYnMsIGNhbmNlbGJvb3RzLCBmaWNoZWlyb3MgY29ycnVwdG9zIG91IHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgZmljaGVpcm9zIGlkw6pudGljb3MgcXVlIHNlamFtIHBhc3PDrXZlaXMgZGUgZGFuaWZpY2FyIG8gY29tcHV0YWRvciBvdSBwcm9wcmllZGFkZSBkZSBvdXRyZW07PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIHB1YmxpY2l0YXIgb3Ugb2ZlcmVjZXIgcGFyYSBjb21wcmEvdmVuZGEgYmVucyBlL291IHNlcnZpw6dvcywgb3UgcXVlIGVuY2VycmVtIHF1YWxxdWVyIG91dHJvIHRpcG8gZGUgb2JqZXRpdm8gY29tZXJjaWFsLCBhIG7Do28gc2VyIGVtIHNlcnZpw6dvcyBxdWUgbyBwZXJtaXRhbSAoYW7Dum5jaW9zIGUgY2xhc3NpZmljYWRvcyk7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5wYXJhIGVmZXR1YXIgZG93bmxvYWRzIGRlIGZpY2hlaXJvcyBkZSBvdXRybyB1c3XDoXJpbywgcXVlIHNlIHNhaWJhIG7Do28gc2VyIHBlcm1pdGlkbyBzZXJlbSBkaXN0cmlidcOtZG9zIHBvciBlc3NlIG1vZG8uPC9saT4NCiAgICAgICAgICAgICAgICA8L3VsPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIDxwPkFvIHVzdcOhcmlvIG7Do28gw6kgcGVybWl0aWRvOjwvcD4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8dWw+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+ZmFsc2lmaWNhciwgb21pdGlyIG91IGFwYWdhciBxdWFscXVlciBhdHJpYnVpw6fDo28gYXV0b3JhbCwgbGVnYWwgb3UgcXVhbHF1ZXIgb3V0cm8gdGlwbyBkZSBldGlxdWV0YXMgLyBkZXNpZ25hw6fDtWVzIGRlIHByb3ByaWVkYWRlIG5hIG9yaWdlbSAvIGZvbnRlIGRvIHNvZnR3YXJlIC8gbWF0ZXJpYWwgY29udGlkbyBudW0gZmljaGVpcm8gdXBsb2FkZWQ7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5tYW5pcHVsYXIgb3UgZmFsc2lmaWNhciBpbmZvcm1hw6fDo28sIGNvbSB2aXN0YSBhIG9jdWx0YXIgYSBvcmlnZW0gZGUgcHJvZHV0b3Mgb3Ugc2VydmnDp29zOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+cmVzdHJpbmdpciBvdSBpbmliaXIgb3V0cm8gdXN1w6FyaW8gZGUgdXNhciBlIGdvemFyIG9zIHNlcnZpw6dvcyBkZSBjb211bmljYcOnw6NvOzwvbGk+DQogICAgICAgICAgICAgICAgICAgIDxsaSBzdHlsZT0ibGlzdC1zdHlsZS10eXBlOiBkaXNjOyI+Z3JhdmFyLCByZWNvbGhlciwgcmV0ZXIgb3UgY29sZWNjaW9uYXIgaW5mb3JtYcOnw6NvIHNvYnJlIG91dHJvcyB1c3XDoXJpb3M7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij52aW9sYXIgdG9kYSBlIHF1YWxxdWVyIGxlaSAvIHJlZ3VsYW1lbnRhw6fDo28gYXBsaWPDoXZlbCwgZW0gZXNwZWNpYWwgYXMgcmVndWxhbWVudGFtIGEgcHJvdGXDp8OjbyBlIG8gZGlyZWl0byBhdXRvcmFsLCBiZW0gY29tbyBjb3Jyb21wZXIgb3UgYWx0ZXJhciBwcm9jZWRpbWVudG9zLCBwb2zDrXRpY2FzLCByZXF1ZXJpbWVudG9zIG91IHJlZ3VsYW1lbnRvcyBsaWdhZG9zIGFvcyBzZXJ2acOnb3M7PC9saT4NCiAgICAgICAgICAgICAgICAgICAgPGxpIHN0eWxlPSJsaXN0LXN0eWxlLXR5cGU6IGRpc2M7Ij5jcmlhciB1bWEgaWRlbnRpZGFkZSBmYWxzYSBjb20gbyBvYmpldGl2byBkZSBlbmdhbmFyIG91dHJlbS48L2xpPg0KICAgICAgICAgICAgICAgIDwvdWw+DQogICAgICAgICAgICAgICAgDQogICAgICAgICAgICAgICAgPGgxIHN0eWxlPSJtYXJnaW4tdG9wOiAyMHB4OyI+My4gUG9sw610aWNhIGRlIFByaXZhY2lkYWRlIGRvIHNpdGUgcGV0aWNhb3B1YmxpY2EuY29tLmJyPC9oMT4NCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICA8cD5PcyBkYWRvcyBkZSByZWdpc3RvIGRvIHVzdcOhcmlvIGVzdMOjbyBzdWplaXRvcyDDoCBQb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGUgZG8gc2l0ZSBwZXRpY2FvcHVibGljYS5jb20uYnIuIFZlamEgYSA8YSBjbGFzcz0iZ3JlZW4tbGluayIgaHJlZj0iL2luZm8vcHJpdmFjeS5hc3B4Ij5Qb2zDrXRpY2EgZGUgUHJpdmFjaWRhZGU8L2E+PC9wPg0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgPC90cj4NCgkJPC90YWJsZT4JCQ0KCQk8ZGl2IGNsYXNzPSJwZXRGb290ZXIiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmOyBwYWRkaW5nOiA1cHggMDsiPjwvZGl2PgkNCgk8L2Rpdj4NCjwvZGl2PmRkjoZJTSQwHaQLcvHjKd/csp8RLo9jGPSJQPlH13IX7ck="/>
+</div>
+<div class="aspNetHidden">
+<input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="5B0B0FAB"/>
+</div>
+<div class="wrapper">
+<div class="pcontent">
+<div class="pethead" style="background-color: #688602; vertical-align: top;">
+<span>Termos de Utilização de Serviços do site Peticaopublica.com.br</span>
+</div>
+<table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding:0;">
+<tbody>
+<tr>
+<td style="background-color: #fff; padding:0 20px;">
+<h1 style="margin-top: 20px;">1. Descrição e Condições do Serviço</h1>
+<p>O site peticaopublica.com.br poderá oferecer serviços de alojamento de
                                     abaixo-assinados, petições públicas, e-mail, fóruns, páginas pessoais, e outros
                                     serviços de comunicação elaborados para permitir ao usuário a comunicação com
                                     outros.</p>
-
-                                <p>Ao usufruir destes serviços, o usuário se compromete a apenas enviar, receber e
+<p>Ao usufruir destes serviços, o usuário se compromete a apenas enviar, receber e
                                     utilizar informação própria e a não empregar linguagem e termos obscenos, ofensivos,
                                     inadequados, impróprios ou comentários que possam ferir outros.</p>
-
-                                <p>São propriedade do peticaopublica.com.br os conteúdos de artigos, software, música,
+<p>São propriedade do peticaopublica.com.br os conteúdos de artigos, software, música,
                                     sons, gráficos, vídeos, mensagens e outros materiais que integram o site produzidos
                                     por fontes internas.
                                     Os conteúdos inseridos por fontes externas (email por exemplo) são da
                                     responsabilidade de quem envia, não podendo o peticaopublica.com.br se
                                     responsabilizar pelos mesmos.</p>
-
-                                <p>O peticaopublica.com.br poderá, a qualquer momento, retirar ou anular outros
+<p>O peticaopublica.com.br poderá, a qualquer momento, retirar ou anular outros
                                     conteúdos e serviços, sem notificação prévia ao utilizador, se entender que violam
                                     quaisquer das disposições estabelecidas.
                                     Do mesmo modo poderá integrar novos conteúdos ou serviços e efectuar as alterações
                                     que entender necessárias.</p>
-
-                                <p>O site peticaopublica.com.br não se responsabiliza por problemas de má emissão, falta
+<p>O site peticaopublica.com.br não se responsabiliza por problemas de má emissão, falta
                                     ou falha que ocorra na comunicação de ou para o usuário.</p>
-
-                                <p>O site não se responsabiliza por eventuais falhas técnicas, que causem qualquer tipo
+<p>O site não se responsabiliza por eventuais falhas técnicas, que causem qualquer tipo
                                     de perdas.</p>
-
-                                <p>O usuário se submete aos presentes Termos de Uso de Serviços que poderão ser
+<p>O usuário se submete aos presentes Termos de Uso de Serviços que poderão ser
                                     alteradas sem notificação prévia. Poderá sempre rever a versão mais actualizada
                                     neste mesmo local.</p>
-
-                                <h1 style="margin-top: 20px;">2. Deveres do usuário</h1>
-
-                                <p>Os Serviços de Comunicação não poderão ser usados:</p>
-
-                                <ul>
-                                    <li style="list-style-type: disc;">em associação com concursos, spamming, correntes
+<h1 style="margin-top: 20px;">2. Deveres do usuário</h1>
+<p>Os Serviços de Comunicação não poderão ser usados:</p>
+<ul>
+<li style="list-style-type: disc;">em associação com concursos, spamming, correntes
                                         de e-mail, junk e-mail ou qualquer outro tipo de mensagens não solicitadas
                                         (comerciais ou não);</li>
-                                    <li style="list-style-type: disc;">para difamar, abusar, assediar, perseguir,
+<li style="list-style-type: disc;">para difamar, abusar, assediar, perseguir,
                                         ameaçar ou violar, sob qualquer outra forma os direitos de outrem (tais como o
                                         direito à privacidade, por exemplo);</li>
-                                    <li style="list-style-type: disc;">para publicar, colocar um post, fazer o upload,
+<li style="list-style-type: disc;">para publicar, colocar um post, fazer o upload,
                                         distribuir ou disseminar todo e qualquer tipo de material/informação impróprio,
                                         difamatório, obsceno, desrespeitador ou ilegal;</li>
-                                    <li style="list-style-type: disc;">para efetuar uploads de ficheiros ou qualquer
+<li style="list-style-type: disc;">para efetuar uploads de ficheiros ou qualquer
                                         outro tipo de material que esteja protegido pelo Código do Direito de Autor ou
                                         que viole a legislação de proteção de dados pessoais / privacidade e quaisquer
                                         outros direitos de propriedade, a não ser que seja o detentor desses direitos ou
                                         tenha recebido as necessárias autorizações para o fazer;</li>
-                                    <li style="list-style-type: disc;">para efetuar uploads de ficheiros que contenham
+<li style="list-style-type: disc;">para efetuar uploads de ficheiros que contenham
                                         vírus, trojan horses, worms, time bombs, cancelboots, ficheiros corruptos ou
                                         qualquer outro tipo de ficheiros idênticos que sejam passíveis de danificar o
                                         computador ou propriedade de outrem;</li>
-                                    <li style="list-style-type: disc;">para publicitar ou oferecer para compra/venda
+<li style="list-style-type: disc;">para publicitar ou oferecer para compra/venda
                                         bens e/ou serviços, ou que encerrem qualquer outro tipo de objetivo comercial, a
                                         não ser em serviços que o permitam (anúncios e classificados);</li>
-                                    <li style="list-style-type: disc;">para efetuar downloads de ficheiros de outro
+<li style="list-style-type: disc;">para efetuar downloads de ficheiros de outro
                                         usuário, que se saiba não ser permitido serem distribuídos por esse modo.</li>
-                                </ul>
-
-                                <p>Ao usuário não é permitido:</p>
-
-                                <ul>
-                                    <li style="list-style-type: disc;">falsificar, omitir ou apagar qualquer atribuição
+</ul>
+<p>Ao usuário não é permitido:</p>
+<ul>
+<li style="list-style-type: disc;">falsificar, omitir ou apagar qualquer atribuição
                                         autoral, legal ou qualquer outro tipo de etiquetas / designações de propriedade
                                         na origem / fonte do software / material contido num ficheiro uploaded;</li>
-                                    <li style="list-style-type: disc;">manipular ou falsificar informação, com vista a
+<li style="list-style-type: disc;">manipular ou falsificar informação, com vista a
                                         ocultar a origem de produtos ou serviços;</li>
-                                    <li style="list-style-type: disc;">restringir ou inibir outro usuário de usar e
+<li style="list-style-type: disc;">restringir ou inibir outro usuário de usar e
                                         gozar os serviços de comunicação;</li>
-                                    <li style="list-style-type: disc;">gravar, recolher, reter ou coleccionar informação
+<li style="list-style-type: disc;">gravar, recolher, reter ou coleccionar informação
                                         sobre outros usuários;</li>
-                                    <li style="list-style-type: disc;">violar toda e qualquer lei / regulamentação
+<li style="list-style-type: disc;">violar toda e qualquer lei / regulamentação
                                         aplicável, em especial as regulamentam a proteção e o direito autoral, bem como
                                         corromper ou alterar procedimentos, políticas, requerimentos ou regulamentos
                                         ligados aos serviços;</li>
-                                    <li style="list-style-type: disc;">criar uma identidade falsa com o objetivo de
+<li style="list-style-type: disc;">criar uma identidade falsa com o objetivo de
                                         enganar outrem.</li>
-                                </ul>
-
-                                <h1 style="margin-top: 20px;">3. Política de Privacidade do site peticaopublica.com.br
+</ul>
+<h1 style="margin-top: 20px;">3. Política de Privacidade do site peticaopublica.com.br
                                 </h1>
-
-                                <p>Os dados de registo do usuário estão sujeitos à Política de Privacidade do site
-                                    peticaopublica.com.br. Veja a <a class="green-link"
-                                        href="../privacy/index.html">Política de Privacidade</a></p>
-
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
-            </div>
-        </div>
-
-    </form>
-    <div class="footer">
-        <div style="width: 920px; margin: auto; overflow: hidden;">
-            <div style="width: 300px; float: left;">
-                <h4 style="margin: 0;">Procurar por Categorias</h4>
-
-                <ul id="ulCat">
-                    <li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
-                    <li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
-                </ul>
-
-            </div>
-            <div style="float: right;">
-                <div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
+<p>Os dados de registo do usuário estão sujeitos à Política de Privacidade do site
+                                    peticaopublica.com.br. Veja a <a class="green-link" href="../privacy/index.html">Política de Privacidade</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
+</div>
+</div>
+</form>
+<div class="footer">
+<div style="width: 920px; margin: auto; overflow: hidden;">
+<div style="width: 300px; float: left;">
+<h4 style="margin: 0;">Procurar por Categorias</h4>
+<ul id="ulCat">
+<li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
+<li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
+<li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
+<li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
+<li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
+<li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
+<li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
+<li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
+<li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
+<li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
+<li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
+<li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
+</ul>
+</div>
+<div style="float: right;">
+<div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
                     respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
-                <div class="nav-share">
-                    <iframe
-                        src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398"
-                        width="82" height="32" style="border:none;overflow:hidden;padding-top:20px;" scrolling="no"
-                        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <ul style="float:right;">
-                        <li><a target="_blank" href="https://www.facebook.com/peticaopublicabrasil" class="fbshare32f"
-                                title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
-                        <li><a target="_blank" href="https://twitter.com/peticaopublicab" class="twshare32f"
-                                title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
-                        <li><a target="_blank" href="https://peticaopublica.com.br/rss.aspx" class="rss32f"
-                                title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
-                    </ul>
-                </div>
-                <div
-                    style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
+<div class="nav-share">
+<iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="32" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398" style="border:none;overflow:hidden;padding-top:20px;" width="82"></iframe>
+<ul style="float:right;">
+<li><a class="fbshare32f" href="https://www.facebook.com/peticaopublicabrasil" target="_blank" title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
+<li><a class="twshare32f" href="https://twitter.com/peticaopublicab" target="_blank" title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
+<li><a class="rss32f" href="https://peticaopublica.com.br/rss.aspx" target="_blank" title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
+</ul>
+</div>
+<div style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
                     O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
                     face ao poder político,
-                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a
-                        style="font-size: 11px;"
-                        href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm"
-                        target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
+                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm" style="font-size: 11px;" target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
                     Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
                 </div>
+</div>
+</div>
+</div>
+<div class="secondfooter">
+<div style="width: 920px; margin: auto; overflow: hidden;">
+<ul>
+<li><a href="../aboutus/index.html">Sobre Nós</a></li>
+<li><a href="../faq/index.html">FAQ</a></li>
+<li><a href="../privacy/index.html">Política de Privacidade</a></li>
+<li><a href="../termsconditions/index.html">Termos e Condições</a></li>
+<li><a href="../help/index.html">Ajuda</a></li>
+<li><a href="../contactus/index.html?pi=">Contato</a></li>
+</ul>
+<div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
             </div>
-        </div>
-    </div>
-    <div class="secondfooter">
-        <div style="width: 920px; margin: auto; overflow: hidden;">
-            <ul>
-                <li><a href="../aboutus/index.html">Sobre Nós</a></li>
-                <li><a href="../faq/index.html">FAQ</a></li>
-                <li><a href="../privacy/index.html">Política de Privacidade</a></li>
-                <li><a href="../termsconditions/index.html">Termos e Condições</a></li>
-                <li><a href="../help/index.html">Ajuda</a></li>
-                <li><a href="../contactus/index.html?pi=">Contato</a></li>
-            </ul>
-            <div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
-            </div>
-        </div>
-    </div>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
-    <script>
+</div>
+</div>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-4269839-47');
     </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a0b9f1d87d6257db',t:'MTc4MTQ0NjUwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-    <iframe height="1" width="1"
-        style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
-    <script defer=""
-        src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
-        integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
-        data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b46a5cb6f5e049389877892a967b678e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
-        crossorigin="anonymous"></script>
-
-    <div id="cboxOverlay" style="display: none;"></div>
-    <div id="colorbox" class="" style="display: none; padding-bottom: 42px; padding-right: 42px;">
-        <div id="cboxWrapper">
-            <div>
-                <div id="cboxTopLeft" style="float: left;"></div>
-                <div id="cboxTopCenter" style="float: left;"></div>
-                <div id="cboxTopRight" style="float: left;"></div>
-            </div>
-            <div style="clear: left;">
-                <div id="cboxMiddleLeft" style="float: left;"></div>
-                <div id="cboxContent" style="float: left;">
-                    <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
-                    <div id="cboxTitle" style="float: left;"></div>
-                    <div id="cboxCurrent" style="float: left;"></div>
-                    <div id="cboxNext" style="float: left;"></div>
-                    <div id="cboxPrevious" style="float: left;"></div>
-                    <div id="cboxSlideshow" style="float: left;"></div>
-                    <div id="cboxClose" style="float: left;"></div>
-                </div>
-                <div id="cboxMiddleRight" style="float: left;"></div>
-            </div>
-            <div style="clear: left;">
-                <div id="cboxBottomLeft" style="float: left;"></div>
-                <div id="cboxBottomCenter" style="float: left;"></div>
-                <div id="cboxBottomRight" style="float: left;"></div>
-            </div>
-        </div>
-        <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
-    </div>
+<script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a0b9f1d87d6257db',t:'MTc4MTQ0NjUwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+<iframe height="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;" width="1"></iframe>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"b46a5cb6f5e049389877892a967b678e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"></script>
+<div id="cboxOverlay" style="display: none;"></div>
+<div class="" id="colorbox" style="display: none; padding-bottom: 42px; padding-right: 42px;">
+<div id="cboxWrapper">
+<div>
+<div id="cboxTopLeft" style="float: left;"></div>
+<div id="cboxTopCenter" style="float: left;"></div>
+<div id="cboxTopRight" style="float: left;"></div>
+</div>
+<div style="clear: left;">
+<div id="cboxMiddleLeft" style="float: left;"></div>
+<div id="cboxContent" style="float: left;">
+<div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+<div id="cboxTitle" style="float: left;"></div>
+<div id="cboxCurrent" style="float: left;"></div>
+<div id="cboxNext" style="float: left;"></div>
+<div id="cboxPrevious" style="float: left;"></div>
+<div id="cboxSlideshow" style="float: left;"></div>
+<div id="cboxClose" style="float: left;"></div>
+</div>
+<div id="cboxMiddleRight" style="float: left;"></div>
+</div>
+<div style="clear: left;">
+<div id="cboxBottomLeft" style="float: left;"></div>
+<div id="cboxBottomCenter" style="float: left;"></div>
+<div id="cboxBottomRight" style="float: left;"></div>
+</div>
+</div>
+<div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
 </body>

@@ -387,6 +387,13 @@
             // Bind events for interactions
             bindEvents(panel, backdrop);
             
+            // Initialize global floating FAQ chatbot
+            try {
+                initFaqChatbot();
+            } catch (e) {
+                console.error("Failed to initialize global chatbot:", e);
+            }
+            
             console.log("Accessibility panel initialized successfully!");
         } catch (error) {
             console.error("Failed to initialize accessibility panel:", error);
@@ -524,6 +531,332 @@
             }
         });
     }
+
+    // ==========================================================================
+    // GLOBAL FAQ CHATBOT
+    // ==========================================================================
+    const faqTree = {
+        root: {
+            message: "Olá! 👋 Sou o assistente do Petição Pública Brasil. Escolha um tema para encontrar sua resposta:",
+            options: [
+                { label: "📋 Sobre o site", target: "cat_sobre" },
+                { label: "✍️ Criar abaixo-assinado", target: "cat_criar" },
+                { label: "🔒 Segurança e contato", target: "cat_seguranca" }
+            ]
+        },
+        cat_sobre: {
+            message: "Sobre o Petição Pública — escolha sua dúvida:",
+            options: [
+                { label: "O que é o PeticaoPublica.com.br?", target: "q_oque" },
+                { label: "O que é um abaixo-assinado?", target: "q_abaixo" },
+                { label: "Quem pode criar um abaixo-assinado?", target: "q_quem" },
+                { label: "O que o site faz? E o que eu faço?", target: "q_oquefaz" },
+                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+            ]
+        },
+        cat_criar: {
+            message: "Criar abaixo-assinado — escolha sua dúvida:",
+            options: [
+                { label: "Como escrever meu abaixo-assinado?", target: "q_escrever" },
+                { label: "Como submeter meu abaixo-assinado?", target: "q_submeter" },
+                { label: "O que o site faz? E o que eu faço?", target: "q_oquefaz" },
+                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+            ]
+        },
+        cat_seguranca: {
+            message: "Segurança e contato — escolha sua dúvida:",
+            options: [
+                { label: "As assinaturas estão seguras?", target: "q_seguras" },
+                { label: "Como fazer mais perguntas ao site?", target: "q_contato" },
+                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+            ]
+        },
+        q_oque: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>O site PeticaoPublica.com.br fornece <strong>alojamento online gratuito</strong> para petições públicas e abaixo-assinados. Nosso objetivo é constituir um serviço público de qualidade a todos os cidadãos brasileiros.</p>' +
+                '<p>Fornecemos um dos mais antigos métodos da democracia, combinado com a última e mais moderna tecnologia digital de comunicação, disponível gratuitamente 24 horas por dia.</p>' +
+                '<p>Acreditamos que a internet pode facilitar a criação, divulgação e participação dos cidadãos na subscrição de abaixo-assinados.</p>' +
+                '<p>Não serão aceites abaixo-assinados que incitem à violência, ofendam terceiros, utilizem linguagem imprópria ou sejam anónimos. Abaixo-assinados com nomes falsos ou linguagem inaceitável serão removidos imediatamente.</p>' +
+                '<p>Qualquer abaixo-assinado é bem-vindo, seja de escala local ou nacional. Os abaixo-assinados aqui armazenados não refletem os pontos de vista do PeticaoPublica.com.br.</p>' +
+                '</div>',
+            parentCat: "cat_sobre"
+        },
+        q_abaixo: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>Abaixo-assinado (ou petição pública), em geral, é a <strong>apresentação de um pedido ou de uma proposta</strong> a órgão soberano ou a qualquer autoridade pública, para que adote determinada medida.</p>' +
+                '<p><em>Adaptação do Texto da Constituição de 1988, em seu Artigo 153, parágrafo 30.</em></p>' +
+                '</div>',
+            parentCat: "cat_sobre"
+        },
+        q_quem: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>Todo cidadão tem o direito de apresentar, <strong>individual ou coletivamente</strong>, aos órgãos soberanos, aos órgãos de governo dos estados ou a qualquer autoridade:</p>' +
+                '<p>• Petições e abaixo-assinados<br>• Representações e reclamações<br>• Queixas para defesa de seus direitos</p>' +
+                '<p>Tem também o direito de ser informado, em prazo razoável, sobre o resultado da respetiva apreciação.</p>' +
+                '<p><em>Artigo 141, Parágrafo 37 da Constituição.</em></p>' +
+                '</div>',
+            parentCat: "cat_sobre"
+        },
+        q_oquefaz: {
+            answer: '<div class="faq-answer-text">' +
+                '<p><strong>O que você faz:</strong></p>' +
+                '<p>1. Escreve o texto do seu abaixo-assinado<br>2. Submete usando nosso formulário online<br>3. Promove seu abaixo-assinado para conseguir assinaturas<br>4. Quando completo, imprime ou encaminha o link aos destinatários</p>' +
+                '<p><strong>O que o site faz:</strong></p>' +
+                '<p>• Formata automaticamente seu abaixo-assinado para a internet<br>• Aloja de forma segura em nossos servidores<br>• Recolhe, mostra e mantém todas as assinaturas</p>' +
+                '</div>',
+            parentCat: "cat_sobre"
+        },
+        q_escrever: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>A parte mais importante é a <strong>declaração do abaixo-assinado</strong>. Centenas, milhares ou até mais pessoas vão ler seu texto, então ele deve estar bem escrito e sem erros.</p>' +
+                '<p>💡 <strong>Dicas importantes:</strong></p>' +
+                '<p>• Dedique tempo na revisão — isso aumenta o sucesso<br>• Seja claro e objetivo sobre o problema e a solução<br>• Use um corretor ortográfico antes de submeter</p>' +
+                '<p>⚠️ <strong>Atenção:</strong> Um abaixo-assinado não pode ser alterado depois de submetido, pois qualquer mudança seria injusta para quem já assinou.</p>' +
+                '</div>',
+            parentCat: "cat_criar"
+        },
+        q_submeter: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>Já tem o texto escrito, visto e revisto? Ótimo! Você pode ir diretamente para a página de criação:</p>' +
+                '</div>',
+            parentCat: "cat_criar",
+            actionLink: { label: "🚀 Criar Abaixo-assinado agora", href: "../pcreate/index.html" }
+        },
+        q_seguras: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>Sim! As assinaturas são tratadas com <strong>muito cuidado</strong>:</p>' +
+                '<p>• Todo o site e assinaturas são guardados diariamente em backup<br>• Tudo é arquivado para facilitar recuperação em caso de problemas<br>• Nossos servidores são seguros</p>' +
+                '<p>Do ponto de vista legal, você assume todo o risco de usar nosso serviço de petições públicas.</p>' +
+                '</div>',
+            parentCat: "cat_seguranca"
+        },
+        q_contato: {
+            answer: '<div class="faq-answer-text">' +
+                '<p>Você pode enviar suas questões, comentários e sugestões através do nosso formulário de contato.</p>' +
+                '<p>💡 <strong>Dica:</strong> Seja claro e objetivo. Se for sobre uma petição específica, inclua o URL dela na mensagem.</p>' +
+                '</div>',
+            parentCat: "cat_seguranca",
+            actionLink: { label: "📧 Ir para o formulário de contato", href: "../contactus/index.html" }
+        }
+    };
+
+    function initFaqChatbot() {
+        // Prevent loading on FAQ page or where the chatbot already exists
+        if (document.querySelector('.chatbot-wrapper') || window.location.pathname.includes('/faq/')) {
+            console.log("FAQ page or embedded chatbot detected. Skipping global floating chatbot widget.");
+            return;
+        }
+
+        // Create FAB button
+        const fab = document.createElement('div');
+        fab.className = 'faq-chatbot-fab acc-exclude';
+        fab.setAttribute('role', 'button');
+        fab.setAttribute('aria-label', 'Abrir Assistente de Ajuda');
+        fab.innerHTML = '<span class="faq-fab-icon">💬</span>';
+        document.body.appendChild(fab);
+
+        // Create Chat window
+        const win = document.createElement('div');
+        win.className = 'faq-chatbot-window acc-exclude';
+        win.innerHTML = `
+            <div class="faq-chatbot-header">
+                <div class="faq-chatbot-header-avatar">🤖</div>
+                <div class="faq-chatbot-header-info">
+                    <h3>Assistente FAQ</h3>
+                    <p>Como posso ajudar você hoje?</p>
+                </div>
+                <button class="faq-chatbot-close-btn" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="faq-chatbot-body" id="faqChatBody"></div>
+            <div class="faq-chatbot-footer">
+                Não encontrou sua resposta? <a href="../contactus/index.html">Entre em contato</a>
+            </div>
+        `;
+        document.body.appendChild(win);
+
+        const chatBody = win.querySelector('#faqChatBody');
+        const closeBtn = win.querySelector('.faq-chatbot-close-btn');
+        let currentNode = null;
+        let isInitialLoad = true;
+
+        // Toggle visibility
+        function toggleChat() {
+            const isActive = win.classList.contains('active');
+            if (isActive) {
+                win.classList.remove('active');
+                fab.classList.remove('active');
+                fab.innerHTML = '<span class="faq-fab-icon">💬</span>';
+            } else {
+                win.classList.add('active');
+                fab.classList.add('active');
+                fab.innerHTML = '<span class="faq-fab-icon" style="font-family: Arial, sans-serif;">&times;</span>';
+                if (isInitialLoad) {
+                    isInitialLoad = false;
+                    navigateTo('root');
+                }
+            }
+        }
+
+        fab.addEventListener('click', toggleChat);
+        closeBtn.addEventListener('click', toggleChat);
+
+        function scrollToBottom() {
+            setTimeout(function() {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 50);
+        }
+
+        function addBotMessage(html, callback) {
+            // Show typing indicator
+            const typingEl = document.createElement('div');
+            typingEl.className = 'faq-chat-msg';
+            typingEl.innerHTML = `
+                <div class="faq-chat-avatar bot">🤖</div>
+                <div class="faq-chat-bubble bot">
+                    <div class="faq-typing-indicator">
+                        <div class="faq-typing-dot"></div>
+                        <div class="faq-typing-dot"></div>
+                        <div class="faq-typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            chatBody.appendChild(typingEl);
+            scrollToBottom();
+
+            setTimeout(function() {
+                typingEl.remove();
+
+                const msgEl = document.createElement('div');
+                msgEl.className = 'faq-chat-msg';
+                msgEl.innerHTML = `
+                    <div class="faq-chat-avatar bot">🤖</div>
+                    <div class="faq-chat-bubble bot">${html}</div>
+                `;
+                chatBody.appendChild(msgEl);
+                scrollToBottom();
+
+                if (callback) {
+                    setTimeout(callback, 100);
+                }
+            }, 600);
+        }
+
+        function addUserMessage(text) {
+            const msgEl = document.createElement('div');
+            msgEl.className = 'faq-chat-msg user-msg';
+            msgEl.innerHTML = `
+                <div class="faq-chat-avatar user">👤</div>
+                <div class="faq-chat-bubble user">${text}</div>
+            `;
+            chatBody.appendChild(msgEl);
+            scrollToBottom();
+        }
+
+        function addOptions(options) {
+            const optionsEl = document.createElement('div');
+            optionsEl.className = 'faq-chat-options';
+
+            for (let i = 0; i < options.length; i++) {
+                (function(opt) {
+                    const btn = document.createElement('button');
+                    btn.className = 'faq-chat-opt-btn';
+                    if (opt.isBack) btn.className += ' back-btn';
+                    btn.textContent = opt.label;
+                    btn.addEventListener('click', function() {
+                        handleOptionClick(opt);
+                    });
+                    optionsEl.appendChild(btn);
+                })(options[i]);
+            }
+
+            chatBody.appendChild(optionsEl);
+            scrollToBottom();
+        }
+
+        function addActionLink(actionLink) {
+            const linkWrap = document.createElement('div');
+            linkWrap.className = 'faq-chat-options';
+            const link = document.createElement('a');
+            link.className = 'faq-chat-opt-btn action-btn';
+            link.href = actionLink.href;
+            link.textContent = actionLink.label;
+            linkWrap.appendChild(link);
+            chatBody.appendChild(linkWrap);
+            scrollToBottom();
+        }
+
+        function handleOptionClick(opt) {
+            // Disable previous option buttons
+            const allBtns = chatBody.querySelectorAll('.faq-chat-opt-btn');
+            for (let i = 0; i < allBtns.length; i++) {
+                allBtns[i].disabled = true;
+                allBtns[i].style.opacity = '0.5';
+                allBtns[i].style.cursor = 'default';
+                allBtns[i].style.pointerEvents = 'none';
+            }
+
+            // User bubble selection (clean emojis)
+            const cleanLabel = opt.label.replace(/^(↩️|📋|✍️|🔒|🚀|📧)\s*/, '');
+            addUserMessage(cleanLabel);
+
+            navigateTo(opt.target);
+        }
+
+        function navigateTo(nodeId) {
+            currentNode = faqTree[nodeId];
+            if (!currentNode) return;
+
+            if (currentNode.answer) {
+                // Answer node
+                addBotMessage(currentNode.answer, function() {
+                    if (currentNode.actionLink) {
+                        addActionLink(currentNode.actionLink);
+                    }
+
+                    const navOptions = [];
+                    if (currentNode.parentCat) {
+                        const parentNode = faqTree[currentNode.parentCat];
+                        const catLabel = currentNode.parentCat === 'cat_sobre' ? "📋 Sobre o site" :
+                                         currentNode.parentCat === 'cat_criar' ? "✍️ Criar abaixo-assinado" : "🔒 Segurança e contato";
+                        navOptions.push({ label: `📋 Outra sobre ${catLabel.replace(/^(📋|✍️|🔒)\s*/, '')}`, target: currentNode.parentCat });
+                    }
+                    navOptions.push({ label: "↩️ Voltar ao início", target: "root", isBack: true });
+
+                    setTimeout(function() {
+                        addOptions(navOptions);
+                    }, 200);
+                });
+            } else {
+                // Menu node
+                addBotMessage(currentNode.message, function() {
+                    addOptions(currentNode.options);
+                });
+            }
+        }
+    }
+
+    // Scroll reveal header logic (hide when scrolling down, show when scrolling up)
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+        
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 70) {
+            if (currentScrollY > lastScrollY) {
+                // Scrolling down -> hide header
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling up -> show header
+                header.classList.remove('header-hidden');
+            }
+        } else {
+            // Near top of the page -> always show header
+            header.classList.remove('header-hidden');
+        }
+        lastScrollY = currentScrollY;
+    });
 
     // Initialize when the DOM is fully interactive
     if (document.readyState === 'loading') {
