@@ -251,7 +251,7 @@
                 }
             }
 
-            $('.petResult').remove();
+            $('.petResult, pet.card').remove();
 
             var filtered = [];
 
@@ -277,9 +277,31 @@
                 heading.text('Resultados da procura');
                 document.title = 'Procurar Abaixo-Assinados - Petição Pública Brasil';
             }
+            $('.results-count').remove();
+
+heading.after(
+    '<p class="results-count">' +
+    filtered.length +
+    ' resultados encontrados</p>'
+);
 
             if (filtered.length === 0) {
-                container.append('<li class="petResult" style="padding: 20px; font-size: 16px; color: #555;">Nenhum abaixo-assinado encontrado correspondente aos critérios da busca.</li>');
+               container.append(`
+                    <li class="petResult empty-state">
+
+                    <h2>Nenhuma petição encontrada</h2>
+
+                    <p>
+                    Tente pesquisar usando palavras mais gerais
+                    ou remover filtros.
+                    </p>
+
+                    <button onclick="window.location.href='index.html'">
+                    Limpar pesquisa
+                    </button>
+
+                    </li>
+                `);
             } else {
                 filtered.forEach(function (pet) {
                     var storedSigs = localStorage.getItem('signatures_' + pet.pi);
@@ -288,43 +310,31 @@
                         var count = parseInt(pet.signatures.replace(/\./g, '')) + JSON.parse(storedSigs).length;
                         sigCount = count.toLocaleString('pt-BR');
                     }
+    var imgDiv = '';
+    if (pet.image && pet.image.trim() !== '') {
+        imgDiv = '<div class="petCard-img" style="background-image: url(\'' + pet.image + '\');"></div>';
+    }
 
-                    var imgHtml = '';
-                    if (pet.image) {
-                        imgHtml = '<td rowspan="2" valign="top" align="right">' +
-                                  '  <div style="width: 220px;">' +
-                                  '    <a class="imgpetcat" href="../pviewsign/index.html?pi=' + pet.pi + '">' +
-                                  '      <img src="' + pet.image + '" width="212" alt="' + pet.title + '">' +
-                                  '    </a>' +
-                                  '  </div>' +
-                                  '</td>';
-                    }
+    var rowHtml = 
+        '<li class="petCard-vertical">' +
+        '  <a href="../pviewsign/index.html?pi=' + pet.pi + '" class="petCard-link">' +
+             imgDiv + 
+        '    <div class="petCard-content">' +
+        '      <h3 class="petCard-title">' + pet.title + '</h3>' +
+        '      <p class="petCard-desc">' + pet.description.substring(0, 150) + '...</p>' +
+        '    </div>' +
+        '    <div class="petCard-action">' +
+        '      <div class="petCard-sigs">' +
+        '        <span class="material-icons" style="font-size: 16px;">people</span> ' + sigCount + ' assinaturas' +
+        '      </div>' +
+        '      <button class="btn2 bgreen petCard-btn">' +
+        '        <span class="material-icons" style="font-size: 16px; margin-right: 5px;">check_circle</span>QUERO ASSINAR' +
+        '      </button>' +
+        '    </div>' +
+        '  </a>' +
+        '</li>';
 
-                    var rowHtml = 
-                        '<li class="petResult">' +
-                        '  <div class="title"><a href="../pviewsign/index.html?pi=' + pet.pi + '">' + pet.title + '</a></div>' +
-                        '  <div class="body">' +
-                        '    <table width="100%" border="0">' +
-                        '      <tbody>' +
-                        '        <tr>' +
-                        '          <td valign="top">' +
-                        '            <p><span>' + pet.description.substring(0, 250) + '...</span>' +
-                        '               <a class="seemore" href="../pviewsign/index.html?pi=' + pet.pi + '">Saber Mais</a>' +
-                        '            </p>' +
-                        '          </td>' +
-                                   imgHtml +
-                        '        </tr>' +
-                        '        <tr>' +
-                        '          <td>' +
-                        '            <a href="../pviewsign/index.html?pi=' + pet.pi + '" style="padding: 8px 10px; font: 500 19px Arial, Helvetica, sans-serif;" class="btn2 bgreen">Assine este abaixo-assinado</a>' +
-                        '            <p>' + sigCount + ' pessoas assinaram este abaixo-assinado</p>' +
-                        '          </td>' +
-                        '        </tr>' +
-                        '      </tbody>' +
-                        '    </table>' +
-                        '  </div>' +
-                        '</li>';
-                    container.append(rowHtml);
+    $('#cmain_divPaging').before(rowHtml);
                 });
             }
         }
@@ -375,7 +385,7 @@
 </div>
 <div style="height: 70px; float: right; margin: 10px 20px;">
 <div class="emailnewsletter" id="divemailnewsletter"><span class="material-icons search-icon" onclick="doSearch();" style="font-size: 20px; color: #888; margin-left: 10px; margin-right: 5px; cursor: pointer; vertical-align: middle;">search</span>
-<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
+<input id="txtemailnewsletter" maxlength="50" title="Pesquise por tema, categoria ou palavra-chave" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
 </div>
 </div>
 </div>
@@ -388,20 +398,29 @@
 <div class="aspNetHidden">
 <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="BBBC20B8"/>
 </div>
-<div id="cmain_adscripts">
-<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</div>
 <div class="wrapper" style="height: auto !important;">
 <div class="pcontent" style="height: auto !important;">
 <div class="pethead" style="background-color: #688602; vertical-align: top;">
 <h1 style="font-size: 20px; font-weight: 600; vertical-align: middle; padding-left: 5px;">Resultados
                         da procura para </h1>
+<div class="quick-filters">
+    <span>Filtrar por:</span>
+    <a href="?idcat=27">Educação</a>
+    <a href="?idcat=32">Saúde</a>
+    <a href="?idcat=26">Esporte</a>
+    <a href="?idcat=101">Animais</a>
+    <a href="?idcat=30">Política</a>
+    
+    <a href="index.html" class="clear-filter">
+        <span class="material-icons" style="font-size: 14px; vertical-align: middle; margin-right: 3px;">close</span> Limpar filtro
+    </a>
+</div>
 </div>
 <table border="0" cellpadding="0" cellspacing="0" style="border: 0px; margin: 0px; padding: 0px; width: 100%; background-color: white; height: auto !important;">
 <tbody>
 <tr style="height: auto !important;">
 <td style="height: auto !important;">
-<div id="cmain_adbannerarea1" style="width: 100%; padding: 10px; margin: auto 0;">
+<div id="cmain_adbannerarea1" style="display:none">
 <ins class="adsbygoogle" data-ad-client="ca-pub-4672676048761329" data-ad-slot="6728524802" data-ad-status="filled" data-adsbygoogle-status="done" style="display:inline-block;width:728px;height:90px">
 <div id="aswift_0_host" style="border: medium; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
 <iframe allowtransparency="true" aria-label="Advertisement" data-google-container-id="a!1" data-google-query-id="CKyw1rbyhpUDFQuClQId0f4omA" data-load-complete="true" frameborder="0" height="90" hspace="0" id="aswift_0" marginheight="0" marginwidth="0" name="aswift_0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4672676048761329&amp;output=html&amp;h=90&amp;slotname=6728524802&amp;adk=1045984611&amp;adf=3097297539&amp;pi=t.ma~as.6728524802&amp;abgtt=9&amp;w=728&amp;lmt=1781445711&amp;format=728x90&amp;url=https%3A%2F%2Fpeticaopublica.com.br%2F../searchfilter/index.html%3Fq%3D&amp;asro=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;dt=1781445711427&amp;bpp=2&amp;bdt=702&amp;idt=120&amp;shv=r20260611&amp;mjsv=m202606090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D219e0ff8166a8354%3AT%3D1779653333%3ART%3D1779653333%3AS%3DALNI_MYFPdRXOkMeINfSvTa_aK9M4E0t0A&amp;gpic=UID%3D0000143ed135c581%3AT%3D1779653333%3ART%3D1779653333%3AS%3DALNI_Mbi_CPnDsXSC4i5hOCw9uumDI7EMA&amp;eo_id_str=ID%3Dccb684fe897d0e3f%3AT%3D1779653333%3ART%3D1779653333%3AS%3DAA-AfjY3zHCXspYk4CYs-gFe5Dwc&amp;correlator=4363837442412&amp;frm=20&amp;pv=2&amp;u_tz=-180&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1080&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;adx=482&amp;ady=185&amp;biw=1904&amp;bih=285&amp;scr_x=0&amp;scr_y=0&amp;eid=95390668%2C95392169%2C42533293&amp;oid=2&amp;pvsid=4834942708477328&amp;tmod=514369338&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fpeticaopublica.com.br%2F&amp;fc=896&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1080%2C1904%2C285&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;bz=1.01&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=130" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;min-height:auto;max-height:none;min-width:auto;max-width:none;" tabindex="0" title="Advertisement" vspace="0" width="728"></iframe></div>
@@ -806,7 +825,6 @@
 </table>
 </div>
 </li>
-<p align="center" id="cmain_adbannerfoter" style="text-align: center;">
 <ins class="adsbygoogle" data-ad-client="ca-pub-4672676048761329" data-ad-format="autorelaxed" data-ad-slot="5947999209" data-ad-status="unfill-optimized" data-adsbygoogle-status="done" style="display: block; height: auto !important; background-color: transparent !important;">
 <div id="aswift_1_host" style="border: medium; height: auto !important; width: 960px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;">
 <div class="google-aiuf" data-google-ad-efd="true" style="width: 960px !important; display: flex !important; flex-wrap: wrap !important; place-content: center !important; align-items: center !important; gap: 10px !important; font-size: initial !important; height: auto !important; max-height: 480px !important;">
@@ -850,7 +868,7 @@
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </p>
 <br/>
-<div class="paging" id="cmain_divPaging"><span class="current">1</span><a href="../searchfilter/index.html?q=&amp;pg=2">2</a><a href="../searchfilter/index.html?q=&amp;pg=3">3</a><a href="../searchfilter/index.html?q=&amp;pg=4">4</a><span>...</span><a href="../searchfilter/index.html?q=&amp;pg=8369">8369</a><a class="bn" href="../searchfilter/index.html?q=&amp;pg=2" rel="next">seguinte</a></div>
+<div class="paging" id="cmain_divPaging"><span class="current">1</span><a href="../searchfilter/index.html?q=&amp;pg=2">2</a><a href="../searchfilter/index.html?q=&amp;pg=3">3</a><a href="../searchfilter/index.html?q=&amp;pg=4">4</a><span>...</span><a href="../searchfilter/index.html?q=&amp;pg=8369">8369</a><a class="bn" href="../searchfilter/index.html?q=&amp;pg=2" rel="next">Seguinte</a></div>
 <div style="clear: both;"></div>
 </td>
 </tr>
