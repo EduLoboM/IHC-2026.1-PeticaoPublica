@@ -47,7 +47,178 @@
     </script>
 <link href="../accessibility.css?v=1.0.17" rel="stylesheet" type="text/css"/>
 <script defer="" src="../accessibility.js?v=1.0.17" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+        background-color: #f8fafc;
+        font-family: 'Inter', sans-serif;
+    }
+    .privacy-container {
+        max-width: 960px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+    }
+    .privacy-hero {
+        background: linear-gradient(135deg, #688602 0%, #4a6001 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+    }
+    .privacy-hero h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+        color: white !important;
+        letter-spacing: -0.5px;
+    }
+    .privacy-hero p {
+        margin: 12px 0 0 0;
+        font-size: 16px;
+        color: rgba(255,255,255,0.9);
+    }
+    .privacy-body {
+        display: flex;
+        padding: 40px;
+        gap: 40px;
+    }
+    .privacy-sidebar {
+        width: 220px;
+        flex-shrink: 0;
+    }
+    .privacy-sidebar ul {
+        position: sticky;
+        top: 40px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-left: 2px solid #e2e8f0;
+    }
+    .privacy-sidebar li {
+        margin-bottom: 12px;
+    }
+    .privacy-sidebar a {
+        display: block;
+        padding: 4px 0 4px 16px;
+        color: #64748b;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        margin-left: -2px;
+        border-left: 2px solid transparent;
+    }
+    .privacy-sidebar a:hover {
+        color: #688602;
+        border-left-color: #d4e5a0;
+    }
+    .privacy-sidebar a.active {
+        color: #4a6001;
+        font-weight: 600;
+        border-left-color: #688602;
+    }
+    .privacy-content {
+        flex-grow: 1;
+        min-width: 0;
+    }
+    .privacy-content p {
+        font-size: 14.5px;
+        line-height: 1.7;
+        color: #475569;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+    .privacy-content ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    .privacy-content li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #475569;
+        margin-bottom: 8px;
+    }
+    .privacy-content a {
+        color: #688602;
+        text-decoration: underline;
+    }
+    .privacy-section {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #f1f5f9;
+        scroll-margin-top: 20px;
+    }
+    .privacy-section:first-of-type {
+        margin-top: 20px;
+        padding-top: 0;
+        border-top: none;
+    }
+    .privacy-section h3 {
+        font-size: 18px;
+        color: #1e293b;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    @media (max-width: 768px) {
+        .privacy-body {
+            flex-direction: column;
+            padding: 24px;
+            gap: 24px;
+        }
+        .privacy-sidebar {
+            width: 100%;
+        }
+        .privacy-sidebar ul {
+            position: static;
+            border-left: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .privacy-sidebar a {
+            padding: 6px 12px;
+            background: #f1f5f9;
+            border-radius: 20px;
+            border-left: none;
+            font-size: 13px;
+        }
+        .privacy-sidebar a:hover, .privacy-sidebar a.active {
+            background: #d4e5a0;
+            color: #4a6001;
+        }
+    }
+</style>
+<script>
+    $(function() {
+        var links = $('.privacy-sidebar a');
+        var sections = $('.privacy-section');
+        
+        $(window).scroll(function() {
+            var scrollPos = $(document).scrollTop();
+            sections.each(function() {
+                var top = $(this).offset().top - 100;
+                var bottom = top + $(this).outerHeight();
+                
+                if (scrollPos >= top && scrollPos <= bottom) {
+                    links.removeClass('active');
+                    links.filter('[href="#' + $(this).attr('id') + '"]').addClass('active');
+                }
+            });
+        });
+        
+        links.click(function() {
+            links.removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
+</head>
 <body>
 <div class="header">
 <div class="innerHeader">
@@ -78,7 +249,7 @@
 </div>
 <div style="height: 70px; float: right; margin: 10px 20px;">
 <div class="emailnewsletter" id="divemailnewsletter"><span class="material-icons search-icon" onclick="doSearch();" style="font-size: 20px; color: #888; margin-left: 10px; margin-right: 5px; cursor: pointer; vertical-align: middle;">search</span>
-<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
+<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter"><span class="material-icons" style="font-size: 18px; vertical-align: middle;">arrow_forward</span></a>
 </div>
 </div>
 </div>
@@ -91,183 +262,192 @@
 <div class="aspNetHidden">
 <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="89FAF9C6"/>
 </div>
-<div class="wrapper">
-<div class="pcontent">
-<div class="pethead" style="background-color: #688602; vertical-align: top;">
-<span>Política de Privacidade</span>
-</div>
-<table border="0" cellpadding="0" cellspacing="0" style="border: 0; margin: 0; padding:0; font-family:'Segoe UI', Arial, sans-serif;font-size:1.2em;">
-<tbody>
-<tr>
-<td style="background-color: #fff; padding:0 20px;">
-<p>Por favor, leia este texto e conheça melhor nossa Política de Privacidade.</p>
-<p>O site Petição Pública Brasil leva a sério a privacidade de quem nos visita. Ao
-                                    acessar este site ou enviar quaisquer formulários no site, você concorda com esta
-                                    Política de Privacidade e com nossos Termos de Uso e consente com a coleta e uso de
-                                    quaisquer informações que fornecer. Caso não concorde com esta Política de
-                                    Privacidade ou nossos Termos de Uso, por favor, não acesse ou use o serviço.</p>
-<h1 style="margin-top: 20px;">1) A Política de Privacidade de Petição Pública Brasil
-                                </h1>
-<p>Estamos comprometidos em proteger a sua privacidade online. A presente Política de
-                                    Privacidade engloba como são tratados os dados pessoais. Quando você utiliza nosso
-                                    site ou se comunica conosco, coletamos e armazenamos suas informações pessoais para
-                                    proporcionarmos a melhor experiencia na utilização do site. Esta Política de
-                                    Privacidade tem o objectivo de mostrar como o site Petição Pública Brasil lida com
-                                    essas informações e como estão a ser utilizadas.</p>
-<h1 style="margin-top: 20px;">2) Recolha, tratamento e manutenção dos Dados Pessoais
-                                </h1>
-<p>O site Petição Pública recolhemos informação sempre que haja uma visita ou um registo
-                                    voluntário do visitante. A informação assim recolhida é individualmente
-                                    identificável (dados pessoais).</p>
-<p>Recolhemos informações como o seu nome, endereço de e-mail, comentários, endereço IP
-                                    e quaisquer outras informações que você compartilha ao se registar no site, assinar
-                                    uma petição ou entrar em contato conosco.
-                                    Podemos também recolher informação sobre o sistema informático utilizado para aceder
-                                    ao site Petição Pública, a navegação efectuada e outras informações e IDs de contas
-                                    em redes sociais compartilhadas conosco no momento do login ou assinatura de uma
-                                    petição.</p>
-<p>Podem também ser gerados cookies com informações sobre as páginas visitadas. Este
-                                    cookies são instalados nos Browsers onde essa opção esteja activada.</p>
-<p>Parcerias existentes no site Petição Pública Brasil ao nível da publicidade ou redes
-                                    sociais podem também ser uma fonte de recolha de informações, dependendo tal acção
-                                    das respectivas políticas dos parceiros.</p>
-<p>Sempre que um visitante deliberada e voluntariamente se regista em Petição Pública
-                                    Brasil, é-lhe requerida a indicação do nome e um endereço de correio electrónico.
-                                    Uma vez registado em Petição Pública Brasil, o visitante, para nós, deixa de ser
-                                    anónimo.</p>
-<p>No Petição Pública Brasil utilizamos essas informações para:</p>
-<ul>
-<li style="list-style-type: disc;">permitir o acesso a zonas do site a que só os
-                                        visitantes registados têm acesso;</li>
-<li style="list-style-type: disc;">personalizar os conteúdos e a publicidade;</li>
-<li style="list-style-type: disc;">poder corresponder às solicitações dos visitantes
-                                        registados sobre produtos e serviços;</li>
-<li style="list-style-type: disc;">informar o visitante registado acerca dos
-                                        produtos do site, divulgação de acções de promoção do Petição Pública,
-                                        nomeadamente enviar newsletters electrónicas.</li>
-</ul>
-<p>Armazenamos e manteremos as suas informações pessoais pelo tempo que for necessário
-                                    para o(s) propósito(s) para o qual(quais) tais informações foram coletadas. Caso
-                                    você indique para parar de enviar comunicações ou para eliminar suas informações,
-                                    atenderemos seu pedido e manteremos o mínimo de informação possível para evitar
-                                    fraude e para ajudar a garantir que você não será contatado novamente.</p>
-<p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores
-                                    têm direito de pedir a alteração, rectificação e eliminação dos seus dados pessoais.
-                                    Para o fazer deverá contactar-nos através do <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
-                                        de contacto</a> ou enviar um email directamente através das informações
-                                    constante no final desta <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
-                                </p>
-<h1 style="margin-top: 20px;">3) Partilha e Divulgação dos Dados Pessoais</h1>
-<p>Por considerar informação confidencial e individual, o site Petição Pública Brasil
-                                    não venderá ou cederá a terceiros os dados pessoais dos visitantes registados ou que
-                                    assinem abaixo-assinados. Estes apenas são utilizados no âmbito das atividades do
-                                    site Petição Pública Brasil e sempre com o objetivo de melhorar o serviço prestado.
-                                </p>
-<p>O nome e o email do signatário do abaixo-assinado poderá ser utilizado pelo site
-                                    Petição Pública Brasil ou por outro site do mesmo grupo para divulgação de ações de
-                                    promoção, campanhas publicitárias ou newsletters através de email, caso o signátário
-                                    tenha indicado que não se importa de receber contatos desta natureza. Este envio de
-                                    email acontecerá apenas no caso de o signatário ter expressado voluntariamente essa
-                                    vontade ao assinar um abaixo-assinado (ou petição pública) e colocar os seus dados
-                                    pessoais, de outra forma nunca receberá qualquer email ou contacto do site Petição
-                                    Pública Brasil.</p>
-<h1 style="margin-top: 20px;">4) Atualização ou Eliminação de Dados Pessoais</h1>
-<p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores
-                                    têm direito de <strong>pedir a alteração, rectificação e eliminação dos seus dados
-                                        pessoais</strong>. Para o fazer deverá contactar-nos através do <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
-                                        de contacto</a> ou enviar directamente um email para o endereço que encontra no
-                                    final desta <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
-                                </p>
-<p>A qualquer momento o usuário poderá solicitar a atualização ou eliminação do seu
-                                    registo, ou de qualquer assinatura efetuada no site. A forma mais simples para fazer
-                                    este pedido é contactar através <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">formulário
-                                        de contacto</a> ou enviar directamente um email para o endereço que encontra no
-                                    final desta <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif; font-weight:600;">página</a>.
-                                </p>
-<h1 style="margin-top: 20px;">5) Cookies</h1>
-<p>O site Petição Pública Brasil poderá instalar cookies no computador do visitante,
-                                    desde que esta opção esteja activada no Browser utilizado para fazer a navegação.
-                                </p>
-<p>Os anunciantes ou outros serviços presentes no site Petição Pública podem recolher e
-                                    usar informações suas, neste e noutros sites, para lhe exibir anúncios ou facilitar
-                                    o uso deste site.</p>
-<h1 style="margin-top: 20px;">6) Segurança</h1>
-<p>O seu registo no Petição Pública Brasil está protegido por um código de acesso
-                                    próprio que lhe assegura privacidade e segurança. Utilizamos também práticas padrão
-                                    da indústria, tais como firewalls e encriptação, para proteger as suas informações.
-                                    Em algumas áreas, o Petição Pública Brasil utiliza a um sistema de codifição e
-                                    encriptação, vulgarmente designado por SSL, para protecção da transmissão dos dados.
-                                </p>
-<h1 style="margin-top: 20px;">7) Alterações à Presente Política de Privacidade</h1>
-<p>O site Petição Pública Brasil poderá rectificar esta política em qualquer momento. Em
-                                    caso de serem efectuadas alterações significativas quanto ao modo de utilização dos
-                                    dados pessoais do visitante registado, faremos circular um anúncio de destaque nas
-                                    nossas páginas durante 10 dias ou enviaremos um aviso individual por newsletter
-                                    electrónica.</p>
-<h1 style="margin-top: 20px;">8) Perguntas ou Sugestões</h1>
-<p>Caso tenha quaisquer dúvidas sobre nossas políticas, suas informações pessoais ou as
-                                    práticas deste site, você poderá <a href="https://peticaopublica.com.br../contactus/index.html?pi=polprivacidade" style="text-decoration:underline; font-family:'Segoe UI', Arial, sans-serif;">entrar
-                                        em contato</a> conosco.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
-</div>
+<div class="privacy-container">
+    <div class="privacy-hero">
+        <h1>Política de Privacidade</h1>
+        <p>Por favor, leia este texto e conheça melhor nossa Política de Privacidade.</p>
+    </div>
+    <div class="privacy-body">
+        <aside class="privacy-sidebar">
+            <ul>
+                <li><a href="#intro" class="active">Introdução</a></li>
+                <li><a href="#section1">1. Política</a></li>
+                <li><a href="#section2">2. Recolha de Dados</a></li>
+                <li><a href="#section3">3. Partilha de Dados</a></li>
+                <li><a href="#section4">4. Eliminação</a></li>
+                <li><a href="#section5">5. Cookies</a></li>
+                <li><a href="#section6">6. Segurança</a></li>
+                <li><a href="#section7">7. Alterações</a></li>
+                <li><a href="#section8">8. Perguntas</a></li>
+            </ul>
+        </aside>
+        <main class="privacy-content">
+            <section id="intro" class="privacy-section">
+                <p>O site Petição Pública Brasil leva a sério a privacidade de quem nos visita. Ao acessar este site ou enviar quaisquer formulários no site, você concorda com esta Política de Privacidade e com nossos Termos de Uso e consente com a coleta e uso de quaisquer informações que fornecer. Caso não concorde com esta Política de Privacidade ou nossos Termos de Uso, por favor, não acesse ou use o serviço.</p>
+            </section>
+            
+            <section id="section1" class="privacy-section">
+                <h3>1) A Política de Privacidade de Petição Pública Brasil</h3>
+                <p>Estamos comprometidos em proteger a sua privacidade online. A presente Política de Privacidade engloba como são tratados os dados pessoais. Quando você utiliza nosso site ou se comunica conosco, coletamos e armazenamos suas informações pessoais para proporcionarmos a melhor experiencia na utilização do site. Esta Política de Privacidade tem o objectivo de mostrar como o site Petição Pública Brasil lida com essas informações e como estão a ser utilizadas.</p>
+            </section>
+
+            <section id="section2" class="privacy-section">
+                <h3>2) Recolha, tratamento e manutenção dos Dados Pessoais</h3>
+                <p>O site Petição Pública recolhemos informação sempre que haja uma visita ou um registo voluntário do visitante. A informação assim recolhida é individualmente identificável (dados pessoais).</p>
+                <p>Recolhemos informações como o seu nome, endereço de e-mail, comentários, endereço IP e quaisquer outras informações que você compartilha ao se registar no site, assinar uma petição ou entrar em contato conosco. Podemos também recolher informação sobre o sistema informático utilizado para aceder ao site Petição Pública, a navegação efectuada e outras informações e IDs de contas em redes sociais compartilhadas conosco no momento do login ou assinatura de uma petição.</p>
+                <p>Podem também ser gerados cookies com informações sobre as páginas visitadas. Este cookies são instalados nos Browsers onde essa opção esteja activada.</p>
+                <p>Parcerias existentes no site Petição Pública Brasil ao nível da publicidade ou redes sociais podem também ser uma fonte de recolha de informações, dependendo tal acção das respectivas políticas dos parceiros.</p>
+                <p>Sempre que um visitante deliberada e voluntariamente se regista em Petição Pública Brasil, é-lhe requerida a indicação do nome e um endereço de correio electrónico. Uma vez registado em Petição Pública Brasil, o visitante, para nós, deixa de ser anónimo.</p>
+                <p>No Petição Pública Brasil utilizamos essas informações para:</p>
+                <ul>
+                    <li>Permitir o acesso a zonas do site a que só os visitantes registados têm acesso;</li>
+                    <li>Personalizar os conteúdos e a publicidade;</li>
+                    <li>Poder corresponder às solicitações dos visitantes registados sobre produtos e serviços;</li>
+                    <li>Informar o visitante registado acerca dos produtos do site, divulgação de acções de promoção do Petição Pública, nomeadamente enviar newsletters electrónicas.</li>
+                </ul>
+                <p>Armazenamos e manteremos as suas informações pessoais pelo tempo que for necessário para o(s) propósito(s) para o qual(quais) tais informações foram coletadas. Caso você indique para parar de enviar comunicações ou para eliminar suas informações, atenderemos seu pedido e manteremos o mínimo de informação possível para evitar fraude e para ajudar a garantir que você não será contatado novamente.</p>
+                <p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores têm direito de pedir a alteração, rectificação e eliminação dos seus dados pessoais. Para o fazer deverá contactar-nos através do <a href="../contactus/index.html?pi=polprivacidade">formulário de contacto</a> ou enviar um email directamente através das informações constante no final desta <a href="../contactus/index.html?pi=polprivacidade">página</a>.</p>
+            </section>
+
+            <section id="section3" class="privacy-section">
+                <h3>3) Partilha e Divulgação dos Dados Pessoais</h3>
+                <p>Por considerar informação confidencial e individual, o site Petição Pública Brasil não venderá ou cederá a terceiros os dados pessoais dos visitantes registados ou que assinem abaixo-assinados. Estes apenas são utilizados no âmbito das atividades do site Petição Pública Brasil e sempre com o objetivo de melhorar o serviço prestado.</p>
+                <p>O nome e o email do signatário do abaixo-assinado poderá ser utilizado pelo site Petição Pública Brasil ou por outro site do mesmo grupo para divulgação de ações de promoção, campanhas publicitárias ou newsletters através de email, caso o signátário tenha indicado que não se importa de receber contatos desta natureza. Este envio de email acontecerá apenas no caso de o signatário ter expressado voluntariamente essa vontade ao assinar um abaixo-assinado (ou petição pública) e colocar os seus dados pessoais, de outra forma nunca receberá qualquer email ou contacto do site Petição Pública Brasil.</p>
+            </section>
+
+            <section id="section4" class="privacy-section">
+                <h3>4) Atualização ou Eliminação de Dados Pessoais</h3>
+                <p>Em conformidade com o disposto na lei de protecção de dados pessoais, os utilizadores têm direito de <strong>pedir a alteração, rectificação e eliminação dos seus dados pessoais</strong>. Para o fazer deverá contactar-nos através do <a href="../contactus/index.html?pi=polprivacidade">formulário de contacto</a> ou enviar directamente um email para o endereço que encontra no final desta <a href="../contactus/index.html?pi=polprivacidade">página</a>.</p>
+                <p>A qualquer momento o usuário poderá solicitar a atualização ou eliminação do seu registo, ou de qualquer assinatura efetuada no site. A forma mais simples para fazer este pedido é contactar através do <a href="../contactus/index.html?pi=polprivacidade">formulário de contacto</a> ou enviar directamente um email para o endereço que encontra no final desta <a href="../contactus/index.html?pi=polprivacidade">página</a>.</p>
+            </section>
+
+            <section id="section5" class="privacy-section">
+                <h3>5) Cookies</h3>
+                <p>O site Petição Pública Brasil poderá instalar cookies no computador do visitante, desde que esta opção esteja activada no Browser utilizado para fazer a navegação.</p>
+                <p>Os anunciantes ou outros serviços presentes no site Petição Pública podem recolher e usar informações suas, neste e noutros sites, para lhe exibir anúncios ou facilitar o uso deste site.</p>
+            </section>
+
+            <section id="section6" class="privacy-section">
+                <h3>6) Segurança</h3>
+                <p>O seu registo no Petição Pública Brasil está protegido por um código de acesso próprio que lhe assegura privacidade e segurança. Utilizamos também práticas padrão da indústria, tais como firewalls e encriptação, para proteger as suas informações. Em algumas áreas, o Petição Pública Brasil utiliza a um sistema de codificação e encriptação, vulgarmente designado por SSL, para protecção da transmissão dos dados.</p>
+            </section>
+
+            <section id="section7" class="privacy-section">
+                <h3>7) Alterações à Presente Política de Privacidade</h3>
+                <p>O site Petição Pública Brasil poderá rectificar esta política em qualquer momento. Em caso de serem efectuadas alterações significativas quanto ao modo de utilização dos dados pessoais do visitante registado, faremos circular um anúncio de destaque nas nossas páginas durante 10 dias ou enviaremos um aviso individual por newsletter electrónica.</p>
+            </section>
+
+            <section id="section8" class="privacy-section">
+                <h3>8) Perguntas ou Sugestões</h3>
+                <p>Caso tenha quaisquer dúvidas sobre nossas políticas, suas informações pessoais ou as práticas deste site, você poderá <a href="../contactus/index.html?pi=polprivacidade">entrar em contato</a> conosco.</p>
+            </section>
+        </main>
+    </div>
 </div>
 </form>
-<div class="footer">
-<div style="width: 920px; margin: auto; overflow: hidden;">
-<div style="width: 300px; float: left;">
-<h4 style="margin: 0;">Procurar por Categorias</h4>
-<ul id="ulCat">
-<li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
-<li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
-<li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
-<li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
-<li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
-<li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
-<li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
-<li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
-<li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
-<li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
-<li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
-<li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
-</ul>
-</div>
-<div style="float: right;">
-<div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
-                    respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
-<div class="nav-share">
-<iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="32" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398" style="border:none;overflow:hidden;padding-top:20px;" width="82"></iframe>
-<ul style="float:right;">
-<li><a class="fbshare32f" href="https://www.facebook.com/peticaopublicabrasil" target="_blank" title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
-<li><a class="twshare32f" href="https://twitter.com/peticaopublicab" target="_blank" title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
-<li><a class="rss32f" href="https://peticaopublica.com.br/rss.aspx" target="_blank" title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
-</ul>
-</div>
-<div style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
-                    O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
-                    face ao poder político,
-                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm" style="font-size: 11px;" target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
-                    Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
-                </div>
-</div>
-</div>
-</div>
-<div class="secondfooter">
-<div style="width: 920px; margin: auto; overflow: hidden;">
-<ul>
-<li><a href="../aboutus/index.html">Sobre Nós</a></li>
-<li><a href="../faq/index.html">FAQ</a></li>
-<li><a href="../privacy/index.html">Política de Privacidade</a></li>
-<li><a href="../termsconditions/index.html">Termos e Condições</a></li>
-<li><a href="../help/index.html">Ajuda</a></li>
-<li><a href="../contactus/index.html?pi=">Contato</a></li>
-</ul>
-<div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
-            </div>
-</div>
+<style>
+    .footer-minimal {
+        clear: both;
+        width: 100%;
+        background-color: #121214;
+        padding: 40px 0;
+        border-top: 1px solid #1f1f23;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .footer-minimal-container {
+        max-width: 920px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-minimal-lgpd {
+        color: #8e8e93;
+        font-size: 12px;
+        line-height: 1.6;
+        max-width: 600px;
+    }
+    .footer-minimal-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #2c2c2e;
+        margin: 5px 0;
+    }
+    .footer-minimal-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer-minimal-links a {
+        color: #aeaeb2;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.25s ease, transform 0.2s ease;
+        display: inline-block;
+    }
+    .footer-minimal-links a:hover {
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+    .footer-minimal-socials {
+        display: flex;
+        gap: 20px;
+        margin-top: 5px;
+    }
+    .footer-minimal-socials a {
+        color: #8e8e93;
+        transition: color 0.25s ease, transform 0.25s ease;
+        display: inline-block;
+    }
+    .footer-minimal-socials a:hover {
+        transform: scale(1.1);
+    }
+    .footer-minimal-socials a.fb:hover { color: #1877F2; }
+    .footer-minimal-socials a.ig:hover { color: #E1306C; }
+    .footer-minimal-socials a.tw:hover { color: #1DA1F2; }
+    .footer-minimal-copyright {
+        color: #636366;
+        font-size: 11px;
+        margin-top: 5px;
+    }
+</style>
+<div class="footer-minimal">
+    <div class="footer-minimal-container">
+        <div class="footer-minimal-lgpd">
+            O site Petição Pública Brasil respeita a sua privacidade nos termos da Lei Geral de Proteção de Dados (LGPD).
+        </div>
+        <div class="footer-minimal-divider"></div>
+        <div class="footer-minimal-links">
+            <a href="../aboutus/index.html">Sobre Nós</a>
+            <a href="../faq/index.html">FAQ</a>
+            <a href="../privacy/index.html">Política de Privacidade</a>
+            <a href="../termsconditions/index.html">Termos e Condições</a>
+            <a href="../help/index.html">Ajuda</a>
+            <a href="../contactus/index.html">Contato</a>
+        </div>
+        <div class="footer-minimal-socials">
+            <a href="https://www.facebook.com/peticaopublicabrasil" target="_blank" class="fb" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="ig" aria-label="Instagram">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://twitter.com/peticaopublicab" target="_blank" class="tw" aria-label="Twitter">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+        </div>
+        <div class="footer-minimal-copyright">
+            Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+        </div>
+    </div>
 </div>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
 <script>

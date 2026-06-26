@@ -1157,8 +1157,8 @@ ins.adsbygoogle {
 
 .petCard-vertical {
     display: block;
-    width: 100%;
-    margin: 15px 0;
+    width: auto;
+    margin: 15px 20px;
     background: #ffffff;
     border: 1px solid #E4E4E4;
     border-radius: 8px;

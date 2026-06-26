@@ -1197,24 +1197,7 @@ body { background-color: #f4f6f0; }
     width: auto !important;
 }
 
-.emailnewsletter a#submitEmailNewsletter {
-    background-color: #444 !important;
-    color: white !important;
-    padding: 6px 14px !important;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px !important;
-    transition: background-color 0.2s;
-    height: auto !important;
-    line-height: normal !important;
-    float: none !important;
-    margin: 0 !important;
-}
-
-.emailnewsletter a#submitEmailNewsletter:hover {
-    background-color: #222 !important;
-}
+/* Styles overridden by accessibility.css */
 
 .petition-layout {
     width: 960px;

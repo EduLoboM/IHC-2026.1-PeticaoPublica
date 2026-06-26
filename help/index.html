@@ -47,7 +47,178 @@
     </script>
 <link href="../accessibility.css?v=1.0.17" rel="stylesheet" type="text/css"/>
 <script defer="" src="../accessibility.js?v=1.0.17" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/></head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+        background-color: #f8fafc;
+        font-family: 'Inter', sans-serif;
+    }
+    .help-container {
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .help-hero {
+        background: linear-gradient(135deg, #688602 0%, #4a6001 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .help-hero h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+        color: white !important;
+        letter-spacing: -0.5px;
+    }
+    .help-hero p {
+        margin: 12px 0 0 0;
+        font-size: 16px;
+        color: rgba(255,255,255,0.9);
+    }
+    .legislation-link-wrapper {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+    .legislation-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #688602;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s ease;
+    }
+    .legislation-btn:hover {
+        color: #4a6001;
+    }
+    
+    /* Main Accordion Card */
+    .acc-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        transition: all 0.3s ease;
+    }
+    .acc-card:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-color: #d4e5a0;
+    }
+    .acc-card-header {
+        padding: 20px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        background: #ffffff;
+        user-select: none;
+        transition: background-color 0.2s ease;
+    }
+    .acc-card-header:hover {
+        background-color: #f8fafc;
+    }
+    .acc-card-header h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1e293b;
+    }
+    .acc-card-header .icon-toggle {
+        color: #64748b;
+        transition: transform 0.3s ease;
+    }
+    .acc-card.open .acc-card-header .icon-toggle {
+        transform: rotate(180deg);
+        color: #688602;
+    }
+    .acc-card-body {
+        display: none;
+        padding: 0 24px 24px 24px;
+        border-top: 1px solid #f1f5f9;
+        background: #f8fafc;
+    }
+    
+    /* Sub Accordions */
+    .sub-acc-item {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 16px 0;
+    }
+    .sub-acc-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .sub-acc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+    }
+    .sub-acc-header h4 {
+        margin: 0;
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #475569;
+        transition: color 0.2s ease;
+    }
+    .sub-acc-header:hover h4 {
+        color: #688602;
+    }
+    .sub-acc-header .icon-sub-toggle {
+        font-size: 20px;
+        color: #94a3b8;
+        transition: transform 0.25s ease;
+    }
+    .sub-acc-item.open .sub-acc-header h4 {
+        color: #4a6001;
+        font-weight: 600;
+    }
+    .sub-acc-item.open .sub-acc-header .icon-sub-toggle {
+        transform: rotate(90deg);
+        color: #688602;
+    }
+    .sub-acc-body {
+        display: none;
+        padding-top: 12px;
+        padding-left: 8px;
+    }
+    .sub-acc-body p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #475569;
+    }
+    .sub-acc-body a {
+        color: #688602;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+</style>
+<script>
+    $(function() {
+        $('.acc-card-header').click(function() {
+            var card = $(this).closest('.acc-card');
+            card.toggleClass('open');
+            card.find('.acc-card-body').first().slideToggle(250);
+        });
+        
+        $('.sub-acc-header').click(function() {
+            var item = $(this).closest('.sub-acc-item');
+            item.toggleClass('open');
+            item.find('.sub-acc-body').first().slideToggle(200);
+        });
+    });
+</script>
+</head>
 <body>
 <div class="header">
 <div class="innerHeader">
@@ -78,7 +249,7 @@
 </div>
 <div style="height: 70px; float: right; margin: 10px 20px;">
 <div class="emailnewsletter" id="divemailnewsletter"><span class="material-icons search-icon" onclick="doSearch();" style="font-size: 20px; color: #888; margin-left: 10px; margin-right: 5px; cursor: pointer; vertical-align: middle;">search</span>
-<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter">procurar</a>
+<input id="txtemailnewsletter" maxlength="50" title="Procure Abaixo-Assinados" type="text" value=""/><a href="javascript:doSearch();" id="submitEmailNewsletter"><span class="material-icons" style="font-size: 18px; vertical-align: middle;">arrow_forward</span></a>
 </div>
 </div>
 </div>
@@ -91,363 +262,289 @@
 <div class="aspNetHidden">
 <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="CE443050"/>
 </div>
-<div class="wrapper">
-<div class="pcontent">
-<div class="pethead" style="background-color: #688602; vertical-align: top;">
-<span>Ajuda</span>
-</div>
-<div style="background-color: #fff; padding:10px 20px 0 20px;">
-<a class="green-link" href="../legislation/index.html" style="text-decoration:underline;">Legislação</a>
-</div>
-<div style="background-color: #fff;padding: 10px 20px 10px 20px;">
-<h1>Ajuda do site Petição Pública Brasil</h1><br/>
-<div class="accordionButton">
-<h3 style="cursor:default;">Assinei ou pretendo assinar um Abaixo-Assinado.</h3>
-</div>
-<div class="accordionContent">
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Desejo contatar o Autor de um Abaixo-Assinado</h4>
-</div>
-<div class="accordionSubContent">
-<p>Para contactar o autor de uma Abaixo-Assinado deve, na página do próprio Abaixo-Assinado,
-                                verificar o link lateral onde diz "Contactar Autor".
-                                <br/>
-<br/>Após preencher o formulário de contacto, o sistema envia um email ao autor do
-                                Abaixo-Assinado que poderá responder à sua questão ou sugestão. Tenha a atenção de
-                                colocar corretamente o seu email, caso contrário o autor não conseguirá responder.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Pretendo remover a minha assinatura</h4>
-</div>
-<div class="accordionSubContent">
-<p>Para iniciar o processo de remoção da sua assinatura de uma Petição ou Abaixo-Assinado
-                                deverá aceder a este <a href="https://peticaopublica.com.br/RemoveSignature.aspx" style="text-decoration: underline;" target="blank">Link de Remover</a> e preencher
-                                os campos solicitados.
-                                <br/>
-<br/>Deverá saber o link/url completo da Petição e também o email com que efectuou a sua
-                                assinatura. Após colocar estes dados ser-lhe-à enviado um email para completar o
-                                processo e remover efectivamente a assinatura.
-                                <br/>
-<br/>Se tiver dificuldades com este processo entre em contato através do <a href="#" onclick="return changebox();">formulário de contato</a> e indique-nos qual o
-                                link/url do Abaixo-Assinado que assinou e qual foi o email de assinatura.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Assinei um Abaixo-assinado e depois recebi um email com
-                                publicidade. O que é isto?</h4>
-</div>
-<div class="accordionSubContent">
-<p>No momento da assinatura de um Abaixo-Assinado é permitido ao signatário escolher se
-                                deseja receber a nossa newsletter ou campanhas comerciais, assinalando para o efeito, a
-                                opção "Não me importo que o Petição Pública Brasil me contate para campanhas ou
-                                abaixo-assinados do mesmo género".
-                                <br/>
-<br/>Ao deixar esta opção assinalada, o site envia periodicamente alguma publicidade de
-                                parceiros interessados em comunicar as suas marcas ou produtos. Nunca em momento algum
-                                passamos o seu contato à terceiros e todas as comunicações são efetuadas exclusivamente
-                                pelo nosso site.
-                                <br/>
-<br/>Existem variados custos com infra-estrutura tecnológica, desenvolvimento de
-                                software, gestão e manutenção do site. Não temos, nem desejamos, qualquer apoio
-                                governamental ou institucional para suportar todos os custos de um site desta natureza.
-                                <br/>
-<br/>É o nosso intuito continuar a fornecer um serviço totalmente gratuito em prol da
-                                democracia no Brasil, por isso, a única forma que temos para viabilizar a continuidade
-                                deste projecto é enviar, periodicamente, alguma publicidade, que ajuda a minimizar os
-                                custos.
-                                <br/>
-<br/>Agradecemos a sua compreensão e compreendemos que não queira receber qualquer tipo
-                                de publicidade ou Newsletter. Nesse sentido poderá remover o seu contacto através dos
-                                links disponibilizados na newsletter ou através do link
-                                http://peticaopublica.com.br/cancelnewsletter.aspx
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Não concordo com o Abaixo-assinado. Quem é o responsável?</h4>
-</div>
-<div class="accordionSubContent">
-<p>O nosso serviço fornece apenas o alojamento gratuito para Abaixo-Assinados online mas não
-                                é responsável pela criação dos mesmos.
-                                <br/>
-<br/>Todas os Abaixo-Assinados são unicamente da responsabilidade dos seus autores.
-                                <br/>
-<br/>Os Abaixo-Assinados existentes não reflectem, de forma alguma, os pontos de vista ou
-                                opiniões do site Petição Pública Brasil.
-                                <br/>
-<br/>Para contatar o autor de um Abaixo-Assinado deve, na página do Abaixo-Assinado,
-                                verificar o link lateral onde diz "Contatar Autor".
-                            </p>
-</div>
-</div>
-<div class="accordionButton">
-<h3 style="cursor:default;">Quero criar ou sugerir um Abaixo-Assinado.</h3>
-</div>
-<div class="accordionContent">
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Quero sugerir-vos um Abaixo-Assinado</h4>
-</div>
-<div class="accordionSubContent">
-<p>O nosso serviço fornece apenas o alojamento gratuito para Abaixo-Assinados online mas não
-                                é responsável pela criação dos mesmos.
-                                <br/>
-<br/>Neste caso deve ser você mesmo a criar o Abaixo-assinado sobre o tema que o incomoda
-                                ou para o qual acha que deve chamar a atenção da sociedade.
-                                <br/>
-<br/>Todas os Abaixo-Assinados são unicamente da responsabilidade dos seus autores.
-                                <br/>
-<br/>Para um Abaixo-Assinado ter a maior visibilidade e adesão possível deve ser
-                                divulgada no Facebook, Twitter, em Fóruns, Blogs e também sites sobre o tema em causa.
-                                <br/>
-<br/>Pode também enviar um email para os meios de comunicação e grupos de mídia
-                                informando sobre o Abaixo-Assinado.
-                                <br/>
-<br/>Deve divulgar também junto dos seus amigos e contactos, enviando um email e
-                                informando sobre o abaixo-assinado e pedindo a colaboração de todos na divulgação.
-                            </p>
-</div>
-</div>
-<div class="accordionButton">
-<h3 style="cursor:default;">Sou o Autor de um Abaixo-Assinado</h3>
-</div>
-<div class="accordionContent">
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Pretendo modificar o meu Abaixo-Assinado.</h4>
-</div>
-<div class="accordionSubContent">
-<p>O autor do Abaixo-Assinado pode a qualquer momento fazer a gestão da mesma através da
-                                área de Gestão de Petições sem que isso afecte as assinaturas ou o funcionamento da
-                                mesma.
-                                <br/>
-<br/>Para usar a área de Gestão de Petições deve efetuar o login no site com o email e
-                                password que usou na criação do Abaixo-Assinado ou no caso de ter usado o Facebook para
-                                se registar, fazer login pelo mesmo método.
-                                <br/>
-<br/>Para fazer login deverá aceder ao link existente no canto superior direito do site
-                                onde diz "Login ou Registar". Após fazer o login aparece o seu nome no mesmo local. Ao
-                                clicar no seu nome, surge um menu com a opção "Minhas Petições" e onde tem acesso à
-                                Gestão das Petições.
-                                <br/>
-<br/>Nesse local pode, efetuar correcções ao texto do Abaixo-Assinado, adicionar links,
-                                fazer actualizações sobre informações relevantes, adicionar imagens ou videos, exportar
-                                a lista de assinaturas, entre outras funcionalidades.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Pretendo imprimir o meu Abaixo-Assinado</h4>
-</div>
-<div class="accordionSubContent">
-<p>Para poder imprimir o seu Abaixo-Assinado deve:
-                                <br/>
-<br/>1. Aceder à área de Gestão de Abaixo-Assinados (após fazer login o seu nome surge no
-                                canto superior direito. Escolher no menu "Meus Abaixo-Assinados");
-                                <br/>2. Selecionar a opção "Gerir Assinaturas";
-                                <br/>3. No fim da página escolher a opção "Exportar para Excel toda a Petição";
-                                <br/>4. Abrir o ficheiro com o excel e verificar a lista. (remover signatários que tenham
-                                erros);
-                                <br/>5. Selecionar a opção imprimir no excel ou outro software semelhante.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Como baixar a lista de assinaturas do meu Abaixo-Assinado?</h4>
-</div>
-<div class="accordionSubContent">
-<p>Para baixar a lista de subscritores do seu Abaixo-Assinado deve entrar na área de Gestão
-                                de Petições, após fazer login no link existente no topo do site.
-                                <br/>
-<br/>Para entrar na área de Gestão deve fazer login através do link "Login ou Registar"
-                                existente no topo do site. Após efectuar o login, o seu nome surge no mesmo local e ao
-                                clicar no seu nome abre um menu com a opção "Minhas Petições" para aceder à área de
-                                Gestão de Petições.
-                                <br/>
-<br/>Na área de Gestão pode exportar as assinaturas através da opção "Gerir assinaturas"
-                                e posteriormente através do botão "Exportar para Excel toda a Petição", existente no fim
-                                da página.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Pretendo desactivar o meu Abaixo-Assinado. Como fazer?</h4>
-</div>
-<div class="accordionSubContent">
-<p>Pode desactivar o seu Abaixo-Assinado através da área de Gestão de Petições existente
-                                após efectuar o login. Para desactivar deverá entrar na área de "Editar Abaixo-Assinado"
-                                e clicar no botão que diz "Encerrar definitivamente". Poderá sempre voltar a reactivar o
-                                seu Abaixo-Assinado quando entender.
-                                <br/>
-<br/>Após desactivar o Abaixo-Assinado o mesmo não aceitará mais assinaturas. O
-                                Abaixo-Assinado continua visível no site para efeitos de consulta mas não será permitido
-                                recolher mais signatários enquanto estiver no estado de desactivado.
-                                <br/>
-<br/>No caso de querer remover o Abaixo-Assinado e esta não ficar disponível para
-                                consulta no site deverá enviar-nos esse pedido por email ou através do formulário de
-                                contacto. Apenas os autores dos Abaixo-Assinado podem solicitar a remoção dos mesmos.
-                            </p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Quem envia a Petição aos destinatários? Eu ou o site Petição
-                                Pública?</h4>
-</div>
-<div class="accordionSubContent">
-<p>O nosso serviço fornece apenas alojamento gratuito para Abaixo-Assinados online.
-                                Fornecemos toda a tecnologia e infra-estrutura necessária. Permitimos desta forma que
-                                qualquer cidadão faça um Abaixo-Assinado e recolha assinaturas para atingir determinados
-                                objectivos.
-                                <br/>
-<br/>Cabe ao autor do Abaixo-Assinado enviar ou entregar aos destinatários o
-                                Abaixo-Assinado quando entender ter atingido o objectivo proposto. A entrega poderá ser
-                                feita em papel, após imprimir as assinaturas ou pela via electrónica, através do envio
-                                de um email aos destinatários.
-                            </p>
-</div>
-</div>
-<div class="accordionButton">
-<h3 style="cursor:default;">Advogados, Polícias, Delegados, Tribunais e outras funções da
-                            Justiça</h3>
-</div>
-<div class="accordionContent">
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Sou Advogado(a) e pretendo denunciar uma Petição</h4>
-</div>
-<div class="accordionSubContent">
-<p>A forma mais simples para denunciar uma petição é enviar um email para
-                                <b>contacto@peticaopublica.com.br</b> a indicar qual o link da Petição e as razões que
-                                levam a fazer a denuncia.
-                                <br/>
-<br/>Email de contacto direto: <b>contacto@peticaopublica.com.br</b>
-<br/>
-<br/>Tenha em atenção que a nossa plataforma fornece apenas o alojamento gratuito para
-                                Abaixo-Assinados e Petições online mas não é responsável pela criação dos mesmos. Todo o
-                                conteúdo de petições e abaixo-assinados é criado por terceiros.
-                                <br/>
-<br/>De acordo com o Marco Civil da Internet (MCI) e conforme dispõe o art. 19 do MCI, de
-                                forma a assegurar a liberdade de expressão e impedir a censura, o provedor de aplicações
-                                de internet não é responsavel pelo conteúdo gerado por terceiros.
-                                <br/>Estará no entanto sempre disponivel para remoção do conteúdo e fornecimento de
-                                registos de conexão ou de acesso auxiliando na identificação da autoria do fato.
-                                <br/>
-<br/><strong>* Atenção (advogados, tribunais, juizes):</strong> Por favor não envie
-                                emails, cartas, solicitação de informação ou qualquer tipo de documentação para a
-                                empresa provedora do registro do domínio. A empresa provedora do registro do domínio tem
-                                unicamente essa função, não tendo qualquer tipo de acesso a qualquer informação, nenhuma
-                                participação na gestão ou acesso a qualquer conteúdo do site. O envio de qualquer tipo
-                                de solicitação para a empresa de registro do domínio apenas levará a uma maior
-                                morosidade e burocracia de todo o processo. Para evitar lentidão do processo e tornar
-                                tudo muito mais célere, basta que nos envie diretamente um email para "<b>
-<script language="javascript">document.write('contacto'); document.write('@'); document.write('peticao'); document.write('publica'); document.write('.com.br');</script>
-                                    contacto@peticaopublica.com.br
-                                </b>" solicitando a informação pretendida. Muito obrigado.
-                                <br/>
-</p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Sou Delegado, Polícia, Oficial de Justiça ou exerço funções na
-                                Justiça e pretendo saber informações sobre uma Petição</h4>
-</div>
-<div class="accordionSubContent">
-<p>A forma mais simples e rápida de nos contatar é enviar-nos um email a indicar qual a
-                                Petição em causa e qual a situação pretendida.
-                                <br/>
-<br/>Email para contato direto: <b>contacto@peticaopublica.com.br</b> ou
-                                <b>petitionpublic@gmail.com</b>
-<br/>
-<br/>Estamos sempre atentos ao email e responderemos com a maior brevidade possível.
-                                Muito obrigado.
-                                <br/>
-</p>
-</div>
-<div class="accordionSubButton">
-<h4 style="cursor:default;">Qual o contato telefónico ou contato do responsável do site?
-                            </h4>
-</div>
-<div class="accordionSubContent">
-<p>O site não tem de momento contato telefónico devido a ser um projecto simples, privado e
-                                particular, sem ligação a nenhum organismo do estado, empresa ou qualquer tipo de
-                                instituição ou organização.
-                                <br/>
-<br/>A forma mais simples e rápida de entrar em contato conosco é por email. Através do
-                                email <b>contacto@peticaopublica.com.br</b> poderá colocar as suas questões. Estamos
-                                sempre atentos ao email e responderemos com a maior brevemente possível.
-                                <br/>
-<br/>Contato de Email: <b>contacto@peticaopublica.com.br</b>
-<br/>
-<br/>Se necessitar saber mais informações sobre o nome e endereço do responsável do site
-                                por favor envie um email para <b>
-<script language="javascript">document.write('contacto'); document.write('@'); document.write('peticao'); document.write('publica'); document.write('.com.br');</script>
-                                    contacto@peticaopublica.com.br
-                                </b>, ao qual responderemos com a maior brevidade possivel.
-                                <br/>
-<br/><strong>* Atenção (advogados, tribunais, juizes):</strong> Por favor não envie
-                                emails, cartas, solicitação de informação ou qualquer tipo de documentação para a
-                                empresa provedora do registro do domínio. A empresa provedora do registro do domínio tem
-                                unicamente essa função, não tendo qualquer tipo de acesso a qualquer informação, nenhuma
-                                participação na gestão ou acesso a qualquer conteúdo do site. O envio de qualquer tipo
-                                de solicitação para a empresa de registro do domínio apenas levará a uma maior
-                                morosidade e burocracia de todo o processo. Para evitar lentidão do processo e tornar
-                                tudo muito mais célere, basta que nos envie diretamente um email para "<b>
-<script language="javascript">document.write('contacto'); document.write('@'); document.write('peticao'); document.write('publica'); document.write('.com.br');</script>
-                                    contacto@peticaopublica.com.br
-                                </b>" solicitando a informação pretendida. Muito obrigado.
-                                <br/>
-</p>
-</div>
-</div>
-</div>
-<div class="petFooter" style="background-color: #fff; padding: 5px 0;"></div>
-</div>
+<div class="help-container">
+    <div class="help-hero">
+        <h1>Central de Ajuda</h1>
+        <p>Como podemos ajudar você hoje?</p>
+    </div>
+    
+    <div class="legislation-link-wrapper">
+        <a class="legislation-btn" href="../legislation/index.html">
+            <span class="material-icons">gavel</span>
+            Ver Legislação de Petições
+        </a>
+    </div>
+
+    <!-- Categoria 1 -->
+    <div class="acc-card">
+        <div class="acc-card-header">
+            <h3>Assinei ou pretendo assinar um Abaixo-Assinado</h3>
+            <span class="material-icons icon-toggle">expand_more</span>
+        </div>
+        <div class="acc-card-body">
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Desejo contatar o Autor de um Abaixo-Assinado</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>Para contactar o autor de um Abaixo-Assinado deve, na página do próprio Abaixo-Assinado, verificar o link lateral onde diz "Contactar Autor".<br/><br/>Após preencher o formulário de contacto, o sistema envia um email ao autor do Abaixo-Assinado que poderá responder à sua questão ou sugestão. Tenha a atenção de colocar corretamente o seu email, caso contrário o autor não conseguirá responder.</p>
+                </div>
+            </div>
+            
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Pretendo remover a minha assinatura</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>Para iniciar o processo de remoção da sua assinatura de uma Petição ou Abaixo-Assinado deverá aceder a este <a href="https://peticaopublica.com.br/RemoveSignature.aspx" target="_blank">Link de Remover</a> e preencher os campos solicitados.<br/><br/>Deverá saber o link/url completo da Petição e também o email com que efectuou a sua assinatura. Após colocar estes dados ser-lhe-á enviado um email para completar o processo e remover efectivamente a assinatura.<br/><br/>Se tiver dificuldades com este processo entre em contato através do formulário de contato e indique-nos qual o link/url do Abaixo-Assinado que assinou e qual foi o email de assinatura.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Assinei um Abaixo-assinado e depois recebi um email com publicidade. O que é isto?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>No momento da assinatura de um Abaixo-Assinado é permitido ao signatário escolher se deseja receber a nossa newsletter ou campanhas comerciais, assinalando para o efeito, a opção "Não me importo que o Petição Pública Brasil me contate para campanhas ou abaixo-assinados do mesmo género".<br/><br/>Ao deixar esta opção assinalada, o site envia periodicamente alguma publicidade de parceiros interessados em comunicar as suas marcas ou produtos. Nunca em momento algum passamos o seu contato a terceiros e todas as comunicações são efetuadas exclusivamente pelo nosso site.<br/><br/>Existem variados custos com infra-estrutura tecnológica, desenvolvimento de software, gestão e manutenção do site. Não temos, nem desejamos, qualquer apoio governamental ou institucional para suportar todos os custos de um site desta natureza.<br/><br/>É o nosso intuito continuar a fornecer um serviço totalmente gratuito em prol da democracia no Brasil, por isso, a única forma que temos para viabilizar a continuidade deste projecto é enviar, periodicamente, alguma publicidade, que ajuda a minimizar os custos.<br/><br/>Agradecemos a sua compreensão e compreendemos que não queira receber qualquer tipo de publicidade ou Newsletter. Nesse sentido poderá remover o seu contacto através dos links disponibilizados na newsletter ou através do link <a href="http://peticaopublica.com.br/cancelnewsletter.aspx" target="_blank">cancelar newsletter</a>.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Não concordo com o Abaixo-assinado. Quem é o responsável?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>O nosso serviço fornece apenas o alojamento gratuito para Abaixo-Assinados online mas não é responsável pela criação dos mesmos.<br/><br/>Todos os Abaixo-Assinados são unicamente da responsabilidade dos seus autores.<br/><br/>Os Abaixo-Assinados existentes não reflectem, de forma alguma, os pontos de vista ou opiniões do site Petição Pública Brasil.<br/><br/>Para contatar o autor de um Abaixo-Assinado deve, na página do Abaixo-Assinado, verificar o link lateral onde diz "Contatar Autor".</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categoria 2 -->
+    <div class="acc-card">
+        <div class="acc-card-header">
+            <h3>Quero criar ou sugerir um Abaixo-Assinado</h3>
+            <span class="material-icons icon-toggle">expand_more</span>
+        </div>
+        <div class="acc-card-body">
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Quero sugerir-vos um Abaixo-Assinado</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>O nosso serviço fornece apenas o alojamento gratuito para Abaixo-Assinados online mas não é responsável pela criação dos mesmos.<br/><br/>Neste caso deve ser você mesmo a criar o Abaixo-assinado sobre o tema que o incomoda ou para o qual acha que deve chamar a atenção da sociedade.<br/><br/>Todos os Abaixo-Assinados são unicamente da responsabilidade dos seus autores.<br/><br/>Para um Abaixo-Assinado ter a maior visibilidade e adesão possível deve ser divulgado no Facebook, Twitter, em Fóruns, Blogs e também sites sobre o tema em causa.<br/><br/>Pode também enviar um email para os meios de comunicação e grupos de mídia informando sobre o Abaixo-Assinado.<br/><br/>Deve divulgar também junto dos seus amigos e contactos, enviando um email e informando sobre o abaixo-assinado e pedindo a colaboração de todos na divulgação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categoria 3 -->
+    <div class="acc-card">
+        <div class="acc-card-header">
+            <h3>Sou o Autor de um Abaixo-Assinado</h3>
+            <span class="material-icons icon-toggle">expand_more</span>
+        </div>
+        <div class="acc-card-body">
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Pretendo modificar o meu Abaixo-Assinado</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>O autor do Abaixo-Assinado pode a qualquer momento fazer a gestão do mesmo através da área de Gestão de Petições sem que isso afecte as assinaturas ou o funcionamento da mesma.<br/><br/>Para usar a área de Gestão de Petições deve efetuar o login no site com o email e password que usou na criação do Abaixo-Assinado ou no caso de ter usado o Facebook para se registar, fazer login pelo mesmo método.<br/><br/>Para fazer login deverá aceder ao link existente no canto superior direito do site onde diz "Login ou Registar". Após fazer o login aparece o seu nome no mesmo local. Ao clicar no seu nome, surge um menu com a opção "Minhas Petições" e onde tem acesso à Gestão das Petições.<br/><br/>Nesse local pode efetuar correcções ao texto do Abaixo-Assinado, adicionar links, fazer actualizações sobre informações relevantes, adicionar imagens ou vídeos, exportar a lista de assinaturas, entre outras funcionalidades.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Pretendo imprimir o meu Abaixo-Assinado</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>Para poder imprimir o seu Abaixo-Assinado deve:<br/><br/>1. Aceder à área de Gestão de Abaixo-Assinados (após fazer login o seu nome surge no canto superior direito. Escolher no menu "Meus Abaixo-Assinados");<br/>2. Selecionar a opção "Gerir Assinaturas";<br/>3. No fim da página escolher a opção "Exportar para Excel toda a Petição";<br/>4. Abrir o ficheiro com o excel e verificar a lista (remover signatários que tenham erros);<br/>5. Selecionar a opção imprimir no excel ou outro software semelhante.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Como baixar a lista de assinaturas do meu Abaixo-Assinado?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>Para baixar a lista de subscritores do seu Abaixo-Assinado deve entrar na área de Gestão de Petições, após fazer login no link existente no topo do site.<br/><br/>Para entrar na área de Gestão deve fazer login através do link "Login ou Registar" existente no topo do site. Após efectuar o login, o seu nome surge no mesmo local e ao clicar no seu nome abre um menu com a opção "Minhas Petições" para aceder à área de Gestão de Petições.<br/><br/>Na área de Gestão pode exportar as assinaturas através da opção "Gerir assinaturas" e posteriormente através do botão "Exportar para Excel toda a Petição", existente no fim da página.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Pretendo desactivar o meu Abaixo-Assinado. Como fazer?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>Pode desactivar o seu Abaixo-Assinado através da área de Gestão de Petições existente após efectuar o login. Para desactivar deverá entrar na área de "Editar Abaixo-Assinado" e clicar no botão que diz "Encerrar definitivamente". Poderá sempre voltar a reactivar o seu Abaixo-Assinado quando entender.<br/><br/>Após desactivar o Abaixo-Assinado o mesmo não aceitará mais assinaturas. O Abaixo-Assinado continua visível no site para efeitos de consulta mas não será permitido recolher mais signatários enquanto estiver no estado de desactivado.<br/><br/>No caso de querer remover o Abaixo-Assinado e esta não ficar disponível para consulta no site deverá enviar-nos esse pedido por email ou através do formulário de contacto. Apenas os autores dos Abaixo-Assinado podem solicitar a remoção dos mesmos.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Quem envia a Petição aos destinatários? Eu ou o site Petição Pública?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>O nosso serviço fornece apenas alojamento gratuito para Abaixo-Assinados online. Fornecemos toda a tecnologia e infra-estrutura necessária. Permitimos desta forma que qualquer cidadão faça um Abaixo-Assinado e recolha assinaturas para atingir determinados objectivos.<br/><br/>Cabe ao autor do Abaixo-Assinado enviar ou entregar aos destinatários o Abaixo-Assinado quando entender ter atingido o objectivo proposto. A entrega poderá ser feita em papel, após imprimir as assinaturas ou pela via electrónica, através do envio de um email aos destinatários.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categoria 4 -->
+    <div class="acc-card">
+        <div class="acc-card-header">
+            <h3>Advogados, Polícias, Delegados, Tribunais e outras funções da Justiça</h3>
+            <span class="material-icons icon-toggle">expand_more</span>
+        </div>
+        <div class="acc-card-body">
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Sou Advogado(a) e pretendo denunciar uma Petição</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>A forma mais simples para denunciar uma petição é enviar um email para <strong>contacto@peticaopublica.com.br</strong> a indicar qual o link da Petição e as razões que levam a fazer a denuncia.<br/><br/>Email de contacto direto: <strong>contacto@peticaopublica.com.br</strong><br/><br/>Tenha em atenção que a nossa plataforma fornece apenas o alojamento gratuito para Abaixo-Assinados e Petições online mas não é responsável pela criação dos mesmos. Todo o conteúdo de petições e abaixo-assinados é criado por terceiros.<br/><br/>De acordo com o Marco Civil da Internet (MCI) e conforme dispõe o art. 19 do MCI, de forma a assegurar a liberdade de expressão e impedir a censura, o provedor de aplicações de internet não é responsavel pelo conteúdo gerado por terceiros. Estará no entanto sempre disponivel para remoção do conteúdo e fornecimento de registos de conexão ou de acesso auxiliando na identificação da autoria do fato.<br/><br/><strong>* Atenção (advogados, tribunais, juizes):</strong> Por favor não envie emails, cartas, solicitação de informação ou qualquer tipo de documentação para a empresa provedora do registro do domínio. A empresa provedora do registro do domínio tem unicamente essa função, não tendo qualquer tipo de acesso a qualquer informação, nenhuma participação na gestão ou acesso a qualquer conteúdo do site. O envio de qualquer tipo de solicitação para a empresa de registro do domínio apenas levará a uma maior morosidade e burocracia de todo o processo. Para evitar lentidão do processo e tornar tudo muito mais célere, basta que nos envie diretamente um email para <strong>contacto@peticaopublica.com.br</strong> solicitando a informação pretendida. Muito obrigado.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Sou Delegado, Polícia, Oficial de Justiça ou exerço funções na Justiça e pretendo saber informações sobre uma Petição</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>A forma mais simples e rápida de nos contatar é enviar-nos um email a indicar qual a Petição em causa e qual a situação pretendida.<br/><br/>Email para contato direto: <strong>contacto@peticaopublica.com.br</strong> ou <strong>petitionpublic@gmail.com</strong><br/><br/>Estamos sempre atentos ao email e responderemos com a maior brevidade possível. Muito obrigado.</p>
+                </div>
+            </div>
+
+            <div class="sub-acc-item">
+                <div class="sub-acc-header">
+                    <h4>Qual o contato telefónico ou contato do responsável do site?</h4>
+                    <span class="material-icons icon-sub-toggle">chevron_right</span>
+                </div>
+                <div class="sub-acc-body">
+                    <p>O site não tem de momento contato telefónico devido a ser um projecto simples, privado e particular, sem ligação a nenhum organismo do estado, empresa ou qualquer tipo de instituição ou organização.<br/><br/>A forma mais simples e rápida de entrar em contato conosco é por email. Através do email <strong>contacto@peticaopublica.com.br</strong> poderá colocar as suas questões. Estamos sempre atentos ao email e responderemos com a maior brevemente possível.<br/><br/>Contato de Email: <strong>contacto@peticaopublica.com.br</strong><br/><br/>Se necessitar saber mais informações sobre o nome e endereço do responsável do site por favor envie um email para <strong>contacto@peticaopublica.com.br</strong>, ao qual responderemos com a maior brevidade possivel.<br/><br/><strong>* Atenção (advogados, tribunais, juizes):</strong> Por favor não envie emails, cartas, solicitação de informação ou qualquer tipo de documentação para a empresa provedora do registro do domínio. A empresa provedora do registro do domínio tem unicamente essa função, não tendo qualquer tipo de acesso a qualquer informação, nenhuma participação na gestão ou acesso a qualquer conteúdo do site. O envio de qualquer tipo de solicitação para a empresa de registro do domínio apenas levará a uma maior morosidade e burocracia de todo o processo. Para evitar lentidão do processo e tornar tudo muito mais célere, basta que nos envie diretamente um email para <strong>contacto@peticaopublica.com.br</strong> solicitando a informação pretendida. Muito obrigado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </form>
-<div class="footer">
-<div style="width: 920px; margin: auto; overflow: hidden;">
-<div style="width: 300px; float: left;">
-<h4 style="margin: 0;">Procurar por Categorias</h4>
-<ul id="ulCat">
-<li><a href="../searchfilter/index.html?idcat=23">Ambiente</a></li>
-<li><a href="../searchfilter/index.html?idcat=24">Artes e Cultura</a></li>
-<li><a href="../searchfilter/index.html?idcat=25">Ciência e Tecnologia</a></li>
-<li><a href="../searchfilter/index.html?idcat=101">Direitos dos Animais</a></li>
-<li><a href="../searchfilter/index.html?idcat=27">Educação</a></li>
-<li><a href="../searchfilter/index.html?idcat=28">Entretenimento e Media</a></li>
-<li><a href="../searchfilter/index.html?idcat=26">Esporte</a></li>
-<li><a href="../searchfilter/index.html?idcat=29">Legislação e Justiça</a></li>
-<li><a href="../searchfilter/index.html?idcat=30">Política e Governo</a></li>
-<li><a href="../searchfilter/index.html?idcat=31">Religião</a></li>
-<li><a href="../searchfilter/index.html?idcat=32">Saúde e Bem-Estar</a></li>
-<li><a href="../searchfilter/index.html?idcat=33">Sociedade</a></li>
-</ul>
-</div>
-<div style="float: right;">
-<div class="footer-text">O site <a href="https://peticaopublica.com.br">Petição Pública</a> Brasil,
-                    respeita a sua privacidade e as normas no tratamento de dados pessoais.</div>
-<div class="nav-share">
-<iframe allow="encrypted-media" allowtransparency="true" frameborder="0" height="32" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fpeticaopublica.com.br&amp;width=82&amp;layout=button&amp;action=like&amp;size=large&amp;share=false&amp;height=82&amp;appId=476498805800398" style="border:none;overflow:hidden;padding-top:20px;" width="82"></iframe>
-<ul style="float:right;">
-<li><a class="fbshare32f" href="https://www.facebook.com/peticaopublicabrasil" target="_blank" title="Acompanhe o Petição Pública Brasil no Facebook">Facebook</a></li>
-<li><a class="twshare32f" href="https://twitter.com/peticaopublicab" target="_blank" title="Acompanhe o Petição Pública Brasil no Twitter">Twitter</a></li>
-<li><a class="rss32f" href="https://peticaopublica.com.br/rss.aspx" target="_blank" title="Acompanhe o Petição Pública Brasil por RSS">RSS</a></li>
-</ul>
-</div>
-<div style="clear:both; width:595px; font-family: Verdana; font-size: 8pt;color: #000; text-align:justify;margin-top: 5px;">
-                    O direito de petição pode considerar-se como um dos mais antigos direitos fundamentais dos cidadãos
-                    face ao poder político,
-                    encontrando-se constitucionalmente assegurado pelo art. 5.º, XXXIV, "a", da <a href="https://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm" style="font-size: 11px;" target="_blank">Constituição Federal de 1988</a> nos seguintes termos: "o direito de petição aos
-                    Poderes Públicos em defesa de direitos ou contra ilegalidade ou abuso de poder".
-                </div>
-</div>
-</div>
-</div>
-<div class="secondfooter">
-<div style="width: 920px; margin: auto; overflow: hidden;">
-<ul>
-<li><a href="../aboutus/index.html">Sobre Nós</a></li>
-<li><a href="../faq/index.html">FAQ</a></li>
-<li><a href="../privacy/index.html">Política de Privacidade</a></li>
-<li><a href="../termsconditions/index.html">Termos e Condições</a></li>
-<li><a href="../help/index.html">Ajuda</a></li>
-<li><a href="../contactus/index.html?pi=">Contato</a></li>
-</ul>
-<div class="copyright">Petição Pública Brasil © 2026. Todos os Direitos Reservados.
-            </div>
-</div>
+<style>
+    .footer-minimal {
+        clear: both;
+        width: 100%;
+        background-color: #121214;
+        padding: 40px 0;
+        border-top: 1px solid #1f1f23;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .footer-minimal-container {
+        max-width: 920px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-minimal-lgpd {
+        color: #8e8e93;
+        font-size: 12px;
+        line-height: 1.6;
+        max-width: 600px;
+    }
+    .footer-minimal-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #2c2c2e;
+        margin: 5px 0;
+    }
+    .footer-minimal-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer-minimal-links a {
+        color: #aeaeb2;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.25s ease, transform 0.2s ease;
+        display: inline-block;
+    }
+    .footer-minimal-links a:hover {
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+    .footer-minimal-socials {
+        display: flex;
+        gap: 20px;
+        margin-top: 5px;
+    }
+    .footer-minimal-socials a {
+        color: #8e8e93;
+        transition: color 0.25s ease, transform 0.25s ease;
+        display: inline-block;
+    }
+    .footer-minimal-socials a:hover {
+        transform: scale(1.1);
+    }
+    .footer-minimal-socials a.fb:hover { color: #1877F2; }
+    .footer-minimal-socials a.ig:hover { color: #E1306C; }
+    .footer-minimal-socials a.tw:hover { color: #1DA1F2; }
+    .footer-minimal-copyright {
+        color: #636366;
+        font-size: 11px;
+        margin-top: 5px;
+    }
+</style>
+<div class="footer-minimal">
+    <div class="footer-minimal-container">
+        <div class="footer-minimal-lgpd">
+            O site Petição Pública Brasil respeita a sua privacidade nos termos da Lei Geral de Proteção de Dados (LGPD).
+        </div>
+        <div class="footer-minimal-divider"></div>
+        <div class="footer-minimal-links">
+            <a href="../aboutus/index.html">Sobre Nós</a>
+            <a href="../faq/index.html">FAQ</a>
+            <a href="../privacy/index.html">Política de Privacidade</a>
+            <a href="../termsconditions/index.html">Termos e Condições</a>
+            <a href="../help/index.html">Ajuda</a>
+            <a href="../contactus/index.html">Contato</a>
+        </div>
+        <div class="footer-minimal-socials">
+            <a href="https://www.facebook.com/peticaopublicabrasil" target="_blank" class="fb" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="ig" aria-label="Instagram">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://twitter.com/peticaopublicab" target="_blank" class="tw" aria-label="Twitter">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+        </div>
+        <div class="footer-minimal-copyright">
+            Petição Pública Brasil © 2026. Todos os Direitos Reservados.
+        </div>
+    </div>
 </div>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-4269839-47"></script>
 <script>

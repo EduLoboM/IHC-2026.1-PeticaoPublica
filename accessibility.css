@@ -682,7 +682,7 @@ body.acc-line-spacing-lg td:not(.acc-exclude):not(.acc-exclude *) {
 /* Large Cursor */
 body.acc-cursor-large,
 body.acc-cursor-large *:not(.acc-exclude):not(.acc-exclude *) {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M2,2 L2,32 L11,24 L19,39 L24,36 L16.5,21.5 L26.5,21.5 Z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cpath d='M2,2 L2,24 L8.5,18 L14,29 L17.5,27 L12,16 L19.5,16 Z' fill='%231e293b' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, auto !important;
 }
 
 body.acc-cursor-large a:not(.acc-exclude),
@@ -698,7 +698,7 @@ body.acc-cursor-large select:not(.acc-exclude),
 body.acc-cursor-large label:not(.acc-exclude),
 body.acc-cursor-large label:not(.acc-exclude) *,
 body.acc-cursor-large summary:not(.acc-exclude) {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M8.25 3a2.25 2.25 0 0 1 4.5 0v15.75a0.75 0.75 0 0 0 1.5 0v-5.25a2.25 2.25 0 0 1 4.5 0v4.5a0.75 0.75 0 0 0 1.5 0v-6.75a2.25 2.25 0 0 1 4.5 0v7.5a0.75 0.75 0 0 0 1.5 0v-5.25a2.25 2.25 0 0 1 4.5 0v10.5a11.25 11.25 0 0 1-11.25 11.25h-7.5a11.25 11.25 0 0 1-11.25-11.25v-9.75a2.25 2.25 0 0 1 4.5 0v3.75a0.75 0.75 0 0 0 1.5 0V3z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 10 1, pointer !important;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 32 32'%3E%3Cpath d='M2,2 L2,24 L8.5,18 L14,29 L17.5,27 L12,16 L19.5,16 Z' fill='%23688602' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 2 2, pointer !important;
 }
 
 body.acc-cursor-large input[type="text"]:not(.acc-exclude),
@@ -1886,15 +1886,16 @@ body {
     transform: translateY(-50%) !important;
     background-color: #5f870e !important;
     color: #ffffff !important;
-    font-size: 11px !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    padding: 5px 12px !important;
-    border-radius: 15px !important;
+    border-radius: 50% !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
     margin: 0 !important;
-    height: auto !important;
-    line-height: 1.2 !important;
     transition: all 0.2s ease !important;
+    text-decoration: none !important;
 }
 
 .emailnewsletter#divemailnewsletter a#submitEmailNewsletter:hover {
@@ -2554,4 +2555,370 @@ body.theme-solarized-dark .creation-warning-card {
 }
 body.theme-solarized-dark .creation-warning-card p {
     color: #93a1a1 !important;
+}
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE LAYOUT IMPROVEMENTS
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 0 !important;
+    }
+    .header {
+        position: static !important;
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
+    .header .innerHeader {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 0 15px !important;
+        gap: 12px !important;
+    }
+    .header .innerHeader > div:first-child {
+        width: auto !important;
+        justify-content: center !important;
+    }
+    .header .innerHeader > div:first-child img {
+        height: 38px !important;
+        width: auto !important;
+    }
+    .header .innerHeader > div:last-child {
+        margin-left: 0 !important;
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    .header .innerHeader > div:last-child > div {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    ul.headerMenu {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    .headerLink a {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+    }
+    .emailnewsletter#divemailnewsletter {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Layout Containers mobile styling */
+    .petition-layout,
+    .privacy-container,
+    .faq-container,
+    .help-container,
+    .contact-container,
+    .login-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px 0 !important;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        box-shadow: none !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .petition-layout, .privacy-body {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 15px !important;
+    }
+    
+    .privacy-sidebar {
+        width: 100% !important;
+    }
+    .privacy-sidebar ul {
+        position: static !important;
+        border-left: none !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    .privacy-sidebar li {
+        margin-bottom: 0 !important;
+    }
+    .privacy-sidebar a {
+        padding: 6px 12px !important;
+        background: #f1f5f9 !important;
+        border-radius: 20px !important;
+        border-left: none !important;
+        font-size: 13px !important;
+        margin-left: 0 !important;
+    }
+    .privacy-sidebar a:hover, .privacy-sidebar a.active {
+        background: #d4e5a0 !important;
+        color: #4a6001 !important;
+    }
+    
+    .petition-sidebar {
+        width: 100% !important;
+    }
+    
+    .grid-info, .about-body .grid-info {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .chatbot-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* Fix: Prevent accessibility font overrides from breaking Material Icons */
+body.acc-font-serif .material-icons,
+body.acc-font-dyslexic .material-icons,
+body.acc-font-hyperlegible .material-icons,
+body.acc-font-limbus .material-icons,
+body.acc-font-isaac .material-icons,
+.material-icons {
+    font-family: 'Material Icons' !important;
+}
+
+/* Fix: Prevent carousel cards from being cut off on hover */
+.carousel-track-wrapper {
+    padding: 12px 0 !important;
+    margin: -12px 0 !important;
+    overflow: visible !important; /* Allow hover scaling to overflow wrapper height */
+}
+.home-carousel-container {
+    padding: 12px 0 !important;
+    overflow: hidden !important; /* Contain the scroll track */
+}
+
+/* ==========================================================================
+   COLOR THEMES OVERRIDES FOR MODERN PAGES (About Us, FAQ, Privacy, Terms, Help, Contact)
+   ========================================================================== */
+
+/* --- DARK THEME --- */
+body.theme-dark .privacy-container,
+body.theme-dark .faq-container,
+body.theme-dark .help-container,
+body.theme-dark .contact-container,
+body.theme-dark .about-container,
+body.theme-dark .form-card,
+body.theme-dark .acc-card,
+body.theme-dark .sub-acc-item,
+body.theme-dark .contact-cta,
+body.theme-dark .info-card {
+    background-color: #1e1e24 !important;
+    background: #1e1e24 !important;
+    border-color: #2e2e33 !important;
+    color: #e2e8f0 !important;
+    box-shadow: none !important;
+}
+body.theme-dark .acc-card-header,
+body.theme-dark .acc-card-body,
+body.theme-dark .sub-acc-body {
+    background-color: #1e1e24 !important;
+    color: #e2e8f0 !important;
+}
+body.theme-dark .acc-card-header h3,
+body.theme-dark .sub-acc-header h4 {
+    color: #e2e8f0 !important;
+}
+body.theme-dark .privacy-body {
+    background-color: #121214 !important;
+}
+body.theme-dark .privacy-sidebar a {
+    color: #94a3b8 !important;
+}
+body.theme-dark .privacy-sidebar a:hover,
+body.theme-dark .privacy-sidebar a.active {
+    color: #b1dd14 !important;
+    background-color: #2a2a30 !important;
+}
+body.theme-dark .privacy-section {
+    border-top-color: #2e2e33 !important;
+}
+body.theme-dark .privacy-content h3 {
+    color: #e2e8f0 !important;
+}
+body.theme-dark .form-title {
+    color: #e2e8f0 !important;
+    border-bottom-color: #2e2e33 !important;
+}
+body.theme-dark .about-hero,
+body.theme-dark .privacy-hero,
+body.theme-dark .help-hero,
+body.theme-dark .contact-hero {
+    background: linear-gradient(135deg, #4a6001 0%, #2a3801 100%) !important;
+}
+
+/* --- CONTRAST THEME --- */
+body.theme-contrast .privacy-container,
+body.theme-contrast .faq-container,
+body.theme-contrast .help-container,
+body.theme-contrast .contact-container,
+body.theme-contrast .about-container,
+body.theme-contrast .form-card,
+body.theme-contrast .acc-card,
+body.theme-contrast .sub-acc-item,
+body.theme-contrast .contact-cta,
+body.theme-contrast .info-card {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+body.theme-contrast .acc-card-header,
+body.theme-contrast .acc-card-body,
+body.theme-contrast .sub-acc-body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+body.theme-contrast .acc-card-header h3,
+body.theme-contrast .sub-acc-header h4 {
+    color: #ffffff !important;
+}
+body.theme-contrast .privacy-body {
+    background-color: #000000 !important;
+}
+body.theme-contrast .privacy-sidebar a {
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    margin: 2px !important;
+}
+body.theme-contrast .privacy-sidebar a:hover,
+body.theme-contrast .privacy-sidebar a.active {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+body.theme-contrast .privacy-section {
+    border-top: 2px solid #ffffff !important;
+}
+body.theme-contrast .privacy-content h3 {
+    color: #ffffff !important;
+}
+body.theme-contrast .form-title {
+    color: #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+}
+body.theme-contrast .about-hero,
+body.theme-contrast .privacy-hero,
+body.theme-contrast .help-hero,
+body.theme-contrast .contact-hero {
+    background: #000000 !important;
+    border-bottom: 2px solid #ffffff !important;
+}
+
+/* --- SOLARIZED LIGHT --- */
+body.theme-solarized-light .privacy-container,
+body.theme-solarized-light .faq-container,
+body.theme-solarized-light .help-container,
+body.theme-solarized-light .contact-container,
+body.theme-solarized-light .about-container,
+body.theme-solarized-light .form-card,
+body.theme-solarized-light .acc-card,
+body.theme-solarized-light .sub-acc-item,
+body.theme-solarized-light .contact-cta,
+body.theme-solarized-light .info-card {
+    background-color: #fdf6e3 !important;
+    background: #fdf6e3 !important;
+    border-color: #eee8d5 !important;
+    color: #586e75 !important;
+    box-shadow: none !important;
+}
+body.theme-solarized-light .acc-card-header,
+body.theme-solarized-light .acc-card-body,
+body.theme-solarized-light .sub-acc-body {
+    background-color: #fdf6e3 !important;
+    color: #586e75 !important;
+}
+body.theme-solarized-light .acc-card-header h3,
+body.theme-solarized-light .sub-acc-header h4 {
+    color: #586e75 !important;
+}
+body.theme-solarized-light .privacy-body {
+    background-color: #eee8d5 !important;
+}
+body.theme-solarized-light .privacy-sidebar a {
+    color: #586e75 !important;
+}
+body.theme-solarized-light .privacy-sidebar a:hover,
+body.theme-solarized-light .privacy-sidebar a.active {
+    color: #b58900 !important;
+    background-color: #eee8d5 !important;
+}
+body.theme-solarized-light .privacy-section {
+    border-top-color: #eee8d5 !important;
+}
+body.theme-solarized-light .privacy-content h3 {
+    color: #586e75 !important;
+}
+body.theme-solarized-light .form-title {
+    color: #586e75 !important;
+    border-bottom-color: #eee8d5 !important;
+}
+body.theme-solarized-light .about-hero,
+body.theme-solarized-light .privacy-hero,
+body.theme-solarized-light .help-hero,
+body.theme-solarized-light .contact-hero {
+    background: linear-gradient(135deg, #b58900 0%, #cb4b16 100%) !important;
+}
+
+/* --- SOLARIZED DARK --- */
+body.theme-solarized-dark .privacy-container,
+body.theme-solarized-dark .faq-container,
+body.theme-solarized-dark .help-container,
+body.theme-solarized-dark .contact-container,
+body.theme-solarized-dark .about-container,
+body.theme-solarized-dark .form-card,
+body.theme-solarized-dark .acc-card,
+body.theme-solarized-dark .sub-acc-item,
+body.theme-solarized-dark .contact-cta,
+body.theme-solarized-dark .info-card {
+    background-color: #073642 !important;
+    background: #073642 !important;
+    border-color: #586e75 !important;
+    color: #93a1a1 !important;
+    box-shadow: none !important;
+}
+body.theme-solarized-dark .acc-card-header,
+body.theme-solarized-dark .acc-card-body,
+body.theme-solarized-dark .sub-acc-body {
+    background-color: #073642 !important;
+    color: #93a1a1 !important;
+}
+body.theme-solarized-dark .acc-card-header h3,
+body.theme-solarized-dark .sub-acc-header h4 {
+    color: #93a1a1 !important;
+}
+body.theme-solarized-dark .privacy-body {
+    background-color: #002b36 !important;
+}
+body.theme-solarized-dark .privacy-sidebar a {
+    color: #93a1a1 !important;
+}
+body.theme-solarized-dark .privacy-sidebar a:hover,
+body.theme-solarized-dark .privacy-sidebar a.active {
+    color: #2aa198 !important;
+    background-color: #002b36 !important;
+}
+body.theme-solarized-dark .privacy-section {
+    border-top-color: #586e75 !important;
+}
+body.theme-solarized-dark .privacy-content h3 {
+    color: #93a1a1 !important;
+}
+body.theme-solarized-dark .form-title {
+    color: #93a1a1 !important;
+    border-bottom-color: #586e75 !important;
+}
+body.theme-solarized-dark .about-hero,
+body.theme-solarized-dark .privacy-hero,
+body.theme-solarized-dark .help-hero,
+body.theme-solarized-dark .contact-hero {
+    background: linear-gradient(135deg, #002b36 0%, #073642 100%) !important;
 }
