@@ -537,11 +537,11 @@
     // ==========================================================================
     const faqTree = {
         root: {
-            message: "Olá! 👋 Sou o assistente do Petição Pública Brasil. Escolha um tema para encontrar sua resposta:",
+            message: "Olá! Sou o assistente do Petição Pública Brasil. Escolha um tema para encontrar sua resposta:",
             options: [
-                { label: "📋 Sobre o site", target: "cat_sobre" },
-                { label: "✍️ Criar abaixo-assinado", target: "cat_criar" },
-                { label: "🔒 Segurança e contato", target: "cat_seguranca" }
+                { label: "Sobre o site", target: "cat_sobre" },
+                { label: "Criar abaixo-assinado", target: "cat_criar" },
+                { label: "Segurança e contato", target: "cat_seguranca" }
             ]
         },
         cat_sobre: {
@@ -551,7 +551,7 @@
                 { label: "O que é um abaixo-assinado?", target: "q_abaixo" },
                 { label: "Quem pode criar um abaixo-assinado?", target: "q_quem" },
                 { label: "O que o site faz? E o que eu faço?", target: "q_oquefaz" },
-                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+                { label: "Voltar ao início", target: "root", isBack: true }
             ]
         },
         cat_criar: {
@@ -560,7 +560,7 @@
                 { label: "Como escrever meu abaixo-assinado?", target: "q_escrever" },
                 { label: "Como submeter meu abaixo-assinado?", target: "q_submeter" },
                 { label: "O que o site faz? E o que eu faço?", target: "q_oquefaz" },
-                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+                { label: "Voltar ao início", target: "root", isBack: true }
             ]
         },
         cat_seguranca: {
@@ -568,7 +568,7 @@
             options: [
                 { label: "As assinaturas estão seguras?", target: "q_seguras" },
                 { label: "Como fazer mais perguntas ao site?", target: "q_contato" },
-                { label: "↩️ Voltar ao início", target: "root", isBack: true }
+                { label: "Voltar ao início", target: "root", isBack: true }
             ]
         },
         q_oque: {
@@ -583,7 +583,7 @@
         },
         q_abaixo: {
             answer: '<div class="faq-answer-text">' +
-                '<p>Abaixo-assinado (ou petição pública), em geral, é a <strong>apresentação de um pedido ou de uma proposta</strong> a órgão soberano ou a qualquer autoridade pública, para que adote determinada medida.</p>' +
+                '<p>Abaixo-assinado (or petição pública), em geral, é a <strong>apresentação de um pedido ou de uma proposta</strong> a órgão soberano ou a qualquer autoridade pública, para que adote determinada medida.</p>' +
                 '<p><em>Adaptação do Texto da Constituição de 1988, em seu Artigo 153, parágrafo 30.</em></p>' +
                 '</div>',
             parentCat: "cat_sobre"
@@ -609,9 +609,9 @@
         q_escrever: {
             answer: '<div class="faq-answer-text">' +
                 '<p>A parte mais importante é a <strong>declaração do abaixo-assinado</strong>. Centenas, milhares ou até mais pessoas vão ler seu texto, então ele deve estar bem escrito e sem erros.</p>' +
-                '<p>💡 <strong>Dicas importantes:</strong></p>' +
+                '<p><strong>Dicas importantes:</strong></p>' +
                 '<p>• Dedique tempo na revisão — isso aumenta o sucesso<br>• Seja claro e objetivo sobre o problema e a solução<br>• Use um corretor ortográfico antes de submeter</p>' +
-                '<p>⚠️ <strong>Atenção:</strong> Um abaixo-assinado não pode ser alterado depois de submetido, pois qualquer mudança seria injusta para quem já assinou.</p>' +
+                '<p><strong>Atenção:</strong> Um abaixo-assinado não pode ser alterado depois de submetido, pois qualquer mudança seria injusta para quem já assinou.</p>' +
                 '</div>',
             parentCat: "cat_criar"
         },
@@ -620,7 +620,7 @@
                 '<p>Já tem o texto escrito, visto e revisto? Ótimo! Você pode ir diretamente para a página de criação:</p>' +
                 '</div>',
             parentCat: "cat_criar",
-            actionLink: { label: "🚀 Criar Abaixo-assinado agora", href: "../pcreate/index.html" }
+            actionLink: { label: "Criar Abaixo-assinado agora", href: "../pcreate/index.html" }
         },
         q_seguras: {
             answer: '<div class="faq-answer-text">' +
@@ -633,10 +633,10 @@
         q_contato: {
             answer: '<div class="faq-answer-text">' +
                 '<p>Você pode enviar suas questões, comentários e sugestões através do nosso formulário de contato.</p>' +
-                '<p>💡 <strong>Dica:</strong> Seja claro e objetivo. Se for sobre uma petição específica, inclua o URL dela na mensagem.</p>' +
+                '<p><strong>Dica:</strong> Seja claro e objetivo. Se for sobre uma petição específica, inclua o URL dela na mensagem.</p>' +
                 '</div>',
             parentCat: "cat_seguranca",
-            actionLink: { label: "📧 Ir para o formulário de contato", href: "../contactus/index.html" }
+            actionLink: { label: "Ir para o formulário de contato", href: "../contactus/index.html" }
         }
     };
 
@@ -647,12 +647,17 @@
             return;
         }
 
+        const botSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>';
+        const userSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
+        const chatBubbleSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+        const closeCrossSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
         // Create FAB button
         const fab = document.createElement('div');
         fab.className = 'faq-chatbot-fab acc-exclude';
         fab.setAttribute('role', 'button');
         fab.setAttribute('aria-label', 'Abrir Assistente de Ajuda');
-        fab.innerHTML = '<span class="faq-fab-icon">💬</span>';
+        fab.innerHTML = `<span class="faq-fab-icon">${chatBubbleSvg}</span>`;
         document.body.appendChild(fab);
 
         // Create Chat window
@@ -660,12 +665,12 @@
         win.className = 'faq-chatbot-window acc-exclude';
         win.innerHTML = `
             <div class="faq-chatbot-header">
-                <div class="faq-chatbot-header-avatar">🤖</div>
+                <div class="faq-chatbot-header-avatar">${botSvg}</div>
                 <div class="faq-chatbot-header-info">
                     <h3>Assistente FAQ</h3>
                     <p>Como posso ajudar você hoje?</p>
                 </div>
-                <button class="faq-chatbot-close-btn" aria-label="Fechar">&times;</button>
+                <button class="faq-chatbot-close-btn" aria-label="Fechar">${closeCrossSvg}</button>
             </div>
             <div class="faq-chatbot-body" id="faqChatBody"></div>
             <div class="faq-chatbot-footer">
@@ -685,11 +690,11 @@
             if (isActive) {
                 win.classList.remove('active');
                 fab.classList.remove('active');
-                fab.innerHTML = '<span class="faq-fab-icon">💬</span>';
+                fab.innerHTML = `<span class="faq-fab-icon">${chatBubbleSvg}</span>`;
             } else {
                 win.classList.add('active');
                 fab.classList.add('active');
-                fab.innerHTML = '<span class="faq-fab-icon" style="font-family: Arial, sans-serif;">&times;</span>';
+                fab.innerHTML = `<span class="faq-fab-icon">${closeCrossSvg}</span>`;
                 if (isInitialLoad) {
                     isInitialLoad = false;
                     navigateTo('root');
@@ -711,7 +716,7 @@
             const typingEl = document.createElement('div');
             typingEl.className = 'faq-chat-msg';
             typingEl.innerHTML = `
-                <div class="faq-chat-avatar bot">🤖</div>
+                <div class="faq-chat-avatar bot">${botSvg}</div>
                 <div class="faq-chat-bubble bot">
                     <div class="faq-typing-indicator">
                         <div class="faq-typing-dot"></div>
@@ -729,7 +734,7 @@
                 const msgEl = document.createElement('div');
                 msgEl.className = 'faq-chat-msg';
                 msgEl.innerHTML = `
-                    <div class="faq-chat-avatar bot">🤖</div>
+                    <div class="faq-chat-avatar bot">${botSvg}</div>
                     <div class="faq-chat-bubble bot">${html}</div>
                 `;
                 chatBody.appendChild(msgEl);
@@ -745,7 +750,7 @@
             const msgEl = document.createElement('div');
             msgEl.className = 'faq-chat-msg user-msg';
             msgEl.innerHTML = `
-                <div class="faq-chat-avatar user">👤</div>
+                <div class="faq-chat-avatar user">${userSvg}</div>
                 <div class="faq-chat-bubble user">${text}</div>
             `;
             chatBody.appendChild(msgEl);
@@ -795,9 +800,8 @@
                 allBtns[i].style.pointerEvents = 'none';
             }
 
-            // User bubble selection (clean emojis)
-            const cleanLabel = opt.label.replace(/^(↩️|📋|✍️|🔒|🚀|📧)\s*/, '');
-            addUserMessage(cleanLabel);
+            // User bubble selection
+            addUserMessage(opt.label);
 
             navigateTo(opt.target);
         }
@@ -815,12 +819,11 @@
 
                     const navOptions = [];
                     if (currentNode.parentCat) {
-                        const parentNode = faqTree[currentNode.parentCat];
-                        const catLabel = currentNode.parentCat === 'cat_sobre' ? "📋 Sobre o site" :
-                                         currentNode.parentCat === 'cat_criar' ? "✍️ Criar abaixo-assinado" : "🔒 Segurança e contato";
-                        navOptions.push({ label: `📋 Outra sobre ${catLabel.replace(/^(📋|✍️|🔒)\s*/, '')}`, target: currentNode.parentCat });
+                        const catLabel = currentNode.parentCat === 'cat_sobre' ? "Sobre o site" :
+                                         currentNode.parentCat === 'cat_criar' ? "Criar abaixo-assinado" : "Segurança e contato";
+                        navOptions.push({ label: `Outra sobre ${catLabel}`, target: currentNode.parentCat });
                     }
-                    navOptions.push({ label: "↩️ Voltar ao início", target: "root", isBack: true });
+                    navOptions.push({ label: "Voltar ao início", target: "root", isBack: true });
 
                     setTimeout(function() {
                         addOptions(navOptions);
